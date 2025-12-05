@@ -35,3 +35,21 @@ layout: two-cols-header
 1. Use [ng-extract-i18n-merge](https://www.npmjs.com/package/ng-extract-i18n-merge)
 1. Instruct an AI model
 1. Combine **2. & 3.**
+
+---
+layout: what-if
+---
+
+... we want to apply translations conditionally?
+
+---
+layout: default
+---
+
+# Problem
+
+- Sometimes we need to apply different translations depending on the state of our component
+
+```ts
+export class UserProfile {}
+```

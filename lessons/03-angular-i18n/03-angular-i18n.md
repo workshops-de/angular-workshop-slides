@@ -1,9 +1,9 @@
 ---
 background: https://cover.sli.dev
-title: Example Lesson
+title: Angular i18n
 info: |
-  ## Example Lesson
-  This is an example lesson to demonstrate the slide structure.
+  ## Angular i18n
+  Translations with built-in Angular techniques
 class: text-center
 drawings:
   persist: false

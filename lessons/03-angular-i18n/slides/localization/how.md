@@ -22,12 +22,12 @@ Due to package conflicts sometimes we need to enforce installing a npm package. 
 
 ```angular-ts
 @Component({
-  selector: 'my-component',
+  selector: 'content-header',
   template: `
     <h1 i18n="@@heading">Hello @angular/localize</h1>
   `
 })
-export class MyComponent {}
+export class ContentHeader {}
 ```
 ````
 
@@ -80,40 +80,3 @@ layout: default
   </file>
 </xliff>
 ```
-
----
-
-# Common Patterns
-
-<div class="grid grid-cols-2 gap-6">
-
-<div>
-
-## Pattern A: Simple
-
-```typescript
-// For simple use cases
-const result = simple(input);
-```
-
-Best for: Quick prototypes
-
-</div>
-
-<div>
-
-## Pattern B: Advanced
-
-```typescript
-// For complex scenarios
-const result = await advanced({
-  input,
-  options: { deep: true },
-});
-```
-
-Best for: Production apps
-
-</div>
-
-</div>
