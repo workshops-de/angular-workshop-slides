@@ -11,7 +11,7 @@ transition: slide-left
 mdc: true
 seoMeta:
   ogImage: auto
-theme: "@workshops.de/slidev-theme"
+theme: '@workshops.de/slidev-theme'
 addons:
   - window-mockup
   - slidev-addon-tldraw
@@ -27,4 +27,8 @@ src: ./lessons/01-example-lesson/01-example-lesson.md
 
 ---
 src: ./lessons/02-advanced-concepts/02-advanced-concepts.md
+---
+
+---
+src: ./lessons/03-angular-i18n/03-angular-i18n.md
 ---
