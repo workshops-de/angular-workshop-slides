@@ -23,13 +23,13 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
+          node-version: "lts/*"
 
       - name: Setup @antfu/ni
         run: npm i -g @antfu/ni
 
       - name: Install dependencies
-        run: nci
+        run: npm install
 
       - name: Install Playwright for PDF export
         run: npx playwright install chromium
