@@ -1,9 +1,0 @@
-name: TypeScript Baseline
-position: 3
-trainer: "gregor@entwicklungszeit.dev"
-slides_type: slidev
-slides_url: https://workshops-de.github.io/typescript-baseline-slides/typescript-baseline/
-pdf_generation_enabled: true
-stackblitz_enabled: false
-codesandbox_enabled: false
-deprecated: false
