@@ -1,0 +1,19 @@
+- **<Task step heading>** technical details about the respective step
+
+```ts
+// <file-name.ts of the affected module>
+import { Component, signal } from '@angular/core';
+
+export class BookCard {
+  customStyle = signal({ color: 'red' });
+}
+```
+
+```html
+<!-- <filename.html of the affected template -->
+<h4 [style]="customStyle()">{{ content().author }}</h4>
+```
+
+--- <!-- separator before the next hint comes -->
+
+- **<Next task tep heading>** ...
