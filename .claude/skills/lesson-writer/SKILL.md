@@ -23,6 +23,8 @@ lessons/
 
 - A task has a `task.yml` file with technical details to include the task in the eClassroom
 - Use [task.template.md](./references/task.template.yml) if you need to write/update one.
+- A solution-Commit has the structure: solution--<topic>-<topic-part>
+  - derive the title of a task from <topic-parts>
 
 ## Write understandable tasks
 
