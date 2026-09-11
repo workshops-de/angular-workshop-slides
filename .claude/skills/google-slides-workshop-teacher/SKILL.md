@@ -108,6 +108,21 @@ und Farbpalette stehen in
 [references/code-slide.md](references/code-slide.md) — vor dem Bauen einer
 Code-Folie dort nachlesen statt Werte zu raten.
 
+## Massen-Migration von Folien (z. B. Layout-Wechsel für viele Folien)
+
+Bei Ersetzung vieler Folien NICHT die `insertionIndex` von `createSlide`
+vorab pro Folie berechnen — jeder Create/Delete verschiebt nachfolgende
+Indizes, sie veralten über mehrere Batches hinweg (führte hier dazu, dass 28
+neue Folien alle am Anfang statt an Originalposition landeten).
+
+Stattdessen: Original-Reihenfolge vorab sichern
+(`get_presentation(fields: "slides(objectId,slideProperties(layoutObjectId))")`
+ins Scratchpad), neue Folien ohne Rücksicht auf Position bauen (ans Ende
+anhängen reicht), danach per Skript Ist- vs. Soll-Reihenfolge vergleichen und
+die Differenz als `updateSlidesPosition`-Requests in einem `batchUpdate`
+anwenden. Abschließend per `get_presentation(fields: "slides.objectId")`
+verifizieren.
+
 ## Hinweise
 
 - `get_page(presentationId, pageObjectId)` liefert Detaildaten zu genau
