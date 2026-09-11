@@ -76,20 +76,37 @@ Driver-Software nötig, da die Präsentationen direkt über MCP ansteuerbar sind
 7. **Umsetzung** Anspassen bestehende und/oder Erstellen neuer Slides
 
 - Neue Slides sollen immer auf English sein.
-- Erstelle dazu im Didaktischen Konzept jeweils Slides die folgende Fragen beantworten:
-  - Titel des Kapitels/Themas (Layout: Abschnittüberschrift)
-  - Little What (Kurze Erklärung, Ein Satz der das Zusammen fasst. Layout: Little What)
-  - Why (Warum brauchen wir dieses Feature. Layout: Why 1)
-  - How (Wie nutzen wir es)
-  - What (Beispiele wir wir es nutzen)
-  - Task (Titel der Aufgabe wie im GitHub Issue. Layout: Task)
-  - What if? (Edgecased die ggf. behandelt werden)
+- Wähle für jede Slide das Layout passend zu ihrer didaktischen Funktion:
+
+| Layout          | Wann verwenden                                                                               |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| Title Slide     | Neues Hauptthema im Deck                                                                     |
+| Section header  | Unterthema zu einem Title Slide                                                              |
+| Main Point      | Wichtige Aussage/Regel (max. ein Satz)                                                       |
+| Little What     | Kurze Erklärung, ein Satz der das Thema zusammenfasst                                        |
+| Why             | Erklärt, warum wir dieses Feature brauchen                                                   |
+| How             | Zeigt, wie wir es nutzen                                                                     |
+| What            | Beispiele, wie wir es nutzen                                                                 |
+| Task            | Informiert, dass die Teilnehmenden jetzt eine Aufgabe bearbeiten (Titel wie im GitHub Issue) |
+| What If?        | Weckt Neugier auf kommende Fragen/Themen (Edgecases, Transfer)                               |
+| Lessons Learned | Fasst zusammen, was im Abschnitt gelernt wurde                                               |
+
+Für Code-Beispiele gilt stattdessen das eigene Layout "Code Window" (siehe
+Abschnitt weiter unten).
 
 Wenn du Aufzählungen nutzt, schau das du nicht mehr als 4 Punkte nutzt und jeder Punkt maximal 70 Zeichen hat. Sonst passt es nicht auf die Slide.
 
 Achte bei Code-Beispielen darauf, dass diese mit dem in den Code-Slides vorhandenem Syntax-Highlighting ausgezeichnet sind.
 
 Die Titel der Slides sollen kurz und einzeilig sein.
+
+## Code-Slide Layout ("Code Window")
+
+Für Code-Beispiele gibt es ein eigenes Folienlayout "Code Window" mit
+fertiger Card-Hülle und Syntax-Highlighting-Konvention. Details, Bauablauf
+und Farbpalette stehen in
+[references/code-slide.md](references/code-slide.md) — vor dem Bauen einer
+Code-Folie dort nachlesen statt Werte zu raten.
 
 ## Hinweise
 
