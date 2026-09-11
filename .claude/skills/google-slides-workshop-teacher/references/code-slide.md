@@ -58,6 +58,7 @@ get_presentation(presentationId, fields: "layouts(objectId,layoutProperties)")
    damit auch diese Vorkommen die Typen-Farbe bekommen. Das Skript ist ein
    Heuristik-basierter Tagger, kein echter Parser — nach dem Bauen die Folie
    trotzdem per `get_page` stichprobenartig gegenchecken.
+
 6. Nach dem Bauen die Folie per `get_page` erneut auslesen und stichprobenartig
    prüfen, ob Ranges und Farben wie geplant angekommen sind.
 
@@ -90,13 +91,13 @@ im selben Absatz und hat keinen Absatzabstand.
 
 Blau-lastige Basispalette, passend zum Akzent des Layouts:
 
-| Token-Art                                                                                                         | Farbe (RGB 0–1)       | Hex       | Bold |
-| ----------------------------------------------------------------------------------------------------------------- | --------------------- | --------- | ---- |
-| Keywords (`export`, `class`… `private`, `return`, `this`, `import`, `from`)                                       | `0, 0.0627, 0.502`    | `#001080` | ja   |
-| Decorator (`@Injectable`, `@Component` …)                                                                         | `0.357, 0.576, 0.902` | `#5B93E6` | nein |
-| Typen / Methodennamen / Funktionsaufrufe (Klassen, `getAll`, `get`, `inject`, generische Typparameter wie `Book`) | `0.176, 0.376, 0.792` | `#2D60CA` | nein |
-| String-Literale                                                                                                   | `0, 0.467, 0.667`     | `#0077AA` | nein |
-| Standardtext (Interpunktion, Operatoren, restlicher Code)                                                         | `0.2, 0.2, 0.2`       | `#333333` | nein |
+| Token Type                                                                  | RGB (0–1)           | Hex      | Bold |
+| :-------------------------------------------------------------------------- | :------------------ | :------- | :--- |
+| Keywords (`export`, `class`, `private`, `return`, `this`, `import`, `from`) | 0, 0.0627, 0.502    | \#001080 | Yes  |
+| Decorators (`@Injectable`, `@Component`, `@Input`)                          | 0, 0.502, 0.627     | \#0080A0 | No   |
+| Types / Method Names / Function Calls (`Book`, `getAll`, `get`, `inject`)   | 0.176, 0.376, 0.792 | \#2D60CA | No   |
+| String Literals                                                             | 0, 0.467, 0.667     | \#0077AA | No   |
+| Standard Text (Punctuation, operators, remaining code)                      | 0.2, 0.2, 0.2       | \#333333 | No   |
 
 Regeln fürs Highlighting:
 
