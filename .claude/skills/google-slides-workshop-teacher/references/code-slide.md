@@ -39,11 +39,25 @@ get_presentation(presentationId, fields: "layouts(objectId,layoutProperties)")
    zuerst ein `updateTextStyle` über `textRange.type: ALL` für Grundfarbe/Font/
    Size, danach gezielte `updateTextStyle`-Aufrufe mit
    `textRange.type: FIXED_RANGE` für jeden abweichenden Token.
-5. **Indizes nie von Hand zählen.** Vor dem Bauen ein kurzes Python-Snippet
-   (`Bash`-Tool) schreiben, das die Codezeilen als Liste von
-   `(text, tokenArt)`-Tupeln definiert, daraus Start-/End-Index je Tupel
-   berechnet und den vollen Text sowie die Ranges ausgibt. Das vermeidet
-   Off-by-one-Fehler bei Sonderzeichen, Einrückung und Zeilenumbrüchen.
+5. **Indizes nie von Hand zählen.** Statt Token-Ranges manuell zu berechnen,
+   das wiederverwendbare Highlighter-Skript
+   [`scripts/highlight_code.py`](../scripts/highlight_code.py) nutzen:
+
+   ```python
+   import sys
+   sys.path.insert(0, "<Pfad zu>/.claude/skills/google-slides-workshop-teacher/scripts")
+   from highlight_code import highlight
+
+   text, ranges = highlight(code, known_types=["BooksClient"])
+   ```
+
+   `code` ist der Codetext mit normalen `\n`-Zeilenumbrüchen; die Funktion
+   gibt den fertigen Text (mit `` statt `\n`, siehe unten) und die
+   Highlighting-Ranges zurück. `known_types` optional angeben für
+   Klassennamen, die als bloße Referenz auftauchen (z. B. `inject(BooksClient)`),
+   damit auch diese Vorkommen die Typen-Farbe bekommen. Das Skript ist ein
+   Heuristik-basierter Tagger, kein echter Parser — nach dem Bauen die Folie
+   trotzdem per `get_page` stichprobenartig gegenchecken.
 6. Nach dem Bauen die Folie per `get_page` erneut auslesen und stichprobenartig
    prüfen, ob Ranges und Farben wie geplant angekommen sind.
 
