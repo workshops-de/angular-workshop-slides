@@ -27,5 +27,14 @@
     "activityBar.activeBorder": "#15202b",
     "activityBarTop.activeBorder": "#15202b"
   },
-  "peacock.color": "#42b883"
+  "peacock.color": "#42b883",
+  "yaml.disableSchemaDetection": [
+    "**/lessons/**/task.yml",
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ]
 }
