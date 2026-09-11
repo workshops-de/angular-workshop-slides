@@ -1,0 +1,11 @@
+name: Angular Services & HTTP
+position: 3
+trainer: 'gregor@entwicklungszeit.dev'
+slides_type: google_slides
+github_code_url: https://github.com/workshops-de/angular-workshop
+git_tag_starting: main
+google_slide_id: 1YQKMhSZvX_0PNBwvkUIpItLzhbrbOqXAIthOhjNKEAc
+pdf_generation_enabled: true
+stackblitz_enabled: true
+codesandbox_enabled: false
+deprecated: false
