@@ -100,13 +100,24 @@ Achte bei Code-Beispielen darauf, dass diese mit dem in den Code-Slides vorhande
 
 Die Titel der Slides sollen kurz und einzeilig sein.
 
-## Code-Slide Layout ("Code Window")
+## Code-Window Layout
 
 Für Code-Beispiele gibt es ein eigenes Folienlayout "Code Window" mit
 fertiger Card-Hülle und Syntax-Highlighting-Konvention. Details, Bauablauf
 und Farbpalette stehen in
-[references/code-slide.md](references/code-slide.md) — vor dem Bauen einer
-Code-Folie dort nachlesen statt Werte zu raten.
+
+- [references/code-slide.md](references/code-window.md) — vor dem Bauen einer
+  Code-Folie dort nachlesen statt Werte zu raten.
+
+## Code-Window-Explanation Layout
+
+Für Code-Beispiele, mit **zusätzlichen Erklärungen** gibt es das Folienlayout "Code Window" mit
+fertiger Card-Hülle und Syntax-Highlighting-Konvention.
+Rechts daneben ist eine Card die mit zusätzlichen Informationen gefüllt werden kann.
+
+- [references/code-slide-explanation.md](references/code-window-explanation.md.md) vor dem Bauen einer Code-Folie dort nachlesen statt Werte zu raten.
+
+Nutze dieses Layout, wenn neben dem puren Code weitere Erklärungen erforderlich sind
 
 ## Massen-Migration von Folien (z. B. Layout-Wechsel für viele Folien)
 
