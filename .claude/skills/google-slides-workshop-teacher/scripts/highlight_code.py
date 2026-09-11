@@ -29,7 +29,7 @@ import re
 import json
 
 KEYWORD = {"red": 0, "green": 0.0627, "blue": 0.502}
-DECORATOR = {"red": 0.357, "green": 0.576, "blue": 0.902}
+DECORATOR = {"red": 0, "green": 0.502, "blue": 0.627}
 TYPE = {"red": 0.176, "green": 0.376, "blue": 0.792}
 STRING = {"red": 0, "green": 0.467, "blue": 0.667}
 DEFAULT = {"red": 0.2, "green": 0.2, "blue": 0.2}
