@@ -47,6 +47,31 @@ get_presentation(presentationId, fields: "layouts(objectId,layoutProperties)")
 6. Nach dem Bauen die Folie per `get_page` erneut auslesen und stichprobenartig
    prüfen, ob Ranges und Farben wie geplant angekommen sind.
 
+### ⚠️ Zeilenumbrüche im Code: NIEMALS `\n`, IMMER ``
+
+Ein normales `\n` (`insertText` mit "Enter") erzeugt in Google Slides einen
+**neuen Absatz** — jede Codezeile bekommt dadurch den vollen Absatzabstand
+(`spaceAbove`/`spaceBelow`) des Platzhalters, und der Code wirkt sichtbar
+zu weit auseinandergezogen. Innerhalb eines Code-Blocks müssen die Zeilen
+stattdessen durch einen **weichen Zeilenumbruch** (Shift+Enter in der UI,
+technisch das Vertical-Tab-Zeichen ``) getrennt werden — das bleibt
+im selben Absatz und hat keinen Absatzabstand.
+
+- Beim Aufbau des Codetexts (egal ob im Python-Snippet aus Schritt 5 oder
+  direkt im `insertText`-Aufruf) jede Zeile mit `` statt `\n`
+  verbinden. Eine Leerzeile im Code ist einfach ``
+  (zwei aufeinanderfolgende weiche Umbrüche).
+- Da `` wie `\n` genau ein Zeichen ist, ändern sich dadurch **keine**
+  Start-/End-Indizes der Highlighting-Ranges — 1:1 austauschbar.
+- Kontrolle nach dem Bauen: `get_page` sollte im `BODY`-Platzhalter **einen
+  einzigen** `paragraphMarker` zeigen, der den kompletten Text umspannt
+  (nicht einen `paragraphMarker` pro Zeile). Tauchen mehrere
+  `paragraphMarker`-Einträge auf, wurde versehentlich `\n` verwendet — Text
+  löschen (`deleteText`, `textRange.type: ALL`) und mit `` neu
+  einfügen.
+- Nur TITLE und SUBTITLE (einzeilig) nutzen normales `insertText` ohne diese
+  Sonderbehandlung.
+
 ## Syntax-Highlighting im Code (`BODY`-Platzhalter)
 
 Blau-lastige Basispalette, passend zum Akzent des Layouts:
