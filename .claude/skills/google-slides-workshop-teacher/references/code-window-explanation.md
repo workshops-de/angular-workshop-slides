@@ -7,11 +7,12 @@ weiterhin `BLANK` — Anzeigename ist das Relevante). Es enthält bereits die
 komplette optische Hülle (Card mit Schatten, abgesetzte Tab-Kopfzeile,
 farbiger Dot, Hintergrund-Farbverlauf) sowie drei fertige Platzhalter:
 
-| Platzhalter-Typ | Verwendung       | Schrift (Default)                 |
-| --------------- | ---------------- | --------------------------------- |
-| `TITLE`         | Folientitel      | Arial 23pt                        |
-| `SUBTITLE`      | Dateiname im Tab | Roboto Mono 11pt, bold, `#434343` |
-| `BODY`          | Code-Inhalt      | Fira Mono 13pt                    |
+| Platzhalter-Typ | Verwendung                                  | Schrift (Default)        |
+| --------------- | ------------------------------------------- | ------------------------ |
+| `TITLE`         | Folientitel                                 | Arial 23pt               |
+| `SUBTITLE`      | Folienkategorie                             | Helvetica, 10pt, #2563eb |
+| `BODY`          | Code-Inhalt (siehe Abschnitt "Code")        | Fira Mono 13pt           |
+| `BODY`          | Explanation (siehe Abschnitt "Hinweistext") | Helvetica 12pt           |
 
 Da die Hülle jetzt Teil des Layouts ist, muss sie **nicht mehr pro Folie neu
 gebaut werden** (kein manuelles Anlegen von Card/Divider/Dot/Hintergrund mehr
@@ -27,12 +28,12 @@ get_presentation(presentationId, fields: "layouts(objectId,layoutProperties)")
 → Eintrag mit layoutProperties.displayName == "Code Window" suchen
 ```
 
-## Bauablauf für eine neue Code-Folie
+## Code
 
-1. `createSlide` mit `slideLayoutReference: { layoutId: "<Code-Window-objectId>" }`.
+1. `createSlide` mit `slideLayoutReference: { layoutId: "<Code-Window-Explanation-objectId>" }`.
 2. `get_page(presentationId, pageObjectId: "<neue Slide-ID>")` aufrufen, um die
    auf dieser Folie neu erzeugten Platzhalter-`objectId`s zu bekommen
-   (erkennbar an `placeholder.type`: `TITLE`, `SUBTITLE`, `BODY`).
+   (erkennbar an `placeholder.type`: `TITLE`, `SUBTITLE`, `BODY`, `BODY`).
 3. Je Platzhalter: `insertText` mit dem gewünschten Inhalt (Titel, Dateiname,
    kompletter Codetext in einem Rutsch).
 4. Auf dem `BODY`-Platzhalter das Syntax-Highlighting setzen (siehe unten) —
