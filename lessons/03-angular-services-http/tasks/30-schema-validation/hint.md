@@ -13,7 +13,7 @@ npm install valibot
 import * as v from 'valibot';
 
 const BookSchema = v.object({
-  id: v.optional(v.pipe(v.string(), v.uuid())),
+  id: v.pipe(v.string(), v.uuid()),
   isbn: v.string(),
   title: v.string(),
   subtitle: v.optional(v.string()),
