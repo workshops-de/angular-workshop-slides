@@ -1,36 +1,106 @@
 ## API starten
+
 If not already installed
+
 ```bash
 # run bookmonkey-api directly
 npx bookmonkey-api
 ```
 
+---
+
 ## Providing HttpClient
 
 ```typescript
+// app.config.ts
 import { provideHttpClient } from '@angular/common/http';
 
-providers: [provideHttpClient()]
+providers: [provideHttpClient()];
 ```
 
-## Loading books in BooksClient
+---
+
+## Extending `Book`
 
 ```typescript
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+// book.ts
+export interface Book {
+  isbn: string;
+  title: string;
+  subtitle?: string;
+  author?: string;
+  price?: number;
+  numPages?: number;
+  cover?: string;
+  publishedAt?: string | null;
+}
 ```
 
+---
+
+## Loading books via `httpResource`
+
 ```typescript
-return this.http.get<Book[]>('http://localhost:4730/books')
+// books-client.ts
+import { httpResource } from '@angular/common/http';
+import { Service } from '@angular/core';
+import { Book } from './book';
+
+@Service()
+export class BooksClient {
+  readonly #baseUrl = 'http://localhost:4730';
+
+  getAll() {
+    return httpResource<Book[]>(
+      () => ({
+        url: `${this.#baseUrl}/books`,
+        params: {
+          _start: 0,
+          _end: 15,
+          _sort: 'createdAt',
+          _order: 'desc'
+        }
+      }),
+      { defaultValue: [] }
+    );
+  }
+}
 ```
 
-## Consuming the Observable in App
+---
 
-Bridge the Observable to a signal with `toSignal` so the template keeps working:
+## Consuming the resource in `BooksPage`
 
 ```typescript
-// app.ts
-import { toSignal } from '@angular/core/rxjs-interop';
+// books-page.ts
+booksResource = this.booksClient.getAll();
 
-books = toSignal(this.booksClient.getAll(), { initialValue: [] });
+booksComputed = computed(() => {
+  const searchTerm = this.searchTerm();
+  const books = this.booksResource.value();
+
+  return books.filter(book => bookMatches(book, searchTerm));
+});
+```
+
+---
+
+## Loading and error state
+
+```html
+<!-- books-page.html -->
+@if (booksResource.isLoading()) {
+<p>Loading books...</p>
+} @else if (booksResource.error(); as error) {
+<p>Error: {{ error.message }}</p>
+}
+```
+
+---
+
+## Showing the real cover
+
+```html
+<!-- book-card.html -->
+<img [src]="currentBook.cover || placeholderCover" alt="" class="book-cover" />
 ```

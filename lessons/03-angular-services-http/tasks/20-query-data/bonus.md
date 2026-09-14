@@ -1,2 +1,2 @@
 - **Inspect the response** Have a look at what the BookMonkey API has returned.
-- **Extend `BookCard`** Feel free to extend `BookCard` to display a cover image or the number of pages or even its price. :-)
+- **Extend `BookCard`** Feel free to extend `BookCard` to also display the number of pages or the price. :-)
