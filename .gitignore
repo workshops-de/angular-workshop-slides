@@ -11,3 +11,7 @@ CLAUDE.local.md
 
 # Node-Tooling (Husky + commitlint)
 node_modules/
+
+# Python-Bytecode-Cache (z. B. aus .claude/skills/*/scripts/)
+__pycache__/
+*.pyc
