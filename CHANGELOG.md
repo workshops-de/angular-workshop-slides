@@ -2,6 +2,30 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.2.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.1.0...v1.2.0) (2026-09-14)
+
+
+### Bug Fixes
+
+* update token highlighting table for consistency and clarity ([da5075f](https://github.com/workshops-de/angular-workshop-slides/commit/da5075f09276f6281b0d2609d1855a10570b88db))
+
+
+### Features
+
+* add activity bar border color customizations ([414d72c](https://github.com/workshops-de/angular-workshop-slides/commit/414d72cdb969dde95a0e831cb7b6184e8cf0bb02))
+* add Angular HTTP presentation to the Google Slides workshop teacher skill ([cfa0e2c](https://github.com/workshops-de/angular-workshop-slides/commit/cfa0e2c0d6ed8a46f09d5f62dd0614a89959e18c))
+* add code highlighting theme and update decorator colors for consistency ([bdd6c02](https://github.com/workshops-de/angular-workshop-slides/commit/bdd6c028020b3950ac4d06cc33f119b8a0983c1b))
+* add custom and async validation tasks for Angular forms ([93c93b9](https://github.com/workshops-de/angular-workshop-slides/commit/93c93b945aee63ae5af9555338e7261c670154e6))
+* add lesson writer templates and structure documentation ([7a081f9](https://github.com/workshops-de/angular-workshop-slides/commit/7a081f95c4d6f2e6a8fcef02b5c1fed040e7a369))
+* add lessons for  effect, directive, schema validation, and API deletion ([d3e8b26](https://github.com/workshops-de/angular-workshop-slides/commit/d3e8b264d485494b0ad175912a44aceb0dd1ef61))
+* add service generation, data querying, schema validation, and delete functionality with hints ([701c82b](https://github.com/workshops-de/angular-workshop-slides/commit/701c82b2f8883fbfbb2a44ec5ac15ff8348bf9c3))
+* add solution-commit structure details to lesson writer documentation ([1afe56d](https://github.com/workshops-de/angular-workshop-slides/commit/1afe56d3e3d018101941330d41fcaf9365aa639d))
+* add syntax highlighter for "Code Window" slide layout ([d4c0112](https://github.com/workshops-de/angular-workshop-slides/commit/d4c0112aea13fd43a897943c1348d11b152b54b7))
+* enhance Google Slides workshop with detailed code slide layout and guidelines ([0f6e524](https://github.com/workshops-de/angular-workshop-slides/commit/0f6e5249b2694c34dd14072889b32b484a20a16e))
+* introduce new "Code Window" and "Code Window Explanation" layouts with updated references ([77974f9](https://github.com/workshops-de/angular-workshop-slides/commit/77974f9e30ca5082444067e2d057f9c158239294))
+* update placeholder types and layout references in code window explanation ([d9e0b8e](https://github.com/workshops-de/angular-workshop-slides/commit/d9e0b8e8cb6fa485fece7bac50876185787f15b3))
+* update task positions for service & http ([45a7565](https://github.com/workshops-de/angular-workshop-slides/commit/45a7565bbff56b9c6b881691f3d82bf7158977f1))
+
 # [1.1.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.0.0...v1.1.0) (2026-09-02)
 
 
