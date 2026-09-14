@@ -1,11 +1,11 @@
-name: Angular Components
-position: 4
+name: Angular Forms
+position: 6
 trainer: 'gregor@entwicklungszeit.dev'
 slides_type: google_slides
 github_code_url: https://github.com/workshops-de/angular-workshop
-git_tag_starting: main
-google_slide_id: 1KJMDvEUIWDHluMPLffiBnadVSO2IElTAs7jPsMadehw
+git_tag_starting: solve--use-router-with-component-input-bindings
+google_slide_id: 1DLlkWJBHaFRXL0tUaj83I19IQg5tJJk8DjK8ZhNvv1I
 pdf_generation_enabled: true
-stackblitz_enabled: true
+stackblitz_enabled: false
 codesandbox_enabled: false
 deprecated: false
