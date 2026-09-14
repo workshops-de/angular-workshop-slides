@@ -1,22 +1,16 @@
-## Generate the component
-
-```sh
-ng generate component books/book-new/book-new-page
-```
-
 ## The component class
 
 ```typescript
-// book-new-page.ts
+// book-create-form.ts
 import { Component, signal } from '@angular/core';
 import { form, FormField, FormRoot } from '@angular/forms/signals';
 
 @Component({
-  selector: 'app-book-new',
+  selector: 'app-book-create-form',
   imports: [FormField, FormRoot],
-  templateUrl: './book-new-page.html'
+  templateUrl: './book-create-form.html'
 })
-export class BookNewPage {
+export class BookCreateForm {
   protected readonly model = signal({
     isbn: '',
     title: '',
@@ -32,28 +26,30 @@ export class BookNewPage {
 ## The template
 
 ```html
-<form [formRoot]="form">
-  <label>
-    <span>ISBN</span>
-    <input [formField]="form.isbn" />
+<form class="form-fields" [formRoot]="form">
+  <label class="field-label">
+    <span class="field-label-text">ISBN</span>
+    <input class="field-input w-full" [formField]="form.isbn" />
   </label>
-  <label>
-    <span>Title</span>
-    <input [formField]="form.title" />
+  <label class="field-label">
+    <span class="field-label-text">Title</span>
+    <input class="field-input w-full" [formField]="form.title" />
   </label>
-  <label>
-    <span>Subtitle</span>
-    <input [formField]="form.subtitle" />
+  <label class="field-label">
+    <span class="field-label-text">Subtitle</span>
+    <input class="field-input w-full" [formField]="form.subtitle" />
   </label>
-  <label>
-    <span>Author</span>
-    <input [formField]="form.author" />
+  <label class="field-label">
+    <span class="field-label-text">Author</span>
+    <input class="field-input w-full" [formField]="form.author" />
   </label>
-  <label>
-    <span>Abstract</span>
-    <input [formField]="form.abstract" />
+  <label class="field-label">
+    <span class="field-label-text">Abstract</span>
+    <input class="field-input w-full" [formField]="form.abstract" />
   </label>
 
-  <button type="submit" [disabled]="form().invalid()">Save</button>
+  <div class="form-actions">
+    <button type="submit" class="btn-primary" [disabled]="form().invalid()">Save</button>
+  </div>
 </form>
 ```

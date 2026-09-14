@@ -1,3 +1,0 @@
-- Enable `withComponentInputBinding()` on `provideRouter` in `app.config.ts`.
-- Remove the `ActivatedRoute` in _BookDetailPage_.
-- Define an `input()` signal for isbn and retrieve the book by using `getByIsbn` via _BooksClient_.

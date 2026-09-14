@@ -14,6 +14,26 @@ update(isbn: string, book: Partial<Book>): Observable<Book> {
 
 ```typescript
 // book-edit-page.ts
+import { Component, input } from '@angular/core';
+import { BookEditForm } from '../book-edit-form/book-edit-form';
+
+@Component({
+  selector: 'app-book-edit',
+  imports: [BookEditForm],
+  templateUrl: './book-edit-page.html'
+})
+export class BookEditPage {
+  readonly isbn = input.required<string>();
+}
+```
+
+```html
+<!-- book-edit-page.html -->
+<app-book-edit-form [isbn]="isbn()" />
+```
+
+```typescript
+// book-edit-form.ts
 import { Component, inject, input, linkedSignal } from '@angular/core';
 import { disabled, form, FormField, FormRoot, readonly, required } from '@angular/forms/signals';
 import { firstValueFrom } from 'rxjs';
@@ -23,13 +43,13 @@ import { validAuthorName } from '../validators/author';
 const emptyBookForm = { isbn: '', title: '', subtitle: '', author: '', abstract: '' };
 
 @Component({
-  selector: 'app-book-edit',
+  selector: 'app-book-edit-form',
   imports: [FormField, FormRoot],
-  templateUrl: './book-edit-page.html'
+  templateUrl: './book-edit-form.html'
 })
-export class BookEditPage {
+export class BookEditForm {
   private readonly booksClient = inject(BooksClient);
-  protected readonly isbn = input.required<string>();
+  readonly isbn = input.required<string>();
 
   private readonly bookResource = this.booksClient.getByIsbnResource(this.isbn);
 
@@ -60,6 +80,9 @@ export class BookEditPage {
 ```
 
 ```html
-<!-- book-detail-page.html -->
-<a [routerLink]="['/books/edit', book.isbn]">Edit</a>
+<!-- book.routes.ts -->
+{
+  path: 'edit/:isbn',
+  loadComponent: () => import('./book-edit-page/book-edit-page').then(c => c.BookEditPage)
+}
 ```

@@ -15,7 +15,7 @@ export function validAuthorName(schemaPath: SchemaPath<string>): void {
 ```
 
 ```typescript
-// book-new-page.ts
+// book-create-form.ts
 import { validAuthorName } from '../validators/author';
 
 protected readonly form = form(this.model, schemaPath => {

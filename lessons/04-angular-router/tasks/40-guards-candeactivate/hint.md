@@ -1,27 +1,38 @@
+## Unsaved-changes state
+
+```ts
+// book-create-page.ts
+export class BookCreatePage {
+  readonly hasUnsafeChanges = signal(true);
+}
+```
 
 ## Guard function
 
 - Import the `CanDeactivateFn` interface from `@angular/router`
-- Type the guard with the guarded component (`BookDetailPage`) and implement the fat arrow function
+- Type the guard with the guarded component (`BookCreatePage`) and implement the fat arrow function
 
 ```ts
-export const confirmLeaveGuardFn: CanDeactivateFn<BookDetailPage> = (route, state) => {
-  // ...
+// confirm-leave.ts
+import { CanDeactivateFn } from '@angular/router';
+import { BookCreatePage } from './book-create-page/book-create-page';
+
+export const confirmLeaveGuardFn: CanDeactivateFn<BookCreatePage> = component => {
+  if (!component.hasUnsafeChanges()) {
+    return true;
+  }
+
+  return confirm('You have unsaved changes. Do you really want to leave?');
 };
 ```
-
-```ts
-return confirm('Do you really want to leave?');
-```
-
 
 Add guard to route:
 
 ```ts
+// book.routes.ts
 {
-  path: ...,
-  component: ...,
-  canDeactivate: [...]
+  path: 'create',
+  loadComponent: () => import('./book-create-page/book-create-page').then(c => c.BookCreatePage),
+  canDeactivate: [confirmLeaveGuardFn]
 }
 ```
-

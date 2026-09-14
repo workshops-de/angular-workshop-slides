@@ -1,16 +1,6 @@
-- **Generate `BookNewPage`** Create a new Component `BookNewPage` for the Book-Feature with `ng generate component books/book-new/book-new-page`.
+`BookCreatePage`/`BookCreateForm` already exist (you copied them from `workshop-support` in the router lesson) and are already wired up via routing — but the form itself doesn't do anything yet. Let's fix that with Signal Forms.
 
----
-
-- **Add the route** Configure a new Route inside the `book.routes.ts` File, displaying the `BookNewPage` (path: new).
-
----
-
-- **Link to it** Add a link from `BooksPage` with `routerLink` to the `new` route.
-
----
-
-- **Create the data model** Inside `book-new-page.ts`, create a `signal()` called `model` holding a plain object with the fields `isbn`, `title`, `subtitle`, `author`, and `abstract` (all empty strings).
+- **Create the data model** Inside `book-create-form.ts`, create a `signal()` called `model` holding a plain object with the fields `isbn`, `title`, `subtitle`, `author`, and `abstract` (all empty strings).
 
 ---
 
@@ -18,13 +8,13 @@
 
 ---
 
-- **Import the directives** Add `FormRoot` and `FormField` from `@angular/forms/signals` to the `imports`-Array of `BookNewPage`.
+- **Import the directives** Add `FormRoot` and `FormField` from `@angular/forms/signals` to the `imports`-Array of `BookCreateForm`.
 
 ---
 
-- **Build the template** Inside the `book-new-page.html`-File:
-  - Add a `<form>`-Tag and bind the created `form` Property to the `[formRoot]`-Directive
-  - For each field of your model create one `<input>`-Tag and bind it to the matching field with the `[formField]`-Directive, e.g. `[formField]="form.isbn"`
-  - Also add a Submit-Button with `type=submit`, disabled while the form is invalid via `[disabled]="form().invalid()"`
+- **Wire up the template** Inside `book-create-form.html`:
+  - Bind the created `form` Property to the `<form>`-Tag's `[formRoot]`-Directive.
+  - For each field of your model, bind its `<input>`-Tag to the matching field with the `[formField]`-Directive, e.g. `[formField]="form.isbn"` (replacing the previous plain `name="isbn"` attribute).
+  - Disable the existing Submit-Button while the form is invalid via `[disabled]="form().invalid()"`.
 
 Run the application inside the Browser: You should see your form and be able to type into every field.

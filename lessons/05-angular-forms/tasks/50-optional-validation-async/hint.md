@@ -16,7 +16,7 @@ export function uniqueIsbn(path: SchemaPath<string>): void {
 ```
 
 ```typescript
-// book-new-page.ts
+// book-create-form.ts
 import { uniqueIsbn } from '../validators/isbn';
 
 protected readonly form = form(this.model, schemaPath => {

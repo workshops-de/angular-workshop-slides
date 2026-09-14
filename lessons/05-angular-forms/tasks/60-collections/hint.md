@@ -1,58 +1,63 @@
 ```typescript
-// book-new-page.ts
+// book-create-form.ts
 import { applyEach, form, FormField, FormRoot, required } from '@angular/forms/signals';
-import { Book } from '../book';
 
-export class BookNewPage {
+export class BookCreateForm {
+  // The form model mirrors the Book payload, so submission can hand it straight
+  // to the API. `author` stays a single value, `coAuthors` is the collection.
   protected readonly model = signal({
     isbn: '',
     title: '',
     subtitle: '',
-    authors: [''],
-    abstract: '',
-    cover: ''
+    author: '',
+    coAuthors: [] as string[],
+    abstract: ''
   });
 
   protected readonly form = form(this.model, schemaPath => {
     required(schemaPath.isbn, { message: 'Please insert an ISBN.' });
     required(schemaPath.title, { message: 'Please insert a title.' });
-    applyEach(schemaPath.authors, author => {
-      required(author, { message: 'Please insert an Author.' });
-      validAuthorName(author);
+    required(schemaPath.author, { message: 'Please insert an Author.' });
+    validAuthorName(schemaPath.author);
+    applyEach(schemaPath.coAuthors, coAuthor => {
+      required(coAuthor, { message: 'Please insert a co-author name.' });
+      validAuthorName(coAuthor);
     });
-  }, {
-    submission: {
-      action: async () => {
-        // The API only supports a single author per book
-        const book: Book = { ...this.model(), author: this.model().authors[0] };
-        await firstValueFrom(this.booksClient.create(book));
-        return null;
-      }
-    }
   });
 
-  addAuthor() {
-    this.model.update(m => ({ ...m, authors: [...m.authors, ''] }));
+  addCoAuthor() {
+    this.model.update(m => ({ ...m, coAuthors: [...m.coAuthors, ''] }));
   }
 
-  deleteAuthor(authorIndex: number) {
-    this.model.update(m => ({ ...m, authors: m.authors.filter((_, i) => i !== authorIndex) }));
+  removeCoAuthor(coAuthorIndex: number) {
+    this.model.update(m => ({
+      ...m,
+      coAuthors: m.coAuthors.filter((_, i) => i !== coAuthorIndex)
+    }));
   }
 }
 ```
 
 ```html
-@for (author of form.authors; track $index; let authorIndex = $index) {
-  <label>
-    <span>Author</span>
-    <input [formField]="author" />
-    @if (author().touched()) {
-      @for (error of author().errors(); track error.kind) {
-        <small>{{ error.message }}</small>
+<fieldset class="field-collection">
+  <legend class="field-label-text">Co-authors</legend>
+
+  @for (coAuthor of form.coAuthors; track $index; let coAuthorIndex = $index) {
+    <div class="field-collection-row">
+      <input class="field-input min-w-0 flex-1" [formField]="coAuthor" placeholder="Co-author name" />
+      <button type="button" class="btn-icon-danger" (click)="removeCoAuthor(coAuthorIndex)" aria-label="Remove co-author">
+        ✕
+      </button>
+    </div>
+    @if (coAuthor().touched()) {
+      @for (error of coAuthor().errors(); track error.kind) {
+        <small class="field-error">{{ error.message }}</small>
       }
     }
-  </label>
-  <button type="button" (click)="deleteAuthor(authorIndex)">Remove Author</button>
-}
-<button type="button" (click)="addAuthor()">Add Author</button>
+  } @empty {
+    <p class="field-hint">No co-authors yet.</p>
+  }
+
+  <button type="button" class="btn-secondary btn-add" (click)="addCoAuthor()">+ Add co-author</button>
+</fieldset>
 ```

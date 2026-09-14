@@ -4,16 +4,12 @@
 export const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: '/about'
+    component: Welcome,
+    pathMatch: 'full'
   },
   {
     path: 'books',
     loadChildren: () => import('./books/book.routes').then(module => module.bookRoutes)
-  },
-  {
-    path: 'about',
-    component: AboutPage
   }
 ];
 ```
@@ -27,6 +23,10 @@ export const bookRoutes: Routes = [
     component: BooksPage
   },
   {
+    path: 'create',
+    component: BookCreatePage
+  },
+  {
     path: 'detail/:isbn',
     component: BookDetailPage
   }
@@ -37,8 +37,11 @@ export const bookRoutes: Routes = [
 
 ```ts
 {
-    path: 'detail/:isbn',
-    loadComponent: () =>
-      import('./book-detail/book-detail-page').then(c => c.BookDetailPage)
- }
+  path: 'create',
+  loadComponent: () => import('./book-create-page/book-create-page').then(c => c.BookCreatePage)
+},
+{
+  path: 'detail/:isbn',
+  loadComponent: () => import('./book-detail-page/book-detail-page').then(c => c.BookDetailPage)
+}
 ```

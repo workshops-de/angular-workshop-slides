@@ -1,6 +1,13 @@
-- Create a folder `books/validators` and add a file `author.ts`.
-- Create a function `validAuthorName(schemaPath: SchemaPath<string>): void` that calls `validate()` from `@angular/forms/signals`, passing in the `schemaPath` and a callback `field => { ... }`.
-- Inside the callback, read the current value with `field.value()` and check if it contains any digits (Hint: you can use a Regex for this: `/[0-9]+/.test(value)`).
-- If the value contains any digits return a validation error object: `{ kind: 'invalidAuthor', message: 'Name must not contain digits' }`, otherwise return `null`.
-- Call your `validAuthorName()`-Function inside the schema function of `BookNewPage`, passing in `schemaPath.author`.
-- We don't need a specific handling of the error message in the template, because we are using already a `for`-loop.
+- **Create the validator file** Create a folder `books/validators` and add a file `author.ts`.
+
+---
+
+- **Write the validator** Create a function `validAuthorName(schemaPath: SchemaPath<string>): void` that calls `validate()` from `@angular/forms/signals`, passing in the `schemaPath` and a callback `field => { ... }`.
+  - Inside the callback, read the current value with `field.value()` and check if it contains any digits (Hint: you can use a Regex for this: `/[0-9]+/.test(value)`).
+  - If the value contains any digits return a validation error object: `{ kind: 'invalidAuthor', message: 'Name must not contain digits' }`, otherwise return `null`.
+
+---
+
+- **Wire it up** Call your `validAuthorName()`-Function inside the schema function of `BookCreateForm`, passing in `schemaPath.author`.
+
+> We don't need a specific handling of the error message in the template, because we are using already a `for`-loop.

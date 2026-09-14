@@ -1,18 +1,11 @@
 ```typescript
-// books-client.ts
-create(book: Partial<Book>): Observable<Book> {
-  return this.http.post<Book>('http://localhost:4730/books', book);
-}
-```
-
-```typescript
-// book-new-page.ts
+// book-create-form.ts
 import { Component, inject, signal } from '@angular/core';
 import { form, FormField, FormRoot, required } from '@angular/forms/signals';
 import { firstValueFrom } from 'rxjs';
 import { BooksClient } from '../books-client';
 
-export class BookNewPage {
+export class BookCreateForm {
   private readonly booksClient = inject(BooksClient);
 
   protected readonly model = signal({ ... });

@@ -1,13 +1,14 @@
 Let's reuse everything we learned to build an Edit-Page for an existing book.
 
-- **Generate `BookEditPage`** Create a new Component `BookEditPage` for the Book-Feature with `ng generate component books/book-edit/book-edit-page`.
+- **Copy the prepared `BookEditPage`** Copy the folders `book-edit-page` and `book-edit-form` from `workshop-support/books/` into `src/app/books/`.
 - **Add the route** Configure a new Route inside `book.routes.ts`, displaying the `BookEditPage` (path: `edit/:isbn`), lazy-loaded like the existing `detail/:isbn`-Route.
-- **Link to it** Add an "Edit"-Link with `routerLink` from `BookDetailPage` to the `edit/:isbn`-Route of the currently displayed book.
+
+> The "Edit"-Link on `BookDetailPage` already points to this route — nothing to do there.
 
 ---
 
 - **Extend `BooksClient`** Add an `update(isbn: string, book: Partial<Book>)`-Method that sends a PUT request to `` `${baseUrl}/books/${isbn}` ``. Add a `getByIsbnResource(isbn: Signal<string>)`-Method that returns an `httpResource<Book>()` for `` `${baseUrl}/books/${isbn()}` ``.
-- **Read the route param** Inside `BookEditPage`, declare `protected readonly isbn = input.required<string>();` to receive the `:isbn` route param.
+- **Read the route param** Inside `BookEditForm`, declare `readonly isbn = input.required<string>();` to receive the `:isbn` route param (passed down from `BookEditPage`).
 - **Load the book** Inject `BooksClient` and call `getByIsbnResource(this.isbn)` — the resource re-fetches whenever `isbn()` changes.
 
 ---
@@ -17,6 +18,6 @@ Let's reuse everything we learned to build an Edit-Page for an existing book.
   - The `isbn` shouldn't be editable: mark it with `readonly(schemaPath.isbn)` inside the schema function.
   - Disable the whole form while the book is loading: `disabled(schemaPath, { when: () => this.bookResource.isLoading() })`.
 - **Submit the form** Pass a `submission.action` that calls `BooksClient.update()` with `isbn()` and the current `model()`.
-- **Build the template** Reuse the markup from `BookNewPage`'s template — `[formRoot]`, `[formField]` per field, and the error-`@for`-Blocks.
+- **Build the template** `book-edit-form.html` already has the fields laid out — wire it up like `BookCreateForm`: `[formRoot]`, `[formField]` per field, and the error-`@for`-Blocks. Note the ISBN field is `readonly` here and there's no co-authors collection in the edit form.
 
 Run the application inside the Browser: Open a book, click "Edit", change a field and save — the change should be persisted on the Backend.
