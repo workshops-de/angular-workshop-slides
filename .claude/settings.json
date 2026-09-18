@@ -3,5 +3,8 @@
     "allow": [
       "mcp__plugin_google-slides-mcp_google-slides__*"
     ]
+  },
+  "enabledPlugins": {
+    "google-slides-mcp@matteoantoci-plugins": true
   }
 }
