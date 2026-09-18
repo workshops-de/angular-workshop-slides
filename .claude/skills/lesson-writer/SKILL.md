@@ -35,10 +35,12 @@ lessons/
 
 ## Provide valuable hints
 
-- Hints contain technical details on how the task has to be solved.
-- Attendees are considered to learn a complete new area.
-- Hints are an important pillar to provide code snippets, to help with syntax and understanding
-- Hints should follow the order of task steps defined in the corresponding `body.md`.
+- Hints...
+  - contain technical details on how the task has to be solved.
+  - Attendees are considered to learn a complete new area.
+  - are an important pillar to provide code snippets, to help with syntax and understanding
+  - should follow the order of task steps defined in the corresponding `body.md`.
+  - are a safe harbour for an attendee. Easy to follow, no tricks. Straight forward code hints to get the solution work.
 
 ## Bonus
 
