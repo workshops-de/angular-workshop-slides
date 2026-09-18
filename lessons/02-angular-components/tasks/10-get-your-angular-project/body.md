@@ -7,10 +7,9 @@ In preparation for your workshop it is needed that you run a few commands to set
 
 - [NodeJS LTS](https://nodejs.org) is installed
 - [Chrome](https://www.google.com/chrome/) or [Firefox](https://www.mozilla.org/en-US/firefox/new/) is installed
-- [VS Code](https://code.visualstudio.com) or [WebStorm](https://jetbrains.com/webstorm) is installed
+- [VS Code](https://code.visualstudio.com) or another IDE with TypeScript support that is to your liking, e.g. [WebStorm](https://jetbrains.com/webstorm), [Zed](https://zed.dev), [Sublime Text](https://www.sublimetext.com), or [Neovim](https://neovim.io)
 
-
-## Create your Angular project
+## Get your Angular project
 
 - Open a terminal
 - Clone our dedicated angular workshop template to have the same foundation
@@ -30,5 +29,4 @@ npm install
 npm start -- --open
 ```
 
-> *🚀 Congratulations, you are set for the workshop.*
-
+> _🚀 Congratulations, you are set for the workshop._
