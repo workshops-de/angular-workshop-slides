@@ -6,6 +6,9 @@
   - Configure the start route (path: `''`, `pathMatch: 'full'`), displaying `Welcome` (imported from `@workshop-support`).
   - Configure a books route, displaying the `BooksPage` (path: `books`).
   - Configure a books-create route, displaying the `BookCreatePage` you just copied (path: `books/create`).
+
+---
+
 - **Provide the router** Add Angular's `provideRouter` with the exported `routes` constant of `app.routes.ts` as argument to the `providers`-Array in `app.config.ts`.
 
 ---
