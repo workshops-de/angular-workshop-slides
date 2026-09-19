@@ -15,7 +15,9 @@ export class Marker {
   markTerm = input('');
 
   constructor() {
-    afterRenderEffect(() => this.markText(this.rawText(), this.markTerm()));
+    afterRenderEffect({
+      write: () => this.markText(this.rawText(), this.markTerm())
+    });
   }
 
   private markText(rawText: string | undefined, markTerm: string) {
@@ -42,7 +44,11 @@ export class Marker {
 }
 ```
 
-Only the constructor changed. `markText` still reads `rawText()`/`markTerm()` and writes to the DOM via `Renderer2` — but now that write runs inside Angular's render phase instead of an unordered `effect()`.
+Only the constructor changed. `markText` still reads `rawText()`/`markTerm()` and writes to the DOM via `Renderer2` — but now that write runs in the `write` phase after rendering instead of in an unordered `effect()`.
+
+## Why `write`?
+
+`afterRenderEffect(() => ...)` without phases runs in `mixedReadWrite`, which Angular recommends avoiding when the work can be split. `markText` never reads layout from the DOM, so `write` is the fitting phase.
 
 ---
 

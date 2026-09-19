@@ -6,4 +6,8 @@ The `Marker` directive already highlights search matches by writing directly to 
 
 ---
 
+- **Pick the right phase** A plain callback runs in the `mixedReadWrite` phase. `markText` only writes to the DOM, so pass an object with a `write` callback instead: `afterRenderEffect({ write: () => ... })`.
+
+---
+
 - **Check the result** Type into the books search field and confirm matches are still wrapped in `<mark>` exactly as before.
