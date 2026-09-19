@@ -1,5 +1,5 @@
 ---
-name: lesson-writer
+name: task-creator
 description: Writes & checks workshop lessons based on given templates
 ---
 
