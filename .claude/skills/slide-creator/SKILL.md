@@ -1,20 +1,22 @@
 ---
-name: google-slides-workshop-teacher
+name: slide-creator
 description: Sichert Aktualisierungen der Workshop-Folien in Google Slides ab, bevor sie freigegeben werden. Fragt nach der betroffenen Präsentation und einer kurzen Beschreibung der inhaltlichen Änderung, durchsucht die Folien per Google Slides MCP nach passenden Treffern, bietet direkte Deep-Links zu den Kandidaten-Folien zur Scope-Prüfung an und fragt abschließend kurz, ob das 4-MAT-Lernprinzip berücksichtigt wurde. Auslöser: "Slides aktualisieren", "Slide-Update prüfen", "Folien absichern", "Google Slides Review", "hat sich was an den Folien geändert".
 ---
 
-# Vorbedingung
+# SKILL.md
+
+## Vorbedingung
 
 Bevor du etwas an den [Lessons](../../../lessons/) veränderst musst du `git submodule update sample-solution` ausführen und sicherstellen, dass die Musterlösung im `solution`-Branch aktuell ist.
 
-# Google Slides Workshop Teacher
+## Google Slides Workshop Teacher
 
 Review-Workflow für Änderungen an den Google-Slides-Präsentationen des Angular
 Workshops. Nutzt ausschließlich die Google Slides MCP-Tools
 (`get_presentation`, `summarize_presentation`, `get_page`) — keine eigene
 Driver-Software nötig, da die Präsentationen direkt über MCP ansteuerbar sind.
 
-## Bekannte Präsentationen
+### Bekannte Präsentationen
 
 Lies in die `lesson.yml` in `lessons/<lesson>/lesson.yml`.
 In ihr steht die ID der Google Slide die du bearbeitest.
@@ -25,7 +27,7 @@ Hör auf, wenn du keinen Eintrag findest.
 google_slide_id: 1fCXthDv9hMFrTPhfDUAkKd3BgmNsiVe_eOwgSkhsU30
 ```
 
-## Ablauf
+### Ablauf
 
 1. **Präsentation klären.** Wenn der Nutzer sie nicht schon genannt hat: nach
    der betroffenen Präsentation aus obiger Tabelle fragen (per
@@ -100,7 +102,7 @@ Achte bei Code-Beispielen darauf, dass diese mit dem in den Code-Slides vorhande
 
 Die Titel der Slides sollen kurz und einzeilig sein.
 
-## Code-Window Layout
+### Code-Window Layout
 
 Für Code-Beispiele gibt es ein eigenes Folienlayout "Code Window" mit
 fertiger Card-Hülle und Syntax-Highlighting-Konvention. Details, Bauablauf
@@ -109,7 +111,7 @@ und Farbpalette stehen in
 - [references/code-slide.md](references/code-window.md) — vor dem Bauen einer
   Code-Folie dort nachlesen statt Werte zu raten.
 
-## Code-Window-Explanation Layout
+### Code-Window-Explanation Layout
 
 Für Code-Beispiele, mit **zusätzlichen Erklärungen** gibt es das Folienlayout "Code Window" mit
 fertiger Card-Hülle und Syntax-Highlighting-Konvention.
