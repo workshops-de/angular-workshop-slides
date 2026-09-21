@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.4.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.3.0...v1.4.0) (2026-09-21)
+
+
+### Features
+
+* rename Angular lifecycle hooks lesson ([329708f](https://github.com/workshops-de/angular-workshop-slides/commit/329708f720ee6bf07e648f436e7c42f157275e74))
+
 # [1.3.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.2.0...v1.3.0) (2026-09-21)
 
 
