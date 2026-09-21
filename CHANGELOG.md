@@ -2,6 +2,14 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.9.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.8.0...v1.9.0) (2026-09-21)
+
+
+### Features
+
+* add inline code highlighting instructions to lesson templates ([365db08](https://github.com/workshops-de/angular-workshop-slides/commit/365db085a3a59423685274548245701414c6c114))
+* remove bonus tasks from computed lesson ([196850c](https://github.com/workshops-de/angular-workshop-slides/commit/196850cdf6a78ca2764c93bbb2342de460d10d53))
+
 # [1.8.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.7.0...v1.8.0) (2026-09-21)
 
 
