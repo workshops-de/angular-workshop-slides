@@ -1,6 +1,6 @@
 ## The functional interceptor
 
-```ts
+```typescript
 // error-interceptor.ts
 import {
   HttpErrorResponse,
@@ -35,7 +35,7 @@ Note that `inject(){:ts}` works here because Angular runs interceptors inside an
 
 ## Registering it
 
-```ts
+```typescript
 // app.config.ts
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 
@@ -53,7 +53,7 @@ export const appConfig: ApplicationConfig = {
 
 ## Provoke an error
 
-```ts
+```typescript
 // book-client.ts
 @Service()
 export class BooksClient {
