@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.8.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.7.0...v1.8.0) (2026-09-21)
+
+
+### Features
+
+* enhance HTML highlighting support in code highlighter and documentation ([a61d3ce](https://github.com/workshops-de/angular-workshop-slides/commit/a61d3ceb45ebf73c4797ff5d03f41b7bb0d988af))
+
 # [1.7.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.6.0...v1.7.0) (2026-09-21)
 
 
