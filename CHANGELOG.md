@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.11.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.11.0...v1.11.1) (2026-09-21)
+
+
+### Bug Fixes
+
+* update code block syntax to use 'typescript' for better highlighting in hints ([7b6a9ea](https://github.com/workshops-de/angular-workshop-slides/commit/7b6a9ea97a6160e32c8963342dd9a4483a91e420))
+
 # [1.11.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.10.0...v1.11.0) (2026-09-21)
 
 
