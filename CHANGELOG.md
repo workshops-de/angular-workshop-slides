@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.7.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.6.0...v1.7.0) (2026-09-21)
+
+
+### Features
+
+* rename lesson from Angular Vitest Testing to Angular Testing ([8ceb9fe](https://github.com/workshops-de/angular-workshop-slides/commit/8ceb9fe1e45c01bf7078a4f6616c19c9cd2f5287))
+
 # [1.6.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.5.0...v1.6.0) (2026-09-21)
 
 
