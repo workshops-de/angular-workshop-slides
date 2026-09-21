@@ -6,6 +6,6 @@ github_code_url: https://github.com/workshops-de/angular-workshop
 git_tag_starting: main
 google_slide_id: 1KJMDvEUIWDHluMPLffiBnadVSO2IElTAs7jPsMadehw
 pdf_generation_enabled: true
-stackblitz_enabled: true
+stackblitz_enabled: false
 codesandbox_enabled: false
 deprecated: false
