@@ -60,6 +60,11 @@ get_presentation(presentationId, fields: "layouts(objectId,layoutProperties)")
    Heuristik-basierter Tagger, kein echter Parser — nach dem Bauen die Folie
    trotzdem per `get_page` stichprobenartig gegenchecken.
 
+   Für HTML/Angular-Templates erkennt `highlight` die Sprache automatisch
+   (Snippet beginnt mit `<` oder `@if`/`@for`/…); explizit mit
+   `highlight(code, language="html")`. Token-Zuordnung: siehe
+   [code-highlight-theme.md](./code-highlight-theme.md#html-angular-templates).
+
 6. Nach dem Bauen die Folie per `get_page` erneut auslesen und stichprobenartig
    prüfen, ob Ranges und Farben wie geplant angekommen sind.
 
