@@ -33,6 +33,27 @@ lessons/
 - Follow the [body template](./references/body.template.md) to learn about the structure
   - Each task is separated by `---` to make the overall text more readable
 
+## Inline code highlighting
+
+The eClassroom Markdown parser highlights code with [Shiki](https://shiki.style/packages/rehype#inline-code) (`inline: 'tailing-curly-colon'`).
+Inline code is highlighted by appending a `{:<lang>}` marker **inside** the backticks, directly after the code:
+
+| Write this                 | Instead of this   | Language |
+| -------------------------- | ----------------- | -------- |
+| `` `input(){:ts}` ``       | `` `input()` ``   | `ts`     |
+| `` `[content]{:html}` ``   | `` `[content]` `` | `html`   |
+| `` `<input>{:html}` ``     | `_<input>_`       | `html`   |
+| `` `count = signal(0){:ts}` `` | `` `count = signal(0)` `` | `ts` |
+
+Rules:
+
+- Applies to `body.md`, `hint.md` and `bonus.md`.
+- The marker sits inside the backticks: `` `code{:ts}` `` ✅, `` `code`{:ts} `` ❌.
+- Always use a marker for code (TypeScript → `ts`, templates → `html`, styles → `css`, shell → `bash`); a code span without marker stays unhighlighted.
+- Use it for code snippets, identifiers, bindings and API calls. Plain terms, file names and paths (`src/app/app.ts`) and UI labels stay without a marker or in _italics_ as before.
+- When updating an existing lesson, add the marker to the inline code you touch; do not rewrite untouched lessons.
+- Code blocks keep using fenced blocks with a language (` ```ts `, ` ```html `) as shown in the [hint template](./references/hint.template.md).
+
 ## Provide valuable hints
 
 - Hints...

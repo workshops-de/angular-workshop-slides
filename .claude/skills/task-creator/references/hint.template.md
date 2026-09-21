@@ -1,4 +1,4 @@
-- **<Task step heading>** technical details about the respective step
+- **<Task step heading>** technical details about the respective step, inline code is highlighted with `input(){:ts}` or `[content]{:html}`
 
 ```ts
 // <file-name.ts of the affected module>
