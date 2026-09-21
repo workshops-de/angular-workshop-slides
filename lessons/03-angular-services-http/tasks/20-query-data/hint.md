@@ -4,7 +4,7 @@ If not already installed
 
 ```bash
 # run bookmonkey-api directly
-npx bookmonkey-api
+npx bookmonkey-api@latest
 ```
 
 ---
@@ -20,7 +20,7 @@ providers: [provideHttpClient()];
 
 ---
 
-## Extending `Book`
+## Extending `Book{:ts}`
 
 ```typescript
 // book.ts
@@ -38,7 +38,7 @@ export interface Book {
 
 ---
 
-## Loading books via `httpResource`
+## Loading books via `httpResource{:ts}`
 
 ```typescript
 // books-client.ts
@@ -69,7 +69,7 @@ export class BooksClient {
 
 ---
 
-## Consuming the resource in `BooksPage`
+## Consuming the resource in `BooksPage{:ts}`
 
 ```typescript
 // books-page.ts

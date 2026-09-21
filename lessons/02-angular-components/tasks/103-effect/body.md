@@ -1,12 +1,12 @@
-The search term is lost on every reload. An `effect` lets us react to signal changes and run side effects - here: persisting the value to `localStorage`.
+The search term is lost on every reload. An `effect{:ts}` lets us react to signal changes and run side effects - here: persisting the value to `localStorage{:ts}`.
 
 ---
 
-- **Seed the signal from `localStorage`** Open _books-page.ts_ and change the `searchTerm` signal so its initial value comes from `localStorage`: `signal(localStorage.getItem('books.searchTerm') ?? '')`. The initial value is read once from an imperative, non-reactive API.
+- **Seed the signal from `localStorage{:ts}`** Open _books-page.ts_ and change the `searchTerm{:ts}` signal so its initial value comes from `localStorage{:ts}`: `signal(localStorage.getItem('books.searchTerm') ?? ''){:ts}`. The initial value is read once from an imperative, non-reactive API.
 
 ---
 
-- **Persist the search term with `effect`** Add a `constructor` to `BooksPage` and register an `effect`. Inside the callback read `searchTerm()` and write it back via `localStorage.setItem('books.searchTerm', this.searchTerm())`.
+- **Persist the search term with `effect{:ts}`** Add a `constructor{:ts}` to `BooksPage{:ts}` and register an `effect{:ts}`. Inside the callback read `searchTerm(){:ts}` and write it back via `localStorage.setItem('books.searchTerm', this.searchTerm()){:ts}`.
 
 ---
 

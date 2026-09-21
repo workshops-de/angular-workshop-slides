@@ -1,6 +1,6 @@
 ## Defining a style object
 
-A `[style]`-Binding accepts an object whose keys are CSS properties. Keep the object inside a `signal`.
+A `[style]{:html}`-Binding accepts an object whose keys are CSS properties. Keep the object inside a `signal{:ts}`.
 
 ```ts
 import { Component, signal } from '@angular/core';

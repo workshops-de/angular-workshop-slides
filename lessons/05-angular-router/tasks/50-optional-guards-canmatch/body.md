@@ -1,7 +1,7 @@
-- **Create the user state** Create a service `UserState` holding the login state if the user is logged in.
+- **Create the user state** Create a service `UserState{:ts}` holding the login state if the user is logged in.
 
 ---
 
-- **Create a `canMatch`-Guard** Create a guard function (`is-user-authenticated.ts`) as `CanMatchFn` to read that state by injecting that service and allow access on the **books** routes.
+- **Create a `canMatch{:ts}`-Guard** Create a guard function (`is-user-authenticated.ts`) as `CanMatchFn{:ts}` to read that state by injecting that service and allow access on the **books** routes.
 
 > If you are not logged in, it should show the error `NG04002: Cannot match any routes.` in the browser console. If you are logged in, it should show the book page.

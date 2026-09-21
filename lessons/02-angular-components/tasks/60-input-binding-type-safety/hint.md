@@ -1,6 +1,6 @@
 ## Typing the input signal
 
-`input.required<Book>()` removes the `undefined` case entirely — the signal always resolves to a `Book`.
+`input.required<Book>(){:ts}` removes the `undefined{:ts}` case entirely — the signal always resolves to a `Book{:ts}`.
 
 ```ts
 // app.ts

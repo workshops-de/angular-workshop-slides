@@ -1,14 +1,14 @@
 Let's warm up a bit and get familiar with our project by taking a first look at Angular's reactivity model.
 
-- **Meet the App component** Open your editor and switch to _src/app/app.ts_. You will find a `signal` property called `warmWelcome`. Switch to _src/app/app.html_ and see how its value is read in the template via `warmWelcome()`.
+- **Meet the App component** Open your editor and switch to _src/app/app.ts_. You will find a `signal{:ts}` property called `warmWelcome{:ts}`. Switch to _src/app/app.html_ and see how its value is read in the template via `warmWelcome(){:ts}`.
 
 ---
 
-- **Add a second signal** In _app.ts_ add another `signal` property called `greet`, initialized with the value `'Hello'`.
+- **Add a second signal** In _app.ts_ add another `signal{:ts}` property called `greet{:ts}`, initialized with the value `'Hello'{:ts}`.
 
 ---
 
-- **Update a signal from a `constructor`** Still in _app.ts_, add a `constructor`. Inside, call `setTimeout` with a delay of `6000` milliseconds. In its callback, update `warmWelcome` using `.update(...)`, combining the current value with `greet()`.
+- **Update a signal from a `constructor{:ts}`** Still in _app.ts_, add a `constructor{:ts}`. Inside, call `setTimeout{:ts}` with a delay of `6000` milliseconds. In its callback, update `warmWelcome{:ts}` using `.update(...){:ts}`, combining the current value with `greet(){:ts}`.
 
 ---
 

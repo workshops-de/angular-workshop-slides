@@ -1,20 +1,20 @@
-`BookCreatePage`/`BookCreateForm` already exist (you copied them from `workshop-support` in the router lesson) and are already wired up via routing — but the form itself doesn't do anything yet. Let's fix that with Signal Forms.
+`BookCreatePage{:ts}`/`BookCreateForm{:ts}` already exist (you copied them from `workshop-support` in the router lesson) and are already wired up via routing — but the form itself doesn't do anything yet. Let's fix that with Signal Forms.
 
-- **Create the data model** Inside `book-create-form.ts`, create a `signal()` called `model` holding a plain object with the fields `isbn`, `title`, `subtitle`, `author`, and `abstract` (all empty strings).
-
----
-
-- **Create the form** Call the `form()`-Function from `@angular/forms/signals`, passing in the `model` signal, and assign the result to a `form` property.
+- **Create the data model** Inside `book-create-form.ts`, create a `signal(){:ts}` called `model{:ts}` holding a plain object with the fields `isbn{:ts}`, `title{:ts}`, `subtitle{:ts}`, `author{:ts}`, and `abstract{:ts}` (all empty strings).
 
 ---
 
-- **Import the directives** Add `FormRoot` and `FormField` from `@angular/forms/signals` to the `imports`-Array of `BookCreateForm`.
+- **Create the form** Call the `form(){:ts}`-Function from `@angular/forms/signals`, passing in the `model{:ts}` signal, and assign the result to a `form{:ts}` property.
+
+---
+
+- **Import the directives** Add `FormRoot{:ts}` and `FormField{:ts}` from `@angular/forms/signals` to the `imports{:ts}`-Array of `BookCreateForm{:ts}`.
 
 ---
 
 - **Wire up the template** Inside `book-create-form.html`:
-  - Bind the created `form` Property to the `<form>`-Tag's `[formRoot]`-Directive.
-  - For each field of your model, bind its `<input>`-Tag to the matching field with the `[formField]`-Directive, e.g. `[formField]="form.isbn"` (replacing the previous plain `name="isbn"` attribute).
-  - Disable the existing Submit-Button while the form is invalid via `[disabled]="form().invalid()"`.
+  - Bind the created `form{:ts}` Property to the `<form>{:html}`-Tag's `[formRoot]{:html}`-Directive.
+  - For each field of your model, bind its `<input>{:html}`-Tag to the matching field with the `[formField]{:html}`-Directive, e.g. `[formField]="form.isbn"{:html}` (replacing the previous plain `name="isbn"{:html}` attribute).
+  - Disable the existing Submit-Button while the form is invalid via `[disabled]="form().invalid()"{:html}`.
 
 Run the application inside the Browser: You should see your form and be able to type into every field.

@@ -29,7 +29,7 @@ export function errorInterceptor(
 }
 ```
 
-Note that `inject()` works here because Angular runs interceptors inside an injection context - no constructor needed.
+Note that `inject(){:ts}` works here because Angular runs interceptors inside an injection context - no constructor needed.
 
 ---
 
@@ -49,7 +49,7 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-`Notifier` already renders its toasts via CDK Overlay - no template markup needed, just inject and call `.error()` / `.success()` / `.info()`.
+`Notifier{:ts}` already renders its toasts via CDK Overlay - no template markup needed, just inject and call `.error(){:ts}` / `.success(){:ts}` / `.info(){:ts}`.
 
 ## Provoke an error
 

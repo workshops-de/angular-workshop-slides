@@ -1,18 +1,18 @@
 Let's add some Form Validation!
 
-Signal Forms define validation next to the model, via a **schema function** — the second argument to `form()`. Inside it you get a `schemaPath` that mirrors your model's shape, and you attach validators like `required()` to individual paths (e.g. `schemaPath.isbn`).
+Signal Forms define validation next to the model, via a **schema function** — the second argument to `form(){:ts}`. Inside it you get a `schemaPath{:ts}` that mirrors your model's shape, and you attach validators like `required(){:ts}` to individual paths (e.g. `schemaPath.isbn{:ts}`).
 
-- **Add a schema function** Pass a second argument to `form()`: a function `schemaPath => { ... }`.
+- **Add a schema function** Pass a second argument to `form(){:ts}`: a function `schemaPath => { ... }{:ts}`.
 
 ---
 
-- **Add validators** Inside that function call `required(schemaPath.isbn, { message: '...' })` for `isbn`, `title` and `author`. Import `required` from `@angular/forms/signals`.
+- **Add validators** Inside that function call `required(schemaPath.isbn, { message: '...' }){:ts}` for `isbn{:ts}`, `title{:ts}` and `author{:ts}`. Import `required{:ts}` from `@angular/forms/signals`.
 
 ---
 
 - **Show validation errors** Now we can add some template logic whenever a field is in an error state:
-  - Add a `@for`-Block with a `<small>`-Tag beneath the `<input>`-Tags of the `title` and `author`-Input, iterating over `form.title().errors()` (or `form.author().errors()`).
-  - Only show the errors once the field was `touched()`, e.g. wrap the `@for` in `@if (form.title().touched()) { ... }`.
-  - Print the error's `message` property inside the `<small>`-Tag.
+  - Add a `@for{:html}`-Block with a `<small>{:html}`-Tag beneath the `<input>{:html}`-Tags of the `title{:ts}` and `author{:ts}`-Input, iterating over `form.title().errors(){:ts}` (or `form.author().errors(){:ts}`).
+  - Only show the errors once the field was `touched(){:ts}`, e.g. wrap the `@for{:html}` in `@if (form.title().touched()) { ... }{:html}`.
+  - Print the error's `message{:ts}` property inside the `<small>{:html}`-Tag.
 
-> The Submit-Button is already disabled as long as the whole `form` is not in a valid state via `[disabled]="form().invalid()"` from the previous task.
+> The Submit-Button is already disabled as long as the whole `form{:ts}` is not in a valid state via `[disabled]="form().invalid()"{:html}` from the previous task.

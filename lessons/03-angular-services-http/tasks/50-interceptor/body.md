@@ -2,19 +2,19 @@ Right now a failed request just disappears silently in the console. Let's catch 
 
 ---
 
-- **Create a functional interceptor** Add `error-interceptor.ts` in `src/app/lib` and export a function `errorInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn)`. Call `next(req)` and use the `catchError` operator from `rxjs` to react to failures.
+- **Create a functional interceptor** Add `error-interceptor.ts` in `src/app/lib` and export a function `errorInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn){:ts}`. Call `next(req){:ts}` and use the `catchError{:ts}` operator from `rxjs` to react to failures.
 
 ---
 
-- **Show a toast on failure** Inject the `Notifier` from `@workshop-support`. Inside `catchError`, check with `error instanceof HttpErrorResponse` and call `notifier.error(...)` with a message that includes `error.status` and `error.statusText`. Re-throw the error afterwards with `throwError(() => error)` so callers still see it.
+- **Show a toast on failure** Inject the `Notifier{:ts}` from `@workshop-support`. Inside `catchError{:ts}`, check with `error instanceof HttpErrorResponse{:ts}` and call `notifier.error(...){:ts}` with a message that includes `error.status{:ts}` and `error.statusText{:ts}`. Re-throw the error afterwards with `throwError(() => error){:ts}` so callers still see it.
 
 ---
 
-- **Register the interceptor** In `app.config.ts` pass `withInterceptors([errorInterceptor])` to `provideHttpClient(...)`.
+- **Register the interceptor** In `app.config.ts` pass `withInterceptors([errorInterceptor]){:ts}` to `provideHttpClient(...){:ts}`.
 
 ---
 
-- **Provoke an HTTP error** Add the query parameter `_devError` to the request that loads the books in `book-client.ts`. `_devError: true` causes a 400 error which makes your `errorInterceptor` to show an error notification
+- **Provoke an HTTP error** Add the query parameter `_devError{:ts}` to the request that loads the books in `book-client.ts`. `_devError: true{:ts}` causes a 400 error which makes your `errorInterceptor{:ts}` to show an error notification
 
 ---
 

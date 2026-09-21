@@ -1,1 +1,1 @@
-- **Autofocus the search field** In `books-page.ts`, add a `viewChild` for the search `<input>` and use `afterNextRender` in the constructor to call `.focus()` on it once, right after the first render. Confirm the field is focused as soon as the books page loads.
+- **Autofocus the search field** In `books-page.ts`, add a `viewChild{:ts}` for the search `<input>{:html}` and use `afterNextRender{:ts}` in the constructor to call `.focus(){:ts}` on it once, right after the first render. Confirm the field is focused as soon as the books page loads.

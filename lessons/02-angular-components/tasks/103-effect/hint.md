@@ -21,5 +21,5 @@ constructor() {
 }
 ```
 
-An `effect` runs once after it is created and re-runs whenever a signal it reads
-(`searchTerm`) changes - so every keystroke is written through to `localStorage`.
+An `effect{:ts}` runs once after it is created and re-runs whenever a signal it reads
+(`searchTerm{:ts}`) changes - so every keystroke is written through to `localStorage{:ts}`.

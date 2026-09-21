@@ -1,2 +1,2 @@
 - **Inspect the response** Have a look at what the BookMonkey API has returned.
-- **Extend `BookCard`** Feel free to extend `BookCard` to also display the number of pages or the price. :-)
+- **Extend `BookCard{:ts}`** Feel free to extend `BookCard{:ts}` to also display the number of pages or the price. :-)

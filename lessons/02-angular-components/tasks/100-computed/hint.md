@@ -14,7 +14,7 @@ searchTerm = signal('');
 <input (input)="searchTerm.set($event.target.value)" />
 ```
 
-## Filtering with `computed`
+## Filtering with `computed{:ts}`
 
 ```ts
 // app.ts

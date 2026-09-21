@@ -1,4 +1,4 @@
-## Formatting the date with the `date` pipe
+## Formatting the date with the `date{:ts}` pipe
 
 ```html
 <!-- src/app/books/book-card/book-card.html -->

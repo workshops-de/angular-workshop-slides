@@ -1,6 +1,6 @@
 ## Reading a signal
 
-A `signal` is read by calling it as a function. That's why the template uses `warmWelcome()` and not `warmWelcome`.
+A `signal{:ts}` is read by calling it as a function. That's why the template uses `warmWelcome(){:ts}` and not `warmWelcome{:ts}`.
 
 ```ts
 // app.ts
@@ -12,7 +12,7 @@ warmWelcome = signal('Angularian');
 <app-welcome>{{ warmWelcome() }}</app-welcome>
 ```
 
-## Adding the `greet` signal
+## Adding the `greet{:ts}` signal
 
 ```ts
 // app.ts
@@ -24,9 +24,9 @@ export class App {
 }
 ```
 
-## Updating a signal from the `constructor`
+## Updating a signal from the `constructor{:ts}`
 
-Use `.update(...)` when the new value depends on the current one. Its callback receives the current value and returns the next one.
+Use `.update(...){:ts}` when the new value depends on the current one. Its callback receives the current value and returns the next one.
 
 ```ts
 // app.ts

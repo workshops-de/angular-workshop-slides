@@ -9,8 +9,8 @@ export class BookCreatePage {
 
 ## Guard function
 
-- Import the `CanDeactivateFn` interface from `@angular/router`
-- Type the guard with the guarded component (`BookCreatePage`) and implement the fat arrow function
+- Import the `CanDeactivateFn{:ts}` interface from `@angular/router`
+- Type the guard with the guarded component (`BookCreatePage{:ts}`) and implement the fat arrow function
 
 ```ts
 // confirm-leave.ts
