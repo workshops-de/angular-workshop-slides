@@ -2,6 +2,19 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.10.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.9.0...v1.10.0) (2026-09-21)
+
+
+### Bug Fixes
+
+* update git tag starting reference for Angular Forms lesson ([704d28b](https://github.com/workshops-de/angular-workshop-slides/commit/704d28b2e31eed5a6fb7b45a1f11d8d5d8ab1f54))
+
+
+### Features
+
+* remove content projection task and related hints from lessons ([8c6895b](https://github.com/workshops-de/angular-workshop-slides/commit/8c6895b134fc83709a80ed45d2bd81d835ac067d))
+* update lesson templates with improved inline code guidelines and method descriptions ([090e535](https://github.com/workshops-de/angular-workshop-slides/commit/090e535a1e7e7ecf10965ac9bd39b071b3529a01))
+
 # [1.9.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.8.0...v1.9.0) (2026-09-21)
 
 
