@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.11.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.10.0...v1.11.0) (2026-09-21)
+
+
+### Features
+
+* enhance Angular Forms lessons with submission handling, validation, and editing capabilities ([d95e9c7](https://github.com/workshops-de/angular-workshop-slides/commit/d95e9c713fb73f611675916c7336214621b362dd))
+
 # [1.10.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.9.0...v1.10.0) (2026-09-21)
 
 
