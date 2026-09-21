@@ -1,11 +1,11 @@
-name: Angular Routing
+name: Angular Router
 position: 5
-trainer: "robin.boehm@workshops.de"
+trainer: 'gregor@entwicklungszeit.dev'
 slides_type: google_slides
 github_code_url: https://github.com/workshops-de/angular-workshop
-git_tag_starting: solve--use-a-signal
+git_tag_starting: solution--after-render-effect-marker
 google_slide_id: 193jtyGRGHGKr7gwHP-jWj8IcENWggzpPClVxmFgPAkY
 pdf_generation_enabled: true
-stackblitz_enabled: true
+stackblitz_enabled: false
 codesandbox_enabled: false
 deprecated: false
