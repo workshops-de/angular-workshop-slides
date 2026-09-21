@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.6.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.5.0...v1.6.0) (2026-09-21)
+
+
+### Features
+
+* remove outdated lessons and update lesson metadata for Angular lifecycle hooks and router ([30a6d90](https://github.com/workshops-de/angular-workshop-slides/commit/30a6d90109a3edf5ca7af69f8d7d511e1ffcdb2f))
+
 # [1.5.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.4.0...v1.5.0) (2026-09-21)
 
 
