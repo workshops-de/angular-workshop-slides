@@ -1,6 +1,6 @@
 A book can have more than one author. Let's add a `coAuthors{:ts}`-Collection next to the existing, single `author{:ts}`-Field. Signal Forms have a dedicated helper, `applyEach(){:ts}`, to apply a schema to every item of an array field.
 
-- **Extend the model** Add a `coAuthors: string[]{:ts}`-Field to your `model{:ts}` (an empty array).
+- **Extend the model** Add a `coAuthors: string[]{:ts}`-Field to your `model{:ts}` (an empty array) and a `cover{:ts}`-Field (an empty string), so the model mirrors the `Book{:ts}` payload.
 
 ---
 
@@ -8,7 +8,7 @@ A book can have more than one author. Let's add a `coAuthors{:ts}`-Collection ne
 
 ---
 
-- **Build the template** Iterate with `@for{:html}` over `form.coAuthors{:ts}` (the array of per-item form fields, one per entry of `coAuthors{:ts}`) and render one `<input>{:html}` (bound via `[formField]{:html}`) per co-author, plus its own error-`@for{:html}`-Block. Add an `@empty{:html}`-Block showing a short hint when there are no co-authors yet.
+- **Build the template** Iterate with `@for{:html}` over `form.coAuthors{:ts}` (the array of per-item form fields, one per entry of `coAuthors{:ts}`) and render one `<input>{:html}` (bound via `[formField]{:html}`) per co-author, plus its own error-`@for{:html}`-Block. Wrap the list in a `<fieldset>{:html}` between the Author- and Abstract-Field and add an `@empty{:html}`-Block showing a short hint when there are no co-authors yet.
 
 ---
 

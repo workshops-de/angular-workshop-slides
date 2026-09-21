@@ -4,6 +4,7 @@
 
 - **Write the validator** Create a function `validAuthorName(schemaPath: SchemaPath<string>): void{:ts}` that calls `validate(){:ts}` from `@angular/forms/signals`, passing in the `schemaPath{:ts}` and a callback `field => { ... }{:ts}`.
   - Inside the callback, read the current value with `field.value(){:ts}` and check if it contains any digits (Hint: you can use a Regex for this: `/[0-9]+/.test(value){:ts}`).
+  - Empty values are already covered by `required(){:ts}`, so return `null{:ts}` right away if there is no value.
   - If the value contains any digits return a validation error object: `{ kind: 'invalidAuthor', message: 'Name must not contain digits' }{:ts}`, otherwise return `null{:ts}`.
 
 ---

@@ -11,19 +11,24 @@ export class BookCreateForm {
     subtitle: '',
     author: '',
     coAuthors: [] as string[],
-    abstract: ''
+    abstract: '',
+    cover: ''
   });
 
-  protected readonly form = form(this.model, schemaPath => {
-    required(schemaPath.isbn, { message: 'Please insert an ISBN.' });
-    required(schemaPath.title, { message: 'Please insert a title.' });
-    required(schemaPath.author, { message: 'Please insert an Author.' });
-    validAuthorName(schemaPath.author);
-    applyEach(schemaPath.coAuthors, coAuthor => {
-      required(coAuthor, { message: 'Please insert a co-author name.' });
-      validAuthorName(coAuthor);
-    });
-  });
+  protected readonly form = form(
+    this.model,
+    schemaPath => {
+      required(schemaPath.isbn, { message: 'Please insert an ISBN.' });
+      required(schemaPath.title, { message: 'Please insert a title.' });
+      required(schemaPath.author, { message: 'Please insert an Author.' });
+      validAuthorName(schemaPath.author);
+      applyEach(schemaPath.coAuthors, coAuthor => {
+        required(coAuthor, { message: 'Please insert a co-author name.' });
+        validAuthorName(coAuthor);
+      });
+    },
+    { submission: { ... } }
+  );
 
   addCoAuthor() {
     this.model.update(m => ({ ...m, coAuthors: [...m.coAuthors, ''] }));

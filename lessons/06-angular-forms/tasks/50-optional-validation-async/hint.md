@@ -19,19 +19,23 @@ export function uniqueIsbn(path: SchemaPath<string>): void {
 // book-create-form.ts
 import { uniqueIsbn } from '../validators/isbn';
 
-protected readonly form = form(this.model, schemaPath => {
-  required(schemaPath.isbn, { message: 'Please insert an ISBN.' });
-  uniqueIsbn(schemaPath.isbn);
-  ....
-});
+protected readonly form = form(
+  this.model,
+  schemaPath => {
+    required(schemaPath.isbn, { message: 'Please insert an ISBN.' });
+    uniqueIsbn(schemaPath.isbn);
+    ....
+  },
+  { submission: { ... } }
+);
 ```
 
 ```html
 @if (form.isbn().pending()) {
-  <small>Checking ISBN…</small>
+  <small class="field-hint">Checking ISBN…</small>
 } @else if (form.isbn().touched()) {
   @for (error of form.isbn().errors(); track error.kind) {
-    <small>{{ error.message }}</small>
+    <small class="field-error">{{ error.message }}</small>
   }
 }
 ```

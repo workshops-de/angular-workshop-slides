@@ -18,9 +18,13 @@ export function validAuthorName(schemaPath: SchemaPath<string>): void {
 // book-create-form.ts
 import { validAuthorName } from '../validators/author';
 
-protected readonly form = form(this.model, schemaPath => {
-  required(schemaPath.author, { message: 'Please insert an Author.' });
-  validAuthorName(schemaPath.author);
-  ....
-});
+protected readonly form = form(
+  this.model,
+  schemaPath => {
+    required(schemaPath.author, { message: 'Please insert an Author.' });
+    validAuthorName(schemaPath.author);
+    ....
+  },
+  { submission: { ... } }
+);
 ```

@@ -6,7 +6,7 @@ The markup for a single co-author row (input, remove-button, error-list) is star
   - `touched = input(false);{:ts}`, `disabled = input(false);{:ts}`, `invalid = input(false);{:ts}`, `errors = input<readonly ValidationError[]>([]);{:ts}`
   - `touch = output<void>();{:ts}` — emitted whenever the control is blurred.
 - **Add a `remove{:ts}`-Output** Add your own `remove = output<void>();{:ts}` for the delete-button.
-- **Build the template** Move the input, remove-button and error-`@for{:html}`-Block from `book-create-form.html` into `co-author-input.html`. Bind the input's value to `[value]{:html}`, update it via `(input){:html}`, and emit `touch{:ts}` on `(blur){:html}`. Wire the remove-button's `(click){:html}` to `remove.emit(){:ts}`.
+- **Build the template** Move the input, remove-button and error-`@for{:html}`-Block from `book-create-form.html` into `co-author-input.html`. Bind the input's value and disabled state via `[value]{:html}` and `[disabled]{:html}`, update the value via `(input){:html}`, and emit `touch{:ts}` on `(blur){:html}`. Wire the remove-button's `(click){:html}` to `remove.emit(){:ts}`.
 
 ---
 

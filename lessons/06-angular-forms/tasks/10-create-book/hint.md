@@ -19,7 +19,14 @@ export class BookCreateForm {
     abstract: ''
   });
 
-  protected readonly form = form(this.model);
+  protected readonly form = form(this.model, {
+    submission: {
+      action: formField => {
+        console.log(formField().controlValue(), this.model());
+        return Promise.resolve(null);
+      }
+    }
+  });
 }
 ```
 
