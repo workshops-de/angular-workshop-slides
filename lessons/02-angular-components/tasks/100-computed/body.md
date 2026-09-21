@@ -6,7 +6,7 @@ Since we add more and more books to our list, a filter is helpful to focus the b
 
 ---
 
-- **Derive the filtered books with `computed`** Open _app.ts_ and add a `computed` property called `booksComputed`. Inside its callback, read `searchTerm()` and the `books` list, and return only the books whose **title** contains the search term.
+- **Derive the filtered books with `computed`** Open _app.ts_ and add a `computed` property called `booksComputed`. Inside its callback, read `searchTerm()` and the `books` list, and return only the books that match the search term. Don't write the matching logic yourself: import the pre-defined helper `bookMatches` from `@workshop-support` and use it as `bookMatches(book, searchTerm)` to decide whether a book matches.
 
 ---
 
