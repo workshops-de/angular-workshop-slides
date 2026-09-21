@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.5.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.4.0...v1.5.0) (2026-09-21)
+
+
+### Features
+
+* update git tag starting for Angular Services & HTTP lesson ([35c227e](https://github.com/workshops-de/angular-workshop-slides/commit/35c227e67280976629c775331b64cddf01ee09de))
+
 # [1.4.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.3.0...v1.4.0) (2026-09-21)
 
 
