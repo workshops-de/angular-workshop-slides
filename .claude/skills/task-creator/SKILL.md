@@ -52,6 +52,7 @@ Rules:
 - Always use a marker for code (TypeScript → `ts`, templates → `html`, styles → `css`, shell → `bash`); a code span without marker stays unhighlighted.
 - Use it for code snippets, identifiers, bindings and API calls. Plain terms, file names and paths (`src/app/app.ts`) and UI labels stay without a marker or in _italics_ as before.
 - When updating an existing lesson, add the marker to the inline code you touch; do not rewrite untouched lessons.
+- Never put JS template strings (backticks, `${...}`) into inline code; the backticks break the inline Shiki marker. Describe the value in prose or _italics_ instead (e.g. _/books/:isbn_) and show the full snippet in a fenced block in `hint.md`.
 - Code blocks keep using fenced blocks with a language (` ```ts `, ` ```html `) as shown in the [hint template](./references/hint.template.md).
 
 ## Provide valuable hints

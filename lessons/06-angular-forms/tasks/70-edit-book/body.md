@@ -7,7 +7,7 @@ Let's reuse everything we learned to build an Edit-Page for an existing book.
 
 ---
 
-- **Extend `BooksClient{:ts}`** Add an `update(isbn: string, book: Partial<Book>){:ts}`-Method that sends a PUT request to `` `${baseUrl}/books/${isbn}`{:ts} ``. Add a `getByIsbnResource(isbn: Signal<string>){:ts}`-Method that returns an `httpResource<Book>(){:ts}` for `` `${baseUrl}/books/${isbn()}`{:ts} ``.
+- **Extend `BooksClient{:ts}`** Add an `update(isbn: string, book: Partial<Book>){:ts}`-Method that sends a PUT request to _/books/:isbn_. Add a `getByIsbnResource(isbn: Signal<string>){:ts}`-Method that returns an `httpResource<Book>(){:ts}` for _/books/:isbn_ (with the current `isbn(){:ts}`).
 - **Read the route param** Inside `BookEditForm{:ts}`, declare `readonly isbn = input.required<string>();{:ts}` to receive the `:isbn` route param (passed down from `BookEditPage{:ts}`).
 - **Load the book** Inject `BooksClient{:ts}` and call `getByIsbnResource(this.isbn){:ts}` — the resource re-fetches whenever `isbn(){:ts}` changes.
 

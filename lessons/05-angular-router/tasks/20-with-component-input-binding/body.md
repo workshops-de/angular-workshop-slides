@@ -12,5 +12,5 @@
 
 ---
 
-- **Load the book** Load the book with `` httpResource<Book>(() => `http://localhost:4730/books/${this.isbn()}`){:ts} `` and expose it (e.g. via a `computed{:ts}`).
+- **Load the book** Load the book with `httpResource<Book>(){:ts}`, using a request function that returns _http://localhost:4730/books/_ followed by `this.isbn(){:ts}`, and expose it (e.g. via a `computed{:ts}`).
 - **Build the template** Pass the loaded book into `<app-book-detail [book]="book()" />{:html}`, guarded by `@if (book(); as book) { ... }{:html}`.
