@@ -2,6 +2,34 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.3.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.2.0...v1.3.0) (2026-09-21)
+
+
+### Bug Fixes
+
+* update BookSchema to make id field required ([3d17514](https://github.com/workshops-de/angular-workshop-slides/commit/3d17514115ad8bd899632d6ff361a87bda1493ba))
+* update git tag for delete data task to reflect mutation solution ([f75970b](https://github.com/workshops-de/angular-workshop-slides/commit/f75970b7e5ccd2d14b60c603b22d653a3b9314d4))
+
+
+### Features
+
+* add afterRenderEffect implementation for Marker directive and related tasks ([119b6eb](https://github.com/workshops-de/angular-workshop-slides/commit/119b6eb70713c5291eee9689d8cb4a5e7cc0c415))
+* add Angular component tasks for property binding, input binding, and event handling ([5d71293](https://github.com/workshops-de/angular-workshop-slides/commit/5d7129332712b6cf9ae91f80401e06e08f472446))
+* add create, update, and delete methods to BooksClient for API integration ([01b0388](https://github.com/workshops-de/angular-workshop-slides/commit/01b0388cb56d3b6e6e8de06030b9dbdb657472be))
+* add custom validators for author name and ISBN uniqueness ([da3bcf7](https://github.com/workshops-de/angular-workshop-slides/commit/da3bcf7ee328605e9a74c658760697130c57e136))
+* add date pipe and locale configuration for book cards ([7a2dc5c](https://github.com/workshops-de/angular-workshop-slides/commit/7a2dc5c5dfc298e3fc20fc544204b3103989c5a9))
+* add enabledPlugins configuration for Google Slides MCP ([f350216](https://github.com/workshops-de/angular-workshop-slides/commit/f35021650864b3b3b41edae3f71fff3edf4858cd))
+* add form handling for book creation with co-authors ([d840afe](https://github.com/workshops-de/angular-workshop-slides/commit/d840afee460a878995c8739d885a6eb827bd064d))
+* add HTTP interceptor with error handling and retry logic ([961edd5](https://github.com/workshops-de/angular-workshop-slides/commit/961edd5832c8488423af26a76f38897924e8f7ad))
+* add initial tasks for getting started with Angular project and reactivity ([55d62e0](https://github.com/workshops-de/angular-workshop-slides/commit/55d62e021a06cc7a17036d3d9093a25594815e4c))
+* disable StackBlitz integration for Angular Components lesson ([affb600](https://github.com/workshops-de/angular-workshop-slides/commit/affb600a36ae6b1ae09afbecc2d47358402f1f14))
+* enhance hints section for clarity and guidance ([b3847e5](https://github.com/workshops-de/angular-workshop-slides/commit/b3847e589fe817fabf27048d5a12cfeaf2afc45f))
+* migrate delete data task to mutation with updated content and hints ([2c67dad](https://github.com/workshops-de/angular-workshop-slides/commit/2c67dadcc3fe38611700d6e3460e2004fce7a655))
+* refactor Angular Router and Forms lessons ([af750d6](https://github.com/workshops-de/angular-workshop-slides/commit/af750d6ab1ff9efd5d86aaf177185b69f329ee79))
+* rename skill from google-slides-workshop-teacher to slide-creator ([0e0bb85](https://github.com/workshops-de/angular-workshop-slides/commit/0e0bb8501226c9849105c2230591439ca0a8ef68))
+* rename skill from lesson-writer to task-creator ([5632ef9](https://github.com/workshops-de/angular-workshop-slides/commit/5632ef9cb6b647360d40c8a78011207f797b0e04))
+* update lesson content for querying data with API integration and enhance Book interface ([b8aab48](https://github.com/workshops-de/angular-workshop-slides/commit/b8aab487524e227a6bd04643bea8f9fd440f0bbb))
+
 # [1.2.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.1.0...v1.2.0) (2026-09-14)
 
 
