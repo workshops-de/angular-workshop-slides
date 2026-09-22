@@ -63,6 +63,9 @@ Rules:
   - are an important pillar to provide code snippets, to help with syntax and understanding
   - should follow the order of task steps defined in the corresponding `body.md`.
   - are a safe harbour for an attendee. Easy to follow, no tricks. Straight forward code hints to get the solution work.
+- Follow the [hint template](./references/hint.template.md) to learn about the structure.
+  - Always wrap every step's hint in its own `<details><summary>...</summary>...</details>` section, in the same order as the steps in `body.md` - even if the task has only a single step. This keeps the structure consistent across all hints, and hints stay collapsed by default so attendees get a clean overview even when code samples get complex.
+  - Keep the `**<Task step heading>**` from the step's structure as the `<summary>` text, so hints stay recognizable at a glance.
 
 ## Bonus
 

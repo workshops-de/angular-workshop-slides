@@ -1,4 +1,7 @@
-- **<Task step heading>** technical details about the respective step, inline code is highlighted with `input(){:ts}` or `[content]{:html}`
+<details>
+<summary><Task step heading></summary>
+
+technical details about the respective step, inline code is highlighted with `input(){:ts}` or `[content]{:html}`
 
 ```ts
 // <file-name.ts of the affected module>
@@ -14,6 +17,11 @@ export class BookCard {
 <h4 [style]="customStyle()">{{ content().author }}</h4>
 ```
 
---- <!-- separator before the next hint comes -->
+</details>
 
-- **<Next task tep heading>** ...
+<details>
+<summary><Next task step heading></summary>
+
+...
+
+</details>
