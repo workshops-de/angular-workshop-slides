@@ -2,6 +2,18 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.14.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.13.0...v1.14.0) (2026-09-22)
+
+
+### Bug Fixes
+
+* update hint templates to ensure consistent structure and clarity ([4f25815](https://github.com/workshops-de/angular-workshop-slides/commit/4f2581545e80a787faeb75a90de9e8b6b9e7e877))
+
+
+### Features
+
+* use detail-summary blocks for hints ([2545e37](https://github.com/workshops-de/angular-workshop-slides/commit/2545e37d02c08baef598287bab7787a55620e120))
+
 # [1.13.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.12.2...v1.13.0) (2026-09-22)
 
 

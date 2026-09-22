@@ -1,6 +1,6 @@
 {
   "name": "angular-workshop-lessons",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "private": true,
   "type": "module",
   "description": "Tooling für das Angular-Workshop-Lessons-Repo (Commit-Guard via Husky + commitlint).",
