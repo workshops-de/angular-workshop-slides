@@ -2,6 +2,18 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.12.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.11.1...v1.12.0) (2026-09-22)
+
+
+### Bug Fixes
+
+* update subproject commit reference in sample solution ([82fa4c9](https://github.com/workshops-de/angular-workshop-slides/commit/82fa4c9c9a60380e59093b42838b694b911a348a))
+
+
+### Features
+
+* add component tree lesson with integration and nesting of components ([26c46b0](https://github.com/workshops-de/angular-workshop-slides/commit/26c46b018c42f61fdcdc59b7a80da19b2fafbee4))
+
 ## [1.11.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.11.0...v1.11.1) (2026-09-21)
 
 
