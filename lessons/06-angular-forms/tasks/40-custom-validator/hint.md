@@ -1,3 +1,6 @@
+<details>
+<summary>Write the validator</summary>
+
 ```typescript
 // validators/author.ts
 import { SchemaPath, validate } from '@angular/forms/signals';
@@ -14,6 +17,11 @@ export function validAuthorName(schemaPath: SchemaPath<string>): void {
 }
 ```
 
+</details>
+
+<details>
+<summary>Wire it up</summary>
+
 ```typescript
 // book-create-form.ts
 import { validAuthorName } from '../validators/author';
@@ -28,3 +36,5 @@ protected readonly form = form(
   { submission: { ... } }
 );
 ```
+
+</details>

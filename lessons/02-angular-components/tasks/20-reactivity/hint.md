@@ -1,4 +1,5 @@
-## Reading a signal
+<details>
+<summary>Meet the App component</summary>
 
 A `signal{:ts}` is read by calling it as a function. That's why the template uses `warmWelcome(){:ts}` and not `warmWelcome{:ts}`.
 
@@ -12,7 +13,10 @@ warmWelcome = signal('Angularian');
 <app-welcome>{{ warmWelcome() }}</app-welcome>
 ```
 
-## Adding the `greet{:ts}` signal
+</details>
+
+<details>
+<summary>Add a second signal</summary>
 
 ```ts
 // app.ts
@@ -24,7 +28,10 @@ export class App {
 }
 ```
 
-## Updating a signal from the `constructor{:ts}`
+</details>
+
+<details>
+<summary>Update a signal from a `constructor{:ts}`</summary>
 
 Use `.update(...){:ts}` when the new value depends on the current one. Its callback receives the current value and returns the next one.
 
@@ -42,4 +49,11 @@ export class App {
 }
 ```
 
+</details>
+
+<details>
+<summary>Check the result</summary>
+
 > Angular tracks which signals a template reads and automatically re-renders it whenever one of them changes — that's what "reactivity" means here.
+
+</details>

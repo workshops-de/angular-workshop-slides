@@ -1,12 +1,14 @@
-## Install valibot
+<details>
+<summary>Add valibot</summary>
 
 ```bash
 npm install valibot
 ```
 
----
+</details>
 
-## The schema
+<details>
+<summary>Describe the `Book{:ts}` schema</summary>
 
 ```ts
 // book.ts
@@ -38,9 +40,10 @@ export const BooksCollectionSchema = v.array(BookSchema);
 export type Book = v.InferOutput<typeof BookSchema>;
 ```
 
----
+</details>
 
-## Parsing in the client
+<details>
+<summary>Parse the response</summary>
 
 ```ts
 // books-client.ts
@@ -53,3 +56,5 @@ import { Book, BooksCollectionSchema } from './book';
   parse: value => v.parse(BooksCollectionSchema, value)
 }
 ```
+
+</details>

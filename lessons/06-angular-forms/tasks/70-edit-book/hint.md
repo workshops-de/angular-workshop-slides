@@ -1,3 +1,6 @@
+<details>
+<summary>Add the route</summary>
+
 ```typescript
 // book.routes.ts
 {
@@ -5,6 +8,11 @@
   loadComponent: () => import('./book-edit-page/book-edit-page').then(c => c.BookEditPage)
 }
 ```
+
+</details>
+
+<details>
+<summary>Extend `BooksClient`</summary>
 
 ```typescript
 // books-client.ts
@@ -15,6 +23,11 @@ getByIsbnResource(isbn: Signal<string>) {
   return httpResource<Book>(() => ({ url: `${this.#baseUrl}/books/${isbn()}` }));
 }
 ```
+
+</details>
+
+<details>
+<summary>Load the book</summary>
 
 ```typescript
 // book-edit-page.ts
@@ -41,6 +54,11 @@ export class BookEditPage {
 }
 ```
 
+</details>
+
+<details>
+<summary>Render by state</summary>
+
 ```html
 <!-- book-edit-page.html -->
 @if (bookResource.isLoading()) {
@@ -51,6 +69,11 @@ export class BookEditPage {
   <app-book-edit-form [book]="book" (save)="saveBook($event)" />
 }
 ```
+
+</details>
+
+<details>
+<summary>Declare input and output</summary>
 
 ```typescript
 // book-edit-form.ts
@@ -98,6 +121,11 @@ export class BookEditForm {
   );
 }
 ```
+
+</details>
+
+<details>
+<summary>Build the template</summary>
 
 ```html
 <!-- book-edit-form.html -->
@@ -170,3 +198,5 @@ export class BookEditForm {
   </form>
 </div>
 ```
+
+</details>

@@ -1,3 +1,6 @@
+<details>
+<summary>Write the validator</summary>
+
 ```typescript
 // validators/isbn.ts
 import { HttpErrorResponse } from '@angular/common/http';
@@ -15,6 +18,11 @@ export function uniqueIsbn(path: SchemaPath<string>): void {
 }
 ```
 
+</details>
+
+<details>
+<summary>Wire it up</summary>
+
 ```typescript
 // book-create-form.ts
 import { uniqueIsbn } from '../validators/isbn';
@@ -30,6 +38,11 @@ protected readonly form = form(
 );
 ```
 
+</details>
+
+<details>
+<summary>Show the pending state</summary>
+
 ```html
 @if (form.isbn().pending()) {
   <small class="field-hint">Checking ISBN…</small>
@@ -39,3 +52,5 @@ protected readonly form = form(
   }
 }
 ```
+
+</details>

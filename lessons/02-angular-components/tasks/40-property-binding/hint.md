@@ -1,4 +1,5 @@
-## Defining a style object
+<details>
+<summary>Add a style object</summary>
 
 A `[style]{:html}`-Binding accepts an object whose keys are CSS properties. Keep the object inside a `signal{:ts}`.
 
@@ -16,3 +17,5 @@ export class BookCard {
 <!-- book-card.html -->
 <h4 [style]="customStyle()">{{ content().author }}</h4>
 ```
+
+</details>

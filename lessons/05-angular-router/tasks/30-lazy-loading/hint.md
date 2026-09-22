@@ -1,6 +1,8 @@
-## app.routes.ts
+<details>
+<summary>Create the child routes file</summary>
 
 ```ts
+// app.routes.ts
 export const routes: Routes = [
   {
     path: '',
@@ -14,9 +16,8 @@ export const routes: Routes = [
 ];
 ```
 
-## books/book.routes.ts
-
 ```ts
+// books/book.routes.ts
 export const bookRoutes: Routes = [
   {
     path: '',
@@ -33,7 +34,10 @@ export const bookRoutes: Routes = [
 ];
 ```
 
-## Lazy load a single component
+</details>
+
+<details>
+<summary>Lazy load the book details route</summary>
 
 ```ts
 {
@@ -45,3 +49,5 @@ export const bookRoutes: Routes = [
   loadComponent: () => import('./book-detail-page/book-detail-page').then(c => c.BookDetailPage)
 }
 ```
+
+</details>

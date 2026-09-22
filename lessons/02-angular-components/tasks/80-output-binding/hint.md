@@ -1,16 +1,27 @@
-## Declaring and emitting the output
+<details>
+<summary>Add an output signal</summary>
 
 ```ts
 // src/app/books/book-card/book-card.ts
 
 // Output-Binding
 readonly detailClick = output<Book>();
+```
 
+</details>
+
+<details>
+<summary>Emit the event</summary>
+
+```ts
 // Emit an event
 this.detailClick.emit(this.content());
 ```
 
-## Handling the event in App
+</details>
+
+<details>
+<summary>Implement the handler</summary>
 
 ```ts
 // src/app/app.ts
@@ -21,3 +32,5 @@ goToBookDetails(book: Book) {
   console.table(book);
 }
 ```
+
+</details>

@@ -1,4 +1,5 @@
-## Routes
+<details>
+<summary>Define the routes</summary>
 
 ```ts
 // app.routes.ts
@@ -24,6 +25,11 @@ export const routes: Routes = [
 ];
 ```
 
+</details>
+
+<details>
+<summary>Provide the router</summary>
+
 ```ts
 // app.config.ts
 import { provideRouter } from '@angular/router';
@@ -34,7 +40,10 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-## Router outlet
+</details>
+
+<details>
+<summary>Add the router outlet</summary>
 
 ```ts
 // app.ts
@@ -59,7 +68,10 @@ export class App {}
 </div>
 ```
 
-## Sidebar links
+</details>
+
+<details>
+<summary>Wire up the navigation</summary>
 
 ```html
 <!-- workshop-support/shell/sidebar/sidebar.html -->
@@ -73,3 +85,5 @@ export class App {}
   <!-- New Book -->
 </a>
 ```
+
+</details>

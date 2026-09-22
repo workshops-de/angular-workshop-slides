@@ -1,4 +1,5 @@
-## Phase 1: Integrate `Sidebar`{:ts}
+<details>
+<summary>Import `Sidebar`{:ts}</summary>
 
 Add `Sidebar{:ts}` to the `imports{:ts}` array of the `@Component{:ts}` decorator, then use its selector `app-sidebar` in the template. `Sidebar{:ts}` ships ready-to-use from `@workshop-support` — no `ng generate{:bash}` needed.
 
@@ -21,9 +22,10 @@ export class App {}
 <app-welcome>{{ warmWelcome() }}</app-welcome>
 ```
 
----
+</details>
 
-## Phase 2: Nest `BookCard`{:ts} inside `BooksPage`{:ts}
+<details>
+<summary>Nest `BookCard`{:ts} inside `BooksPage`{:ts}</summary>
 
 Add `BookCard{:ts}` to the `imports{:ts}` array of `BooksPage{:ts}`'s `@Component{:ts}` decorator so its selector `app-book-card` becomes available in _books-page.html_.
 
@@ -46,9 +48,10 @@ export class BooksPage {}
 <app-book-card />
 ```
 
----
+</details>
 
-## Integrate `BooksPage`{:ts} into _App_
+<details>
+<summary>Integrate `BooksPage`{:ts} in _App_</summary>
 
 Add `BooksPage{:ts}` to the `imports{:ts}` array in _app.ts_, and replace `<app-welcome>{:html}` with `<app-books-page />{:html}` in _app.html_.
 
@@ -72,3 +75,5 @@ export class App {}
 <app-sidebar />
 <app-books-page />
 ```
+
+</details>

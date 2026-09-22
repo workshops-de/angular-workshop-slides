@@ -1,4 +1,31 @@
-## Enable Component Input Binding
+<details>
+<summary>Copy the prepared `BookDetailPage{:ts}`</summary>
+
+```ts
+// app.routes.ts
+{ path: 'books/detail/:isbn', component: BookDetailPage }
+```
+
+</details>
+
+<details>
+<summary>Navigate from `BooksPage{:ts}`</summary>
+
+```ts
+// books-page.ts
+import { Router } from '@angular/router';
+
+private readonly router = inject(Router);
+
+async goToBookDetails(book: Book) {
+  await this.router.navigate(['/books', 'detail', book.isbn]);
+}
+```
+
+</details>
+
+<details>
+<summary>Enable Component Input Binding</summary>
 
 ```ts
 // app.config.ts
@@ -7,7 +34,10 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 provideRouter(routes, withComponentInputBinding());
 ```
 
-## The component
+</details>
+
+<details>
+<summary>Load the book</summary>
 
 ```ts
 // book-detail-page.ts
@@ -41,22 +71,4 @@ export class BookDetailPage {
 }
 ```
 
-## Extend BooksPage
-
-```ts
-// books-page.ts
-import { Router } from '@angular/router';
-
-private readonly router = inject(Router);
-
-async goToBookDetails(book: Book) {
-  await this.router.navigate(['/books', 'detail', book.isbn]);
-}
-```
-
-## Extend your routes definitions
-
-```ts
-// app.routes.ts
-{ path: 'books/detail/:isbn', component: BookDetailPage }
-```
+</details>

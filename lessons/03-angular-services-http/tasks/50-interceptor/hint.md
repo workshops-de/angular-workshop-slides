@@ -1,4 +1,5 @@
-## The functional interceptor
+<details>
+<summary>Create a functional interceptor</summary>
 
 ```typescript
 // error-interceptor.ts
@@ -31,9 +32,12 @@ export function errorInterceptor(
 
 Note that `inject(){:ts}` works here because Angular runs interceptors inside an injection context - no constructor needed.
 
----
+`Notifier{:ts}` already renders its toasts via CDK Overlay - no template markup needed, just inject and call `.error(){:ts}` / `.success(){:ts}` / `.info(){:ts}`.
 
-## Registering it
+</details>
+
+<details>
+<summary>Register the interceptor</summary>
 
 ```typescript
 // app.config.ts
@@ -49,9 +53,10 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-`Notifier{:ts}` already renders its toasts via CDK Overlay - no template markup needed, just inject and call `.error(){:ts}` / `.success(){:ts}` / `.info(){:ts}`.
+</details>
 
-## Provoke an error
+<details>
+<summary>Provoke an HTTP error</summary>
 
 ```typescript
 // book-client.ts
@@ -82,3 +87,5 @@ export class BooksClient {
   // ...
 }
 ```
+
+</details>

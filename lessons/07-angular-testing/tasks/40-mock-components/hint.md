@@ -1,3 +1,6 @@
+<details>
+<summary>Create a mock component</summary>
+
 ```ts
 // books-page.spec.ts
 import { Component, input } from '@angular/core';
@@ -53,3 +56,5 @@ describe('BooksPage', () => {
   });
 });
 ```
+
+</details>

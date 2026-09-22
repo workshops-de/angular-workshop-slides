@@ -1,4 +1,18 @@
-## Providing the book data
+<details>
+<summary>Add an input signal</summary>
+
+Input signals are functions — call them with `()` to read their value.
+
+```html
+<!-- book-card.html -->
+<h3>{{ content().title }}</h3>
+<!-- ... -->
+```
+
+</details>
+
+<details>
+<summary>Provide a book to bind</summary>
 
 ```ts
 // app.ts
@@ -11,12 +25,4 @@ export class App {
 }
 ```
 
-## Reading an input signal in the template
-
-Input signals are functions — call them with `()` to read their value.
-
-```html
-<!-- book-card.html -->
-<h3>{{ content().title }}</h3>
-<!-- ... -->
-```
+</details>
