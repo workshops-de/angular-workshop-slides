@@ -33,6 +33,13 @@ lessons/
 - Follow the [body template](./references/body.template.md) to learn about the structure
   - Each task is separated by `---` to make the overall text more readable
 
+## Markdown renderer
+
+eClassroom renders `body.md`, `hint.md` and `bonus.md` with [Earmark](https://earmark.hexdocs.pm/readme.html), the Elixir Markdown parser. Earmark treats a matched pair of block-level HTML tags (e.g. `<details>...</details>`) as a single **verbatim** AST node - it does not parse Markdown (code fences, inline code, bold, ...) nested inside raw HTML.
+
+- Do not use `<details>`/`<summary>` (or any other raw-HTML wrapping) in `body.md`, `hint.md` or `bonus.md` - Markdown/Shiki-highlighted content inside them renders as flat, unstyled text in eClassroom, confirmed live.
+- If a user explicitly asks for a `<details>`/`<summary>` collapsible section, tell them that formatted Markdown text (code blocks, inline code, etc.) inside a `<summary>`/`<details>` block is not rendered by eClassroom's Earmark-based parser, and that it should not be used for that reason.
+
 ## Inline code highlighting
 
 The eClassroom Markdown parser highlights code with [Shiki](https://shiki.style/packages/rehype#inline-code) (`inline: 'tailing-curly-colon'`).
