@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.12.2](https://github.com/workshops-de/angular-workshop-slides/compare/v1.12.1...v1.12.2) (2026-09-22)
+
+
+### Bug Fixes
+
+* remove bonus section for component styling in bonus.md ([b45a0e0](https://github.com/workshops-de/angular-workshop-slides/commit/b45a0e041b3800b29c9437379ff9e6bdeb1503f7))
+
 ## [1.12.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.12.0...v1.12.1) (2026-09-22)
 
 
