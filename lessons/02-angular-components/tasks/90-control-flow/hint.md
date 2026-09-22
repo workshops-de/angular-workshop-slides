@@ -1,5 +1,4 @@
-<details>
-<summary>Turn `book{:ts}` into `books{:ts}`</summary>
+## The books list
 
 ```ts
 // app.ts
@@ -22,10 +21,7 @@ books = signal<Book[]>([
 ]);
 ```
 
-</details>
-
-<details>
-<summary>Render the list</summary>
+## Rendering the list with @for
 
 ```html
 <!-- app.html -->
@@ -33,5 +29,3 @@ books = signal<Book[]>([
   <app-book-card ... >
 }
 ```
-
-</details>

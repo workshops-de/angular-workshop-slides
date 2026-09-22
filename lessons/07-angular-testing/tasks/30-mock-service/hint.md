@@ -1,6 +1,3 @@
-<details>
-<summary>Create the spec file</summary>
-
 ```ts
 // books-page.spec.ts
 import { render, screen } from '@testing-library/angular';
@@ -61,5 +58,3 @@ describe('BooksPage', () => {
   });
 });
 ```
-
-</details>

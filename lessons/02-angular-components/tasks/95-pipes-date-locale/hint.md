@@ -1,15 +1,11 @@
-<details>
-<summary>Use the `date{:ts}` pipe</summary>
+## Formatting the date with the `date{:ts}` pipe
 
 ```html
 <!-- src/app/books/book-card/book-card.html -->
 <p class="book-published">{{ currentBook.publishedAt | date: 'longDate' }}</p>
 ```
 
-</details>
-
-<details>
-<summary>Import the pipe</summary>
+## Importing the pipe
 
 ```ts
 // src/app/books/book-card/book-card.ts
@@ -25,10 +21,7 @@ export class BookCard {
 }
 ```
 
-</details>
-
-<details>
-<summary>Provide the locale</summary>
+## Providing the locale
 
 ```ts
 // src/app/app.config.ts
@@ -39,10 +32,7 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-</details>
-
-<details>
-<summary>Register the locale data</summary>
+## Registering the locale data
 
 ```ts
 // src/main.ts
@@ -56,5 +46,3 @@ registerLocaleData(localeDe);
 
 bootstrapApplication(App, appConfig).catch(err => console.error(err));
 ```
-
-</details>

@@ -1,5 +1,4 @@
-<details>
-<summary>Prepare `create{:ts}`, `update{:ts}` and `delete{:ts}` methods</summary>
+## The client methods
 
 ```ts
 // books-client.ts
@@ -27,10 +26,9 @@ export class BooksClient {
 }
 ```
 
-</details>
+---
 
-<details>
-<summary>Wire the delete action</summary>
+## Calling it from the component
 
 ```ts
 // books-page.ts
@@ -45,5 +43,3 @@ async deleteBook(book: Book) {
   this.booksResource.reload();
 }
 ```
-
-</details>

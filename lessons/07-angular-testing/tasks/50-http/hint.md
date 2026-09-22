@@ -1,6 +1,3 @@
-<details>
-<summary>Create the spec file</summary>
-
 ```ts
 // books-client.spec.ts
 import { TestBed } from '@angular/core/testing';
@@ -77,5 +74,3 @@ describe('BooksClient', () => {
 ```
 
 > `getAll(){:ts}` returns an `httpResource{:ts}`, not an `Observable{:ts}` — a resource fetches on its own inside an injection context, so it isn't exercised with the `subscribe(){:ts}` + `expectOne(){:ts}` pattern. It is covered at component level in `books-page.spec.ts`.
-
-</details>

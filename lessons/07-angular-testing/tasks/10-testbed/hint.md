@@ -1,6 +1,3 @@
-<details>
-<summary>Create the spec file</summary>
-
 ```ts
 // book-card.spec.ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -39,5 +36,3 @@ describe('BookCard', () => {
   });
 });
 ```
-
-</details>

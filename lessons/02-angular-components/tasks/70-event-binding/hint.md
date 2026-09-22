@@ -1,5 +1,4 @@
-<details>
-<summary>Implement the handler</summary>
+## Preventing the default link behaviour
 
 ```ts
 handleDetailClick(click: MouseEvent) {
@@ -8,5 +7,3 @@ handleDetailClick(click: MouseEvent) {
   console.log('Click Details-Link:', click);
 }
 ```
-
-</details>

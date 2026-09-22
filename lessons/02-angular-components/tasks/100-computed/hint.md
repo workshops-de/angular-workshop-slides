@@ -1,10 +1,11 @@
-<details>
-<summary>The Book filter control</summary>
+## Storing the search term as a signal
 
 ```ts
 // app.ts
 searchTerm = signal('');
 ```
+
+## Wiring the search input
 
 ```html
 <!-- app.html -->
@@ -13,10 +14,7 @@ searchTerm = signal('');
 <input (input)="searchTerm.set($event.target.value)" />
 ```
 
-</details>
-
-<details>
-<summary>Derive the filtered books with `computed{:ts}`</summary>
+## Filtering with `computed{:ts}`
 
 ```ts
 // app.ts
@@ -32,11 +30,6 @@ booksComputed = computed(() => {
 });
 ```
 
-</details>
-
-<details>
-<summary>Use `booksComputed{:ts}` in the template</summary>
-
 ```html
 <!-- app.html -->
 
@@ -44,5 +37,3 @@ booksComputed = computed(() => {
 @for (book of booksComputed(); track book.title) {
 <app-book-card ...> ...</app-book-card>
 ```
-
-</details>

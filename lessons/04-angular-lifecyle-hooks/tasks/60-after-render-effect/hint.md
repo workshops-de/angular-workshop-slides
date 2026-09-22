@@ -1,5 +1,4 @@
-<details>
-<summary>Swap `effect{:ts}` for `afterRenderEffect{:ts}`</summary>
+## Swap `effect{:ts}` for `afterRenderEffect{:ts}`
 
 ```ts
 // marker.ts
@@ -47,18 +46,12 @@ export class Marker {
 
 Only the constructor changed. `markText{:ts}` still reads `rawText(){:ts}`/`markTerm(){:ts}` and writes to the DOM via `Renderer2{:ts}` — but now that write runs in the `write{:ts}` phase after rendering instead of in an unordered `effect(){:ts}`.
 
-</details>
-
-<details>
-<summary>Pick the right phase</summary>
+## Why `write{:ts}`?
 
 `afterRenderEffect(() => ...){:ts}` without phases runs in `mixedReadWrite{:ts}`, which Angular recommends avoiding when the work can be split. `markText{:ts}` never reads layout from the DOM, so `write{:ts}` is the fitting phase.
 
-</details>
+---
 
-<details>
-<summary>Check the result</summary>
+## Check the result
 
 Type a few letters into the books search field. The matching parts of each title should still be wrapped in `<mark class="mark-hit">{:html}`, same as before the refactor.
-
-</details>

@@ -1,5 +1,4 @@
-<details>
-<summary>Add unsaved-changes state</summary>
+## Unsaved-changes state
 
 ```ts
 // book-create-page.ts
@@ -8,10 +7,7 @@ export class BookCreatePage {
 }
 ```
 
-</details>
-
-<details>
-<summary>Create a guard function</summary>
+## Guard function
 
 - Import the `CanDeactivateFn{:ts}` interface from `@angular/router`
 - Type the guard with the guarded component (`BookCreatePage{:ts}`) and implement the fat arrow function
@@ -30,11 +26,6 @@ export const confirmLeaveGuardFn: CanDeactivateFn<BookCreatePage> = component =>
 };
 ```
 
-</details>
-
-<details>
-<summary>Wire up the guard</summary>
-
 Add guard to route:
 
 ```ts
@@ -45,5 +36,3 @@ Add guard to route:
   canDeactivate: [confirmLeaveGuardFn]
 }
 ```
-
-</details>

@@ -1,6 +1,3 @@
-<details>
-<summary>Rewrite `book-card.spec.ts`</summary>
-
 ```ts
 // book-card.spec.ts
 import { Component } from '@angular/core';
@@ -40,5 +37,3 @@ describe('BookCard', () => {
   });
 });
 ```
-
-</details>

@@ -1,14 +1,12 @@
-<details>
-<summary>Generate the directive</summary>
+## Generate the directive
 
 ```bash
 ng generate directive books/marker
 ```
 
-</details>
+---
 
-<details>
-<summary>Render the highlighted text</summary>
+## The directive
 
 ```ts
 // marker.ts
@@ -48,10 +46,9 @@ export class Marker {
 }
 ```
 
-</details>
+---
 
-<details>
-<summary>Use the directive in `BookCard{:ts}`</summary>
+## Using it in the templates
 
 ```html
 <!-- book-card.html -->
@@ -73,11 +70,6 @@ export class BookCard {
 }
 ```
 
-</details>
-
-<details>
-<summary>Forward the search term</summary>
-
 ```html
 <!-- books-page.html -->
 <app-book-card
@@ -87,5 +79,3 @@ export class BookCard {
   (deleteClick)="deleteBook($event)"
 />
 ```
-
-</details>

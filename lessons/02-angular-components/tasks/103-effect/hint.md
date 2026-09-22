@@ -1,5 +1,4 @@
-<details>
-<summary>Seed the signal from `localStorage{:ts}`</summary>
+## Seeding the signal from localStorage
 
 ```ts
 // books-page.ts
@@ -7,10 +6,9 @@
 searchTerm = signal(localStorage.getItem('books.searchTerm') ?? '');
 ```
 
-</details>
+--- 
 
-<details>
-<summary>Persist the search term with `effect{:ts}`</summary>
+## Persisting with an effect
 
 ```ts
 // books-page.ts
@@ -25,5 +23,3 @@ constructor() {
 
 An `effect{:ts}` runs once after it is created and re-runs whenever a signal it reads
 (`searchTerm{:ts}`) changes - so every keystroke is written through to `localStorage{:ts}`.
-
-</details>

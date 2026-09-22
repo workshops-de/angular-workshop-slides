@@ -1,5 +1,4 @@
-<details>
-<summary>Create the data model</summary>
+## The component class
 
 ```typescript
 // book-create-form.ts
@@ -31,10 +30,7 @@ export class BookCreateForm {
 }
 ```
 
-</details>
-
-<details>
-<summary>Wire up the template</summary>
+## The template
 
 ```html
 <form class="form-fields" [formRoot]="form">
@@ -64,5 +60,3 @@ export class BookCreateForm {
   </div>
 </form>
 ```
-
-</details>

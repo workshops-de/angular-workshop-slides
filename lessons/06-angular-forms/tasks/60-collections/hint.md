@@ -1,6 +1,3 @@
-<details>
-<summary>Extend the model</summary>
-
 ```typescript
 // book-create-form.ts
 import { applyEach, form, FormField, FormRoot, required } from '@angular/forms/signals';
@@ -46,11 +43,6 @@ export class BookCreateForm {
 }
 ```
 
-</details>
-
-<details>
-<summary>Build the template</summary>
-
 ```html
 <fieldset class="field-collection">
   <legend class="field-label-text">Co-authors</legend>
@@ -74,5 +66,3 @@ export class BookCreateForm {
   <button type="button" class="btn-secondary btn-add" (click)="addCoAuthor()">+ Add co-author</button>
 </fieldset>
 ```
-
-</details>

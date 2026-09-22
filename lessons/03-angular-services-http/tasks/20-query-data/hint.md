@@ -1,5 +1,4 @@
-<details>
-<summary>Start the API</summary>
+## API starten
 
 If not already installed
 
@@ -8,10 +7,9 @@ If not already installed
 npx bookmonkey-api@latest
 ```
 
-</details>
+---
 
-<details>
-<summary>Provide the HttpClient</summary>
+## Providing HttpClient
 
 ```typescript
 // app.config.ts
@@ -20,10 +18,9 @@ import { provideHttpClient } from '@angular/common/http';
 providers: [provideHttpClient()];
 ```
 
-</details>
+---
 
-<details>
-<summary>Extend the `Book{:ts}` interface</summary>
+## Extending `Book{:ts}`
 
 ```typescript
 // book.ts
@@ -39,10 +36,9 @@ export interface Book {
 }
 ```
 
-</details>
+---
 
-<details>
-<summary>Load data via `httpResource{:ts}`</summary>
+## Loading books via `httpResource{:ts}`
 
 ```typescript
 // books-client.ts
@@ -71,10 +67,9 @@ export class BooksClient {
 }
 ```
 
-</details>
+---
 
-<details>
-<summary>Consume the resource in `BooksPage{:ts}`</summary>
+## Consuming the resource in `BooksPage{:ts}`
 
 ```typescript
 // books-page.ts
@@ -88,10 +83,9 @@ booksComputed = computed(() => {
 });
 ```
 
-</details>
+---
 
-<details>
-<summary>Show loading and error state</summary>
+## Loading and error state
 
 ```html
 <!-- books-page.html -->
@@ -102,14 +96,11 @@ booksComputed = computed(() => {
 }
 ```
 
-</details>
+---
 
-<details>
-<summary>Show the real cover</summary>
+## Showing the real cover
 
 ```html
 <!-- book-card.html -->
 <img [src]="currentBook.cover || placeholderCover" alt="" class="book-cover" />
 ```
-
-</details>

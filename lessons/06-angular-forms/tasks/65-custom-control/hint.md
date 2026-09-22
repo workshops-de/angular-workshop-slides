@@ -1,6 +1,3 @@
-<details>
-<summary>Generate `CoAuthorInput`</summary>
-
 ```typescript
 // co-author-input.ts
 import { Component, input, model, output } from '@angular/core';
@@ -22,11 +19,6 @@ export class CoAuthorInput implements FormValueControl<string> {
   remove = output<void>();
 }
 ```
-
-</details>
-
-<details>
-<summary>Build the template</summary>
 
 ```html
 <!-- co-author-input.html -->
@@ -50,11 +42,6 @@ export class CoAuthorInput implements FormValueControl<string> {
 }
 ```
 
-</details>
-
-<details>
-<summary>Use it in `BookCreateForm`</summary>
-
 ```html
 <!-- book-create-form.html -->
 @for (coAuthor of form.coAuthors; track $index; let coAuthorIndex = $index) {
@@ -75,5 +62,3 @@ import { CoAuthorInput } from '../co-author-input/co-author-input';
 })
 export class BookCreateForm { /* ... */ }
 ```
-
-</details>

@@ -1,6 +1,3 @@
-<details>
-<summary>Wire up the submission</summary>
-
 ```typescript
 // book-create-form.ts
 import { Component, inject, signal } from '@angular/core';
@@ -35,5 +32,3 @@ export class BookCreateForm {
   );
 }
 ```
-
-</details>
