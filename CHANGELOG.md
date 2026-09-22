@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.12.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.12.0...v1.12.1) (2026-09-22)
+
+
+### Bug Fixes
+
+* remove unnecessary iframe and add verification step for component tree ([8e99851](https://github.com/workshops-de/angular-workshop-slides/commit/8e9985170a3974d668bc4f465567df1af59f8fed))
+
 # [1.12.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.11.1...v1.12.0) (2026-09-22)
 
 
