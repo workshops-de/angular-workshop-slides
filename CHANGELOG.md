@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.13.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.12.2...v1.13.0) (2026-09-22)
+
+
+### Features
+
+* add solution-creator skill for workshop task automation ([9841998](https://github.com/workshops-de/angular-workshop-slides/commit/9841998a97e91a5fc3fb63aecb8497f85c0b3afa))
+
 ## [1.12.2](https://github.com/workshops-de/angular-workshop-slides/compare/v1.12.1...v1.12.2) (2026-09-22)
 
 
