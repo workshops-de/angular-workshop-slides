@@ -34,7 +34,3 @@
 - **Nest `BookCard`{:ts} inside `BooksPage`{:ts}** Add the missing import for `BookCard{:ts}` to the `imports{:ts}` array in _books-page.ts_, and use `<app-book-card />{:html}` in _books-page.html_.
 - **Integrate `BooksPage`{:ts} in _App_** Replace `<app-welcome>{:html}` in _app.html_ with `<app-books-page />{:html}`. Add the missing import for `BooksPage{:ts}` to the `imports{:ts}` array in _app.ts_.
 - **Verify** Check that your full component tree — _App_ containing _Sidebar_ and _BooksPage_, with _BooksPage_ containing _BookCard_ — is displayed in the browser. Check [localhost:4200](http://localhost:4200).
-
-## How the component could look like
-
-<iframe src="https://docs.google.com/presentation/d/1QyM9Nwm6CRvQkDvp3q9I-UN32CQmZ-eXs9tdBJXeFYk/embed#slide=id.ga8afa0fa9e_0_24" width="100%" height="720px"></iframe>
