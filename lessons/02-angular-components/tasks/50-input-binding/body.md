@@ -4,6 +4,6 @@ Now, it is time to feed our component with data using an `input(){:ts}`-Binding.
 
 ---
 
-- **Provide a book to bind** Switch to `src/app/app.ts` and initialize a property `book{:ts}` as object with the properties _title_, _author_, _abstract_. Switch to the template of _App_ and bind the property `book{:ts}` to the component `app-book-card` using its `input(){:ts}`-binding **[content]**.
+- **Provide a book to bind** Switch to `src/app/books/books-page/books-page.ts` and initialize a property `book{:ts}` as object with the properties _title_, _author_, _abstract_. Switch to the template of _BooksPage_ (_books-page.html_) and bind the property `book{:ts}` to the component `app-book-card` using its `input(){:ts}`-binding **[content]**.
 
 <iframe src="https://docs.google.com/presentation/d/1KJMDvEUIWDHluMPLffiBnadVSO2IElTAs7jPsMadehw/embed#slide=id.ga8afa0fa9e_0_24" height="800px" width="100%"></iframe>

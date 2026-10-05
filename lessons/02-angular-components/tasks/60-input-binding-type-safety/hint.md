@@ -3,7 +3,7 @@
 `input.required<Book>(){:ts}` removes the `undefined{:ts}` case entirely — the signal always resolves to a `Book{:ts}`.
 
 ```ts
-// app.ts
+// books-page.ts
 book = signal<Book>({ /* ... */ });
 
 // book-card.ts

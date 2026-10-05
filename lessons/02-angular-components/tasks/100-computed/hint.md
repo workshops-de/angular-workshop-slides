@@ -1,14 +1,14 @@
 ## Storing the search term as a signal
 
 ```ts
-// app.ts
+// books-page.ts
 searchTerm = signal('');
 ```
 
 ## Wiring the search input
 
 ```html
-<!-- app.html -->
+<!-- books-page.html -->
 
 <!-- search input, sets the signal directly -->
 <input (input)="searchTerm.set($event.target.value)" />
@@ -17,7 +17,7 @@ searchTerm = signal('');
 ## Filtering with `computed{:ts}`
 
 ```ts
-// app.ts
+// books-page.ts
 import { computed, signal } from '@angular/core';
 import { bookMatches } from '@workshop-support';
 
@@ -31,7 +31,7 @@ booksComputed = computed(() => {
 ```
 
 ```html
-<!-- app.html -->
+<!-- books-page.html -->
 
 <!-- use the computed signal -->
 @for (book of booksComputed(); track book.title) {

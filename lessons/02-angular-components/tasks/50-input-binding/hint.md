@@ -1,8 +1,8 @@
 ## Providing the book data
 
 ```ts
-// app.ts
-export class App {
+// books-page.ts
+export class BooksPage {
   book = signal({
     title: 'How to win friends',
     author: 'Dale Carnegie',

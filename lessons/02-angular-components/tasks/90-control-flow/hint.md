@@ -1,7 +1,7 @@
 ## The books list
 
 ```ts
-// app.ts
+// books-page.ts
 books = signal<Book[]>([
   {
     title: 'How to win friends',
@@ -24,7 +24,7 @@ books = signal<Book[]>([
 ## Rendering the list with @for
 
 ```html
-<!-- app.html -->
+<!-- books-page.html -->
 @for(book of books(); track book.title){
   <app-book-card ... >
 }

@@ -6,7 +6,7 @@ It is time to allow our component to communicate with other components.
 
 ---
 
-- **Bind the output** Switch to _src/app/app.html_ and bind to the `detailClick{:ts}`-Event of _<app-book-card>_ to a method `goToBookDetails($event){:ts}`.
-- **Implement the handler** Implement `goToBookDetails($event){:ts}` and log the book passed by _<app-book-card>_.
+- **Bind the output** Switch to _src/app/books/books-page/books-page.html_ and bind to the `detailClick{:ts}`-Event of _<app-book-card>_ to a method `goToBookDetails($event){:ts}`.
+- **Implement the handler** In _books-page.ts_ implement `goToBookDetails($event){:ts}` and log the book passed by _<app-book-card>_.
 
 <iframe src="https://docs.google.com/presentation/d/1KJMDvEUIWDHluMPLffiBnadVSO2IElTAs7jPsMadehw/embed#slide=id.gab308489f3_0_122" height="700px" width="100%"></iframe>

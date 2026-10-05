@@ -10,10 +10,10 @@ readonly detailClick = output<Book>();
 this.detailClick.emit(this.content());
 ```
 
-## Handling the event in App
+## Handling the event in BooksPage
 
 ```ts
-// src/app/app.ts
+// src/app/books/books-page/books-page.ts
 
 // handling detailClick-Event
 goToBookDetails(book: Book) {

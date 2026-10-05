@@ -4,6 +4,6 @@ We can embrace TypeScripts language features to make developing with Angular mor
 
 ---
 
-- **Annotate `App{:ts}`** Switch to the _App_ component and annotate the property `book{:ts}` with the interface `Book{:ts}`. You might need to import `Book{:ts}` from _'./books/book'_ if your editor misses to import the type automatically.
+- **Annotate `BooksPage{:ts}`** Switch to the _BooksPage_ component and annotate the property `book{:ts}` with the interface `Book{:ts}`. You might need to import `Book{:ts}` from _'./books/book'_ if your editor misses to import the type automatically.
 - **Annotate `BookCard{:ts}`** Switch to the _BookCard_ component and annotate the `input(){:ts}` signal function with the interface `Book{:ts}` by switching to `input.required<Book>(){:ts}`.
 - **Verify** Recognize that you now have auto-completion in both TypeScript- & Template-Files.
