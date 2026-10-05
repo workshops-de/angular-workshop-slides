@@ -12,8 +12,4 @@ Let's warm up a bit and get familiar with our project by taking a first look at 
 
 ---
 
-- **Adjust the welcome text** Switch to _src/app/workshop-support/shell/welcome/welcome.html_ and remove the hardcoded `Hello,` text, since the greeting will now come from the signal itself.
-
----
-
 - **Check the result** Open the browser at [localhost:4200](http://localhost:4200). Recognize that the welcome text changes on its own after 6 seconds — without you writing any code to re-render the template. That's Angular's reactivity model at work: the template automatically reacts whenever a signal it reads changes.
