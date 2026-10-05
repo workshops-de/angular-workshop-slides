@@ -2,6 +2,25 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.15.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.14.0...v1.15.0) (2026-10-05)
+
+
+### Bug Fixes
+
+* add statusBar.inactiveBackground color to settings ([51bebc3](https://github.com/workshops-de/angular-workshop-slides/commit/51bebc357ef4b29d1ef9d3aca706cdb92852dc34))
+* remove hardcoded greeting from welcome.html to utilize signal for dynamic text ([6ab3a8a](https://github.com/workshops-de/angular-workshop-slides/commit/6ab3a8aeec6ad8b24dbb1b32be9df873d973e4d8))
+
+
+### Features
+
+* add static markup for BookCard template in hint.md ([a6f3d23](https://github.com/workshops-de/angular-workshop-slides/commit/a6f3d235b9ea53678fec7ec9f7150ab246783953))
+* enhance book component with input/output bindings and type safety ([c985e5d](https://github.com/workshops-de/angular-workshop-slides/commit/c985e5dd963a56c5589008b79b7920b2ba05b93e))
+
+
+### Reverts
+
+* drop detail-summary hint blocks, unsupported by Earmark ([bbb6bd8](https://github.com/workshops-de/angular-workshop-slides/commit/bbb6bd8763f55faabdc6735ac644318b36623226))
+
 # [1.14.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.13.0...v1.14.0) (2026-09-22)
 
 
