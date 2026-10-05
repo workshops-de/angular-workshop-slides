@@ -23,6 +23,27 @@ export class App {}
 
 ---
 
+## Phase 2: Build the `BookCard`{:ts} template
+
+Use this static markup in _book-card.html_. The class names match the styles that are already provided, so the card looks right without writing any CSS.
+
+```html
+<!-- book-card.html -->
+<div class="book-card">
+  <div class="book-card-body">
+    <h3>Moby Dick</h3>
+    <h4>Herman Melville</h4>
+    <p class="book-published">1851-10-18</p>
+    <div class="book-card-actions">
+      <a href="" class="btn-secondary">More</a>
+      <button type="button" class="btn-danger">Delete</button>
+    </div>
+  </div>
+</div>
+```
+
+---
+
 ## Phase 2: Nest `BookCard`{:ts} inside `BooksPage`{:ts}
 
 Add `BookCard{:ts}` to the `imports{:ts}` array of `BooksPage{:ts}`'s `@Component{:ts}` decorator so its selector `app-book-card` becomes available in _books-page.html_.
