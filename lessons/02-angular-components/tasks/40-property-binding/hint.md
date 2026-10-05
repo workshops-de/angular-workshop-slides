@@ -14,5 +14,5 @@ export class BookCard {
 
 ```html
 <!-- book-card.html -->
-<h4 [style]="customStyle()">{{ content().author }}</h4>
+<h4 [style]="customStyle()">Herman Melville</h4>
 ```

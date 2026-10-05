@@ -15,17 +15,18 @@
 - **Build a static template** Open _src/app/books/book-card/book-card.html_ and set up a simple HTML template visualizing book-information by using **static data**.
   - title
   - author
+  - published date
   - details-link
-  - abstract
 
   ```html
   <!-- book-card.html -->
 
   <h3>Moby Dick</h3>
   <h4>Herman Melville</h4>
+  <p>1851-10-18</p>
 
   <!--
-  ... link, abstract ...
+  ... details link ...
   -->
   ```
 

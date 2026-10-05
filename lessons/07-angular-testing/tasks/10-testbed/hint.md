@@ -6,11 +6,11 @@ import { Book } from '../book';
 
 describe('BookCard', () => {
   const book: Book = {
+    id: 'a1b76e0a-6f19-4c9c-9d3e-1b7f5e2a1c7c',
     isbn: '978-3-16-148410-0',
     cover: '',
     title: 'Moby Dick',
-    author: 'Herman Melville',
-    abstract: 'A whale of a tale.'
+    author: 'Herman Melville'
   };
 
   let fixture: ComponentFixture<BookCard>;
@@ -19,7 +19,7 @@ describe('BookCard', () => {
     TestBed.configureTestingModule({});
 
     fixture = TestBed.createComponent(BookCard);
-    fixture.componentRef.setInput('content', book);
+    fixture.componentRef.setInput('book', book);
     fixture.detectChanges();
   });
 
@@ -28,11 +28,9 @@ describe('BookCard', () => {
     expect(title.textContent).toContain('Moby Dick');
   });
 
-  it('should display the author and abstract', () => {
-    const host: HTMLElement = fixture.nativeElement;
-
-    expect(host.querySelector('h4')?.textContent).toContain('Herman Melville');
-    expect(host.querySelector('p')?.textContent).toContain('A whale of a tale.');
+  it('should display the book author', () => {
+    const author = fixture.nativeElement.querySelector('h4');
+    expect(author.textContent).toContain('Herman Melville');
   });
 });
 ```

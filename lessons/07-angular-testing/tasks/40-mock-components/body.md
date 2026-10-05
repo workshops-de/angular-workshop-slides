@@ -1,6 +1,6 @@
 `BooksPage{:ts}` doesn't just depend on a service — it also depends on the `BookCard{:ts}`-Component to render every list item. Right now, your `BooksPage{:ts}` tests implicitly also render `BookCard{:ts}`'s real template. Let's isolate `BooksPage{:ts}` fully by swapping `BookCard{:ts}` for a mock component, using `render(){:ts}`'s `componentImports{:ts}`-shortcut.
 
-- **Create a mock component** above your `describe{:ts}`-block: `@Component({ selector: 'app-book-card', template: '<div data-testid="mock-book-card">{{ content().title }}</div>' }){:ts}`, with `class BookCardMock { content = input.required<Book>(); }{:ts}` — note the selector must match `BookCard{:ts}`'s selector exactly (`app-book-card`) so it slots into the same place in `BooksPage{:ts}`'s template.
+- **Create a mock component** above your `describe{:ts}`-block: `@Component({ selector: 'app-book-card', template: '<div data-testid="mock-book-card">{{ book().title }}</div>' }){:ts}`, with `class BookCardMock { book = input.required<Book>(); }{:ts}` — note the selector must match `BookCard{:ts}`'s selector exactly (`app-book-card`) so it slots into the same place in `BooksPage{:ts}`'s template.
 - **Swap it in**: `await render(BooksPage, { componentImports: [BookCardMock], providers: [...] });{:ts}`.
 - **Write an `it('renders one book card per book, without depending on BookCard internals', ...){:ts}`**:
   - Mock `BooksClient.getAll(){:ts}` to return a resource-shaped stub with two books (like in the previous task).

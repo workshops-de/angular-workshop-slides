@@ -8,26 +8,26 @@ import { Book } from './book';
 
 @Component({
   selector: 'app-book-card',
-  template: `<div data-testid="mock-book-card">{{ content().title }}</div>`
+  template: `<div data-testid="mock-book-card">{{ book().title }}</div>`
 })
 class BookCardMock {
-  content = input.required<Book>();
+  book = input.required<Book>();
 }
 
 describe('BooksPage', () => {
   const mobyDick: Book = {
+    id: 'a1b76e0a-6f19-4c9c-9d3e-1b7f5e2a1c7c',
     isbn: '978-3-16-148410-0',
     cover: '',
     title: 'Moby Dick',
-    author: 'Herman Melville',
-    abstract: 'A whale of a tale.'
+    author: 'Herman Melville'
   };
   const friends: Book = {
+    id: '6f0c1c3e-2a41-4f55-9b0e-3d1d7a9e8b52',
     isbn: '978-0-671-72322-5',
     cover: '',
     title: 'How to win friends',
-    author: 'Dale Carnegie',
-    abstract: 'A self-help classic.'
+    author: 'Dale Carnegie'
   };
 
   function booksClientMock(books: Book[]): Partial<BooksClient> {

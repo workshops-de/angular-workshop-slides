@@ -11,7 +11,12 @@ searchTerm = signal('');
 <!-- books-page.html -->
 
 <!-- search input, sets the signal directly -->
-<input (input)="searchTerm.set($event.target.value)" />
+<input
+  class="search-field"
+  type="search"
+  placeholder="Search..."
+  (input)="searchTerm.set($event.target.value)"
+/>
 ```
 
 ## Filtering with `computed{:ts}`
@@ -34,6 +39,7 @@ booksComputed = computed(() => {
 <!-- books-page.html -->
 
 <!-- use the computed signal -->
-@for (book of booksComputed(); track book.title) {
-<app-book-card ...> ...</app-book-card>
+@for (book of booksComputed(); track book.id) {
+  <app-book-card [book]="book" ... />
+}
 ```

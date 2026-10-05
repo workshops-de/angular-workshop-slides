@@ -4,19 +4,22 @@
 // books-page.ts
 books = signal<Book[]>([
   {
+    id: 'how-to-win-friends',
     title: 'How to win friends',
     author: 'Dale Carnegie',
-    abstract: "How to Win Friends and Influence ..."
+    publishedAt: new Date('1936-10-01')
   },
   {
+    id: 'the-willpower-instinct',
     title: 'The Willpower Instinct: How Self-Control Works ...',
     author: 'Kelly McGonigal',
-    abstract: 'Based on Stanford University ...'
+    publishedAt: new Date('2011-12-29')
   },
   {
+    id: 'start-with-why',
     author: 'Simon Sinek',
     title: 'Start with WHY',
-    abstract: "START WITH WHY shows that the leaders who've ..."
+    publishedAt: new Date('2009-10-29')
   }
 ]);
 ```
@@ -25,7 +28,13 @@ books = signal<Book[]>([
 
 ```html
 <!-- books-page.html -->
-@for(book of books(); track book.title){
-  <app-book-card ... >
-}
+<div class="book-grid">
+  @for (book of books(); track book.id) {
+    <app-book-card
+      [book]="book"
+      (detailClick)="goToBookDetails($event)"
+      (deleteClick)="deleteBook($event)"
+    />
+  }
+</div>
 ```

@@ -14,9 +14,9 @@ Every 1st-class Angular building block can be **unit tested** in isolation. Let'
 - **Write a `describe('BookCard', ...){:ts}`-block**. Inside a `beforeEach(){:ts}`:
   - Call `TestBed.configureTestingModule({}){:ts}`.
   - Create the fixture with `TestBed.createComponent(BookCard){:ts}`.
-  - Define a small test `Book{:ts}`-object and set it via `fixture.componentRef.setInput('content', book){:ts}` — `content{:ts}` is a `required{:ts}` Input, so it must be set before the first `detectChanges(){:ts}`.
+  - Define a small test `Book{:ts}`-object and set it via `fixture.componentRef.setInput('book', book){:ts}` — `book{:ts}` is a `required{:ts}` Input, so it must be set before the first `detectChanges(){:ts}`.
   - Call `fixture.detectChanges(){:ts}`.
 - **Write an `it('should display the book title', ...){:ts}`**: query `fixture.nativeElement.querySelector('h3'){:ts}` and assert its `textContent{:ts}` contains your test book's title with `expect(...).toContain(...){:ts}`.
-- **Write a second `it('should display the author and abstract', ...){:ts}`**: query the `<h4>{:html}` and `<p>{:html}` elements and assert their `textContent{:ts}` contains your test book's `author{:ts}` / `abstract{:ts}`.
+- **Write a second `it('should display the book author', ...){:ts}`**: query the `<h4>{:html}` element and assert its `textContent{:ts}` contains your test book's `author{:ts}`.
 
 Run `npm test{:bash}` — both cases should turn green.
