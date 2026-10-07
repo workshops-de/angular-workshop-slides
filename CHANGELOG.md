@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.15.2](https://github.com/workshops-de/angular-workshop-slides/compare/v1.15.1...v1.15.2) (2026-10-07)
+
+
+### Bug Fixes
+
+* correct service usage instructions to reference BooksPage instead of App ([294067d](https://github.com/workshops-de/angular-workshop-slides/commit/294067df675008461af28dceaf00608d1fb76798))
+
 ## [1.15.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.15.0...v1.15.1) (2026-10-07)
 
 
