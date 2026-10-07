@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.15.3](https://github.com/workshops-de/angular-workshop-slides/compare/v1.15.2...v1.15.3) (2026-10-07)
+
+
+### Bug Fixes
+
+* remove instruction to track by isbn in BooksPage template ([5e200bc](https://github.com/workshops-de/angular-workshop-slides/commit/5e200bced1b8b5c5fac7b4984a30c7fafe2eac85))
+
 ## [1.15.2](https://github.com/workshops-de/angular-workshop-slides/compare/v1.15.1...v1.15.2) (2026-10-07)
 
 
