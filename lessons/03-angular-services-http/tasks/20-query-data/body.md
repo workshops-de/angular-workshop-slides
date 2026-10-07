@@ -30,8 +30,4 @@ Time to swap the hard-coded books for real data. Angular's `httpResource{:ts}` g
 
 ---
 
-- **Track by isbn** Use the `isbn{:ts}` property of `Book{:ts}` as key for the track function (`@for{:html}`) in the `BooksPage{:ts}` template.
-
----
-
 - **Check the result** Start the app, confirm the books now come from the API and that the loading message briefly appears on a reload.
