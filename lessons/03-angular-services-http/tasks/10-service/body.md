@@ -1,2 +1,2 @@
 - **Generate the service** Execute the following Angular CLI command: `ng generate service books/books-client{:bash}`. Implement the method `getAll(){:ts}` and make it return the example books from _App_.
-- **Use the service in `App{:ts}`** Remove the example books from _BooksPage_. Inject `BooksClient{:ts}` into _App_ using `inject(){:ts}` and replace the example books of _App_ by calling `getAll(){:ts}` from `BooksClient{:ts}`.
+- **Use the service in `BooksPage{:ts}`** Remove the example books from _BooksPage_. Inject `BooksClient{:ts}` into _BooksPage_ using `inject(){:ts}` and replace the example books of _BooksPage_ by calling `getAll(){:ts}` from `BooksClient{:ts}`.
