@@ -1,8 +1,6 @@
 The API is an external system - never trust its payload blindly. [valibot](https://valibot.dev) lets us describe the expected shape once and fail fast when the data drifts.
 
----
-
-- **Add valibot** Install the dependency: `npm install valibot{:bash}`.
+`valibot` is already pre-installed - there is nothing to install.
 
 ---
 

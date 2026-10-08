@@ -1,11 +1,3 @@
-## Install valibot
-
-```bash
-npm install valibot
-```
-
----
-
 ## The schema
 
 ```ts
