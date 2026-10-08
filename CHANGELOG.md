@@ -2,6 +2,20 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.16.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.15.3...v1.16.0) (2026-10-08)
+
+
+### Bug Fixes
+
+* correct directive names in body.md for book marker ([d011d6b](https://github.com/workshops-de/angular-workshop-slides/commit/d011d6b7edbbf04bdbc2b4082bcbc12a4895f306))
+* update installation instructions for valibot in body.md and hint.md ([fa6cd3a](https://github.com/workshops-de/angular-workshop-slides/commit/fa6cd3aab3e5344f90a96104cff696823d7f5efa))
+* update subproject commit reference in sample solution ([966e4d6](https://github.com/workshops-de/angular-workshop-slides/commit/966e4d6abc0608c909e9084729f1ddda47607c31))
+
+
+### Features
+
+* refactor book marker service and update data loading in BooksPage ([6ad81e2](https://github.com/workshops-de/angular-workshop-slides/commit/6ad81e2207e781002b578d5104bfa650f32ab3db))
+
 ## [1.15.3](https://github.com/workshops-de/angular-workshop-slides/compare/v1.15.2...v1.15.3) (2026-10-07)
 
 
