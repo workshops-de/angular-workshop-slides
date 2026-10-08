@@ -2,6 +2,14 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.16.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.16.0...v1.16.1) (2026-10-08)
+
+
+### Bug Fixes
+
+* update book loading and template binding in BookDetailPage ([4269d12](https://github.com/workshops-de/angular-workshop-slides/commit/4269d124b3b78e439aff329b40f3766381d0e11e))
+* update subproject commit reference in sample solution ([938286c](https://github.com/workshops-de/angular-workshop-slides/commit/938286c140779ab9f7f466a3d27b0f6e6487d84e))
+
 # [1.16.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.15.3...v1.16.0) (2026-10-08)
 
 
