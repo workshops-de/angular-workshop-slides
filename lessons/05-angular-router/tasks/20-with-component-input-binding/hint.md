@@ -11,12 +11,11 @@ provideRouter(routes, withComponentInputBinding());
 
 ```ts
 // book-detail-page.ts
-import { httpResource } from '@angular/common/http';
-import { Component, computed, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { Book } from '../book';
 import { BookDetail } from '../book-detail/book-detail';
+import { BooksClient } from '../books-client';
 
 @Component({
   selector: 'app-book-detail-page',
@@ -24,19 +23,16 @@ import { BookDetail } from '../book-detail/book-detail';
   templateUrl: './book-detail-page.html'
 })
 export class BookDetailPage {
-  readonly isbn = input('');
+  private booksClient = inject(BooksClient);
+  isbn = input('');
 
-  private readonly bookResource = httpResource<Book>(
-    () => `http://localhost:4730/books/${this.isbn()}`
-  );
-
-  protected readonly book = computed(() => this.bookResource.value());
+  bookResource = this.booksClient.getByIsbn(this.isbn);
 }
 ```
 
 ```html
 <!-- book-detail-page.html -->
-@if (book(); as book) {
+@if (bookResource.value(); as book) {
   <app-book-detail [book]="book" />
 }
 ```
