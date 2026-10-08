@@ -2,11 +2,11 @@ Filtering the list is good - showing _why_ a book matched is better. Wrapping th
 
 ---
 
-- **Generate the directive** Run `ng generate directive books/marker{:bash}`. It gets the selector `[appMarker]{:html}`.
+- **Generate the directive** Run `ng generate directive books/book-marker{:bash}`. It gets the selector `[appBookMarker]{:html}`.
 
 ---
 
-- **Add the inputs** Give `Marker{:ts}` two `input{:ts}`s: `rawText{:ts}` (`input.required<string | undefined>(){:ts}`, the text to render) and `markTerm{:ts}` (`input(''){:ts}`, the current search term).
+- **Add the inputs** Give `BookMarker{:ts}` two `input{:ts}`s: `rawText{:ts}` (`input.required<string | undefined>(){:ts}`, the text to render) and `markTerm{:ts}` (`input(''){:ts}`, the current search term).
 
 ---
 
@@ -14,7 +14,7 @@ Filtering the list is good - showing _why_ a book matched is better. Wrapping th
 
 ---
 
-- **Use the directive in `BookCard{:ts}`** In _book-card.ts_ add a `markTerm = input(''){:ts}` and register `Marker{:ts}` in `imports{:ts}`. In _book-card.html_ replace the interpolated `title{:ts}` and `author{:ts}` with `appMarker{:ts}`, passing `[rawText]{:html}` and `[markTerm]{:html}`.
+- **Use the directive in `BookCard{:ts}`** In _book-card.ts_ add a `markTerm = input(''){:ts}` and register `BookMarker{:ts}` in `imports{:ts}`. In _book-card.html_ replace the interpolated `title{:ts}` and `author{:ts}` with `appBookMarker{:ts}`, passing `[rawText]{:html}` and `[markTerm]{:html}`.
 
 ---
 
