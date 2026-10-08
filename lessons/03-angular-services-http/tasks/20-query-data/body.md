@@ -14,11 +14,15 @@ Time to swap the hard-coded books for real data. Angular's `httpResource{:ts}` g
 
 ---
 
-- **Load data via `httpResource{:ts}`** In _books-client.ts_ change `getAll(){:ts}` to return an `httpResource<Book[]>{:ts}`. Point it at `http://localhost:4730/books`, pass `_start{:ts}`, `_end{:ts}`, `_sort{:ts}` and `_order{:ts}` as `params{:ts}` to page and sort the result, and set `defaultValue: []{:ts}` so the list is never `undefined{:ts}`.
+- **Generate the service** Execute the following Angular CLI command: `ng generate service books/books-client{:bash}`.
 
 ---
 
-- **Consume the resource in `BooksPage{:ts}`** Rename `books{:ts}` to `booksResource{:ts}` and read the loaded data via `booksResource.value(){:ts}` inside `booksComputed{:ts}`.
+- **Load data via `httpResource{:ts}`** In _books-client.ts_ add a method `getAll(){:ts}` that returns an `httpResource<Book[]>{:ts}`. Point it at `http://localhost:4730/books`, pass `_start{:ts}`, `_end{:ts}`, `_sort{:ts}` and `_order{:ts}` as `params{:ts}` to page and sort the result, and set `defaultValue: []{:ts}` so the list is never `undefined{:ts}`.
+
+---
+
+- **Consume the resource in `BooksPage{:ts}`** Remove the example books from _BooksPage_. Inject `BooksClient{:ts}` using `inject(){:ts}` and store the result of `getAll(){:ts}` in a `booksResource{:ts}` property. Read the loaded data via `booksResource.value(){:ts}` inside `booksComputed{:ts}`.
 
 ---
 

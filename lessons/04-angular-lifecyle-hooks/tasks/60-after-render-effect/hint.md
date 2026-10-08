@@ -1,13 +1,13 @@
 ## Swap `effect{:ts}` for `afterRenderEffect{:ts}`
 
 ```ts
-// marker.ts
+// book-marker.ts
 import { Directive, ElementRef, Renderer2, afterRenderEffect, inject, input } from '@angular/core';
 
 import { classifyMarkSegments } from '@workshop-support';
 
-@Directive({ selector: '[appMarker]' })
-export class Marker {
+@Directive({ selector: '[appBookMarker]' })
+export class BookMarker {
   private renderer = inject(Renderer2);
   private host = inject<ElementRef<HTMLElement>>(ElementRef);
 

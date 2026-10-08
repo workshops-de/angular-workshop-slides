@@ -38,6 +38,14 @@ export interface Book {
 
 ---
 
+## Generate with Angular CLI
+
+```bash
+ng generate service books/books-client
+```
+
+---
+
 ## Loading books via `httpResource{:ts}`
 
 ```typescript
@@ -73,13 +81,16 @@ export class BooksClient {
 
 ```typescript
 // books-page.ts
+booksClient = inject(BooksClient);
+bookMarkerStore = inject(BookMarkerStore);
+
 booksResource = this.booksClient.getAll();
 
 booksComputed = computed(() => {
-  const searchTerm = this.searchTerm();
+  const markTerm = this.bookMarkerStore.markTerm();
   const books = this.booksResource.value();
 
-  return books.filter(book => bookMatches(book, searchTerm));
+  return books.filter(book => bookMatches(book, markTerm));
 });
 ```
 
