@@ -58,18 +58,3 @@ export class App {}
   </main>
 </div>
 ```
-
-## Sidebar links
-
-```html
-<!-- workshop-support/shell/sidebar/sidebar.html -->
-<a routerLink="/" routerLinkActive="sidebar-link-active" [routerLinkActiveOptions]="{ exact: true }" class="sidebar-link">
-  <!-- Home -->
-</a>
-<a routerLink="/books" routerLinkActive="sidebar-link-active" [routerLinkActiveOptions]="{ exact: true }" class="sidebar-link">
-  <!-- Books -->
-</a>
-<a routerLink="/books/create" routerLinkActive="sidebar-link-active" class="sidebar-link">
-  <!-- New Book -->
-</a>
-```

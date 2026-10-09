@@ -14,10 +14,8 @@
 ---
 
 - **Add the router outlet** Open the template of `App{:ts}` (_app.html_). Replace `<app-books-page />{:html}` with `<router-outlet />{:html}`. Adjust the `imports{:ts}`-Array of `App{:ts}` accordingly (remove `BooksPage{:ts}`, add `RouterOutlet{:ts}`).
-- **Verify** You can test the navigation already by typing the different URLs in the browser.
+- **Verify** You can test the navigation already by typing the different URLs in the browser or by clicking the links in the sidebar (they are already wired up).
 
 ---
-
-- **Wire up the navigation** `App{:ts}` already renders a `Sidebar{:ts}` from `@workshop-support` with 3 placeholder links (Home, Books, New Book). Open `src/app/workshop-support/shell/sidebar/sidebar.html` and add `routerLink{:ts}`/`routerLinkActive{:ts}` to each link: `/`, `/books` and `/books/create`.
 
 > Don't forget: the `BookCreatePage{:ts}` you copied doesn't do anything functional yet — that's expected, its Signal Forms wiring is the topic of the next lesson.
