@@ -22,6 +22,10 @@ Time to swap the hard-coded books for real data. Angular's `httpResource{:ts}` g
 
 ---
 
+- **Prepare loading a single book** In _books-client.ts_ add a second method `getByIsbn(isbn){:ts}` that returns an `httpResource<Book>{:ts}` for a single book. It takes the ISBN as a `Signal<string>{:ts}` and requests _/books/:isbn_ on the same API. We do not use it yet - it is prepared here, so we can simply call it in a later task.
+
+---
+
 - **Consume the resource in `BooksPage{:ts}`** Remove the example books from _BooksPage_. Inject `BooksClient{:ts}` using `inject(){:ts}` and store the result of `getAll(){:ts}` in a `booksResource{:ts}` property. Read the loaded data via `booksResource.value(){:ts}` inside `booksComputed{:ts}`.
 
 ---

@@ -48,10 +48,12 @@ ng generate service books/books-client
 
 ## Loading books via `httpResource{:ts}`
 
+Both methods live in the same service:
+
 ```typescript
 // books-client.ts
 import { httpResource } from '@angular/common/http';
-import { Service } from '@angular/core';
+import { Service, Signal } from '@angular/core';
 import { Book } from './book';
 
 @Service()
@@ -72,8 +74,14 @@ export class BooksClient {
       { defaultValue: [] }
     );
   }
+
+  getByIsbn(isbn: Signal<string>) {
+    return httpResource<Book>(() => `${this.#baseUrl}/books/${isbn()}`);
+  }
 }
 ```
+
+`getByIsbn(){:ts}` is not used in this task. It is only prepared for later. Because it reads the `isbn` signal inside the request function, the resource reloads automatically whenever the ISBN changes.
 
 ---
 
