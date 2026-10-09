@@ -2,6 +2,14 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.16.3](https://github.com/workshops-de/angular-workshop-slides/compare/v1.16.2...v1.16.3) (2026-10-09)
+
+
+### Bug Fixes
+
+* update navigation verification and clean up sidebar links in hints ([b78afb5](https://github.com/workshops-de/angular-workshop-slides/commit/b78afb548e475d3f60194e9d400abdc0edec94c3))
+* update subproject commit reference in sample solution ([fe9765f](https://github.com/workshops-de/angular-workshop-slides/commit/fe9765ffb4c6b27ceb970db48a80e58bb601dd43))
+
 ## [1.16.2](https://github.com/workshops-de/angular-workshop-slides/compare/v1.16.1...v1.16.2) (2026-10-09)
 
 
