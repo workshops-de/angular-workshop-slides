@@ -35,11 +35,20 @@ export class BookMarkerStore {
 
 ## Using the service in `BooksPage{:ts}`
 
+The service is provided in the component's `providers{:ts}`. Child components like _BookCard_ find it through dependency injection.
+
 ```ts
 // books-page.ts
-import { computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { BookMarkerStore } from '../book-marker-store';
 
+@Component({
+  selector: 'app-books-page',
+  templateUrl: './books-page.html',
+  imports: [BookCard],
+  // Local provider: one instance per BooksPage, shared with all BookCards below it.
+  providers: [BookMarkerStore]
+})
 export class BooksPage {
   bookMarkerStore = inject(BookMarkerStore);
 

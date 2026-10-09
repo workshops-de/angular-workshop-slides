@@ -1,4 +1,4 @@
-The search term is needed in more than one place: `BooksPage{:ts}` filters with it and every `BookCard{:ts}` highlights it. Instead of passing it down through inputs, we move it into a service that both components can inject.
+The search term is needed in more than one place: `BooksPage{:ts}` filters with it and every `BookCard{:ts}` highlights it. Instead of passing it down through inputs, we move it into a service that both components can inject. The service is provided locally by _BooksPage_, so every `BookCard{:ts}` below it shares the same instance.
 
 ---
 
@@ -14,11 +14,11 @@ The search term is needed in more than one place: `BooksPage{:ts}` filters with 
 
 ---
 
-- **Use the service in `BooksPage{:ts}`** Remove the `searchTerm{:ts}` signal and the `constructor{:ts}` with its `effect{:ts}` from _BooksPage_. Inject `BookMarkerStore{:ts}` using `inject(){:ts}` and read `markTerm(){:ts}` inside `booksComputed{:ts}` instead of `searchTerm(){:ts}`. In _books-page.html_ bind the search field with `[value]{:html}` to `bookMarkerStore.markTerm(){:ts}` and call `bookMarkerStore.setMarkTerm($event.target.value){:ts}` on `(input){:html}`.
+- **Use the service in `BooksPage{:ts}`** Remove the `searchTerm{:ts}` signal and the `constructor{:ts}` with its `effect{:ts}` from _BooksPage_. Provide `BookMarkerStore{:ts}` locally with `providers: [BookMarkerStore]{:ts}` in the `@Component{:ts}` decorator, inject it using `inject(){:ts}` and read `markTerm(){:ts}` inside `booksComputed{:ts}` instead of `searchTerm(){:ts}`. In _books-page.html_ bind the search field with `[value]{:html}` to `bookMarkerStore.markTerm(){:ts}` and call `bookMarkerStore.setMarkTerm($event.target.value){:ts}` on `(input){:html}`.
 
 ---
 
-- **Use the service in `BookCard{:ts}`** Remove the `markTerm{:ts}` input from _BookCard_ and inject `BookMarkerStore{:ts}` instead. In _book-card.html_ pass `bookMarkerStore.markTerm(){:ts}` to the `[markTerm]{:html}` binding of the directive.
+- **Use the service in `BookCard{:ts}`** Remove the `markTerm{:ts}` input from _BookCard_ and inject `BookMarkerStore{:ts}` instead. Do not provide it again here: _BookCard_ receives the instance of _BooksPage_. In _book-card.html_ pass `bookMarkerStore.markTerm(){:ts}` to the `[markTerm]{:html}` binding of the directive.
 
 ---
 
