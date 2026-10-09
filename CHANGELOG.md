@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.17.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.16.3...v1.17.0) (2026-10-09)
+
+
+### Features
+
+* prepare method to load a single book by ISBN in BooksClient service ([884d4a0](https://github.com/workshops-de/angular-workshop-slides/commit/884d4a0bc14f15550f14a85c377d48796267c15a))
+
 ## [1.16.3](https://github.com/workshops-de/angular-workshop-slides/compare/v1.16.2...v1.16.3) (2026-10-09)
 
 
