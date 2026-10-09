@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.16.2](https://github.com/workshops-de/angular-workshop-slides/compare/v1.16.1...v1.16.2) (2026-10-09)
+
+
+### Bug Fixes
+
+* update service usage in BooksPage and BookCard components ([10d4ae7](https://github.com/workshops-de/angular-workshop-slides/commit/10d4ae76b14b3264e086c268b961868e549ac5dc))
+
 ## [1.16.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.16.0...v1.16.1) (2026-10-08)
 
 
