@@ -3,7 +3,7 @@
 ## Phase 1: Integrate an existing Component
 
 - **Import `Sidebar`{:ts}** Open _src/app/app.ts_ and import `Sidebar{:ts}` from `@workshop-support`. Add it to the `imports{:ts}` array of the `@Component{:ts}` decorator.
-- **Use it in the template** Switch to _src/app/app.html_ and place `<app-sidebar />{:html}` in the template. `Sidebar{:ts}` is already fully built — integrating it is just import, register, and use its selector. No generation needed.
+- **Use it in the template** Switch to _src/app/app.html_ and wrap the existing content in a `<div class="app-shell">{:html}`. Place `<app-sidebar class="contents" />{:html}` as its first child and move `<app-welcome>{:html}` into a `<main class="app-content">{:html}` next to it. `Sidebar{:ts}` is already fully built — integrating it is just import, register, and use its selector. No generation needed.
 - **Verify** Check [localhost:4200](http://localhost:4200). The sidebar should now be visible.
 
 ---

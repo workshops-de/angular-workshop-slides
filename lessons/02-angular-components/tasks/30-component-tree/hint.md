@@ -17,8 +17,13 @@ export class App {}
 
 ```html
 <!-- app.html -->
-<app-sidebar />
-<app-welcome>{{ warmWelcome() }}</app-welcome>
+<div class="app-shell">
+  <app-sidebar class="contents" />
+
+  <main class="app-content">
+    <app-welcome>{{ warmWelcome() }}</app-welcome>
+  </main>
+</div>
 ```
 
 ---
@@ -90,6 +95,11 @@ export class App {}
 
 ```html
 <!-- app.html -->
-<app-sidebar />
-<app-books-page />
+<div class="app-shell">
+  <app-sidebar class="contents" />
+
+  <main class="app-content">
+    <app-books-page />
+  </main>
+</div>
 ```
