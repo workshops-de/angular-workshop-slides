@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.17.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.17.0...v1.17.1) (2026-10-19)
+
+
+### Bug Fixes
+
+* **02-angular-components:** wrap sidebar and content in app-shell layout ([9b9287a](https://github.com/workshops-de/angular-workshop-slides/commit/9b9287a87ac79deb48d7dca3570d8b06fac99c1d))
+
 # [1.17.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.16.3...v1.17.0) (2026-10-09)
 
 
