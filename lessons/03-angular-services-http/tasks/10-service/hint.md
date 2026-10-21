@@ -12,7 +12,8 @@ ng generate service books/book-marker-store
 // book-marker-store.ts
 import { effect, Service, signal } from '@angular/core';
 
-@Service()
+// autoProvided: false — the service is only available where it is provided (BooksPage).
+@Service({ autoProvided: false })
 export class BookMarkerStore {
   // Initial value comes from a non-reactive, imperative API (localStorage).
   #markTerm = signal(localStorage.getItem('books.markTerm') ?? '');
@@ -35,7 +36,7 @@ export class BookMarkerStore {
 
 ## Using the service in `BooksPage{:ts}`
 
-The service is provided in the component's `providers{:ts}`. Child components like _BookCard_ find it through dependency injection.
+The service is provided in the component's `providers{:ts}`. Everything below _BooksPage_, like the directive inside _BookCard_, finds it through dependency injection.
 
 ```ts
 // books-page.ts
@@ -76,27 +77,6 @@ export class BooksPage {
 
 ---
 
-## Using the service in `BookCard{:ts}`
-
-```ts
-// book-card.ts
-import { inject } from '@angular/core';
-import { BookMarkerStore } from '../book-marker-store';
-
-export class BookCard {
-  bookMarkerStore = inject(BookMarkerStore);
-
-  // the `markTerm` input is gone
-}
-```
-
-```html
-<!-- book-card.html -->
-<h3 appBookMarker [rawText]="currentBook.title" [markTerm]="bookMarkerStore.markTerm()"></h3>
-```
-
----
-
 ## Renaming the directive
 
 ```ts
@@ -117,4 +97,50 @@ import { BookMarker } from '../book-marker';
   imports: [DatePipe, BookMarker]
 })
 export class BookCard {}
+```
+
+---
+
+## Using the service in `BookMarker{:ts}`
+
+The directive reads the mark term directly from the service. It is not provided again, so the directive receives the instance of _BooksPage_.
+
+```ts
+// book-marker.ts
+import { Directive, ElementRef, Renderer2, effect, inject, input } from '@angular/core';
+import { BookMarkerStore } from './book-marker-store';
+
+@Directive({ selector: '[appBookMarker]' })
+export class BookMarker {
+  private renderer = inject(Renderer2);
+  private host = inject<ElementRef<HTMLElement>>(ElementRef);
+
+  private bookMarkerStore = inject(BookMarkerStore);
+
+  rawText = input.required<string | undefined>();
+  // the `markTerm` input is gone
+
+  constructor() {
+    effect(() => this.markText(this.rawText(), this.bookMarkerStore.markTerm()));
+  }
+
+  // markText(...) stays unchanged
+}
+```
+
+---
+
+## Cleaning up `BookCard{:ts}`
+
+```ts
+// book-card.ts
+export class BookCard {
+  // the `markTerm` input is gone
+}
+```
+
+```html
+<!-- book-card.html -->
+<h3 appBookMarker [rawText]="currentBook.title"></h3>
+<h4 [style]="customStyle()" appBookMarker [rawText]="currentBook.author"></h4>
 ```

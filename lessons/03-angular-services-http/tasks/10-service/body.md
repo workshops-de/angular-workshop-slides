@@ -1,4 +1,4 @@
-The search term is needed in more than one place: `BooksPage{:ts}` filters with it and every `BookCard{:ts}` highlights it. Instead of passing it down through inputs, we move it into a service that both components can inject. The service is provided locally by _BooksPage_, so every `BookCard{:ts}` below it shares the same instance.
+The search term is needed in more than one place: `BooksPage{:ts}` filters with it and the marker directive in every `BookCard{:ts}` highlights it. Instead of passing it down through inputs, we move it into a service that both can inject. The service is provided locally by _BooksPage_, so every directive below it shares the same instance.
 
 ---
 
@@ -6,7 +6,7 @@ The search term is needed in more than one place: `BooksPage{:ts}` filters with 
 
 ---
 
-- **Hold the mark term** In _book-marker-store.ts_ add a private `#markTerm{:ts}` signal whose initial value comes from `localStorage.getItem('books.markTerm') ?? ''{:ts}`. Expose it read-only as `markTerm = this.#markTerm.asReadonly(){:ts}` and add a method `setMarkTerm(markTerm: string){:ts}` that sets the private signal.
+- **Hold the mark term** In _book-marker-store.ts_ change the decorator to `@Service({ autoProvided: false }){:ts}`, because the service will only be provided by _BooksPage_. Add a private `#markTerm{:ts}` signal whose initial value comes from `localStorage.getItem('books.markTerm') ?? ''{:ts}`. Expose it read-only as `markTerm = this.#markTerm.asReadonly(){:ts}` and add a method `setMarkTerm(markTerm: string){:ts}` that sets the private signal.
 
 ---
 
@@ -18,11 +18,15 @@ The search term is needed in more than one place: `BooksPage{:ts}` filters with 
 
 ---
 
-- **Use the service in `BookCard{:ts}`** Remove the `markTerm{:ts}` input from _BookCard_ and inject `BookMarkerStore{:ts}` instead. Do not provide it again here: _BookCard_ receives the instance of _BooksPage_. In _book-card.html_ pass `bookMarkerStore.markTerm(){:ts}` to the `[markTerm]{:html}` binding of the directive.
+- **Rename the directive** To match the new service name, rename `Marker{:ts}` to `BookMarker{:ts}`: rename the file _marker.ts_ to _book-marker.ts_, the class to `BookMarker{:ts}` and the selector to `[appBookMarker]{:html}`. Update the usages in _book-card.ts_ and _book-card.html_.
 
 ---
 
-- **Rename the directive** To match the new service name, rename `Marker{:ts}` to `BookMarker{:ts}`: rename the file _marker.ts_ to _book-marker.ts_, the class to `BookMarker{:ts}` and the selector to `[appBookMarker]{:html}`. Update the usages in _book-card.ts_ and _book-card.html_.
+- **Use the service in `BookMarker{:ts}`** In _book-marker.ts_ remove the `markTerm{:ts}` input and inject `BookMarkerStore{:ts}` instead. Inside the `effect{:ts}` read `bookMarkerStore.markTerm(){:ts}` instead of the input. Do not provide the service again: the directive receives the instance of _BooksPage_.
+
+---
+
+- **Clean up `BookCard{:ts}`** _BookCard_ no longer needs the mark term. Remove its `markTerm{:ts}` input and remove the `[markTerm]{:html}` bindings from the `appBookMarker{:html}` elements in _book-card.html_.
 
 ---
 
