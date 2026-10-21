@@ -1,22 +1,46 @@
+## Creating the user state
+
 ```ts
-@Injectable({
-  providedIn: 'root'
-})
+// src/app/user-state.ts
+import { Service, signal } from '@angular/core';
+
+@Service()
 export class UserState {
-  isLoggedIn = true;
+  // Hard-coded for this exercise: switch to `false` to see the guard block the books routes.
+  readonly isLoggedIn = signal(true);
 }
 ```
 
+---
+
+## Creating the `canMatch{:ts}`-Guard
+
+A `CanMatchFn{:ts}` runs in an injection context, so you can use `inject(){:ts}` directly.
+
 ```ts
-const service = inject(UserState);
+// src/app/is-user-authenticated.ts
+import { inject } from '@angular/core';
+import { CanMatchFn } from '@angular/router';
+
+import { UserState } from './user-state';
+
+export const isUserAuthenticatedGuardFn: CanMatchFn = () => {
+  const userState = inject(UserState);
+
+  return userState.isLoggedIn();
+};
 ```
 
 ```ts
-{
-  path: 'books',
-  //...
-  canMatch: [
-  //...
-  ]
-}
+// src/app/app.routes.ts
+import { isUserAuthenticatedGuardFn } from './is-user-authenticated';
+
+export const routes: Routes = [
+  // ...
+  {
+    path: 'books',
+    loadChildren: () => import('./books/book.routes').then(mod => mod.bookRoutes),
+    canMatch: [isUserAuthenticatedGuardFn]
+  }
+];
 ```
