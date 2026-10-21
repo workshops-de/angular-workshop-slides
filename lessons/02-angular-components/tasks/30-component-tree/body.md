@@ -16,7 +16,10 @@
   - title
   - author
   - published date
-  - details-link
+  - a _More_ link (`<a>{:html}`) to the book details
+  - a _Delete_ button (`<button>{:html}`)
+
+  The link and the button do nothing yet. In later tasks you will react to their clicks.
 
   ```html
   <!-- book-card.html -->
@@ -26,7 +29,7 @@
   <p>1851-10-18</p>
 
   <!--
-  ... details link ...
+  ... More link and Delete button ...
   -->
   ```
 
