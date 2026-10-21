@@ -2,6 +2,16 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.17.2](https://github.com/workshops-de/angular-workshop-slides/compare/v1.17.1...v1.17.2) (2026-10-21)
+
+
+### Bug Fixes
+
+* **02-angular-components:** align directive names in task with solution ([86f65e6](https://github.com/workshops-de/angular-workshop-slides/commit/86f65e68e2755fbcf28ce5fe14958a8c0c5d1e31))
+* **02-angular-components:** mention more link and delete button in component tree task ([da6c6e1](https://github.com/workshops-de/angular-workshop-slides/commit/da6c6e1a4f2e979519099ad1e46d0f3622d9ceb3))
+* **03-angular-services-http:** inject mark term store into BookMarker directive ([32a480d](https://github.com/workshops-de/angular-workshop-slides/commit/32a480dd9400e6df59abd6c02501d5b7a0c6e8ad))
+* **05-angular-router,07-angular-testing:** align tasks with restored solution tags ([994fe2c](https://github.com/workshops-de/angular-workshop-slides/commit/994fe2c083d86318c0f67c4a5234db40c9c7345a))
+
 ## [1.17.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.17.0...v1.17.1) (2026-10-19)
 
 
