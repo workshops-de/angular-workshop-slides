@@ -3,7 +3,7 @@ Let's reuse everything we learned to build an Edit-Page for an existing book. Th
 - **Copy the prepared `BookEditPage{:ts}`** Copy the folders `book-edit-page` and `book-edit-form` from `workshop-support/books/` into `src/app/books/`.
 - **Add the route** Configure a new Route inside `book.routes.ts`, displaying the `BookEditPage{:ts}` (path: `edit/:isbn`), lazy-loaded like the existing `detail/:isbn`-Route.
 
-> The "Edit"-Link on `BookDetailPage{:ts}` already points to this route — nothing to do there.
+- **Wire the Edit link** Now that the route exists, open _book-detail-page.html_ and add `[routerLink]="['/books', 'edit', isbn()]"{:html}` to the _Edit_ link. The comment above the link shows the binding.
 
 ---
 

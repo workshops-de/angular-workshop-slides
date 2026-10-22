@@ -6,6 +6,11 @@
 }
 ```
 
+```html
+<!-- book-detail-page.html -->
+<a [routerLink]="['/books', 'edit', isbn()]" class="btn-secondary">Edit</a>
+```
+
 ```typescript
 // books-client.ts
 import { httpResource } from '@angular/common/http';
