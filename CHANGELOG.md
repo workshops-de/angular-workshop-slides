@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.17.4](https://github.com/workshops-de/angular-workshop-slides/compare/v1.17.3...v1.17.4) (2026-10-22)
+
+
+### Bug Fixes
+
+* **05-angular-router:** declare isbn route input as required ([8311686](https://github.com/workshops-de/angular-workshop-slides/commit/8311686c4730d3861196fec4f92131e69e6afdc1))
+
 ## [1.17.3](https://github.com/workshops-de/angular-workshop-slides/compare/v1.17.2...v1.17.3) (2026-10-22)
 
 
