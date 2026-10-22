@@ -24,7 +24,8 @@ import { BooksClient } from '../books-client';
 })
 export class BookDetailPage {
   private booksClient = inject(BooksClient);
-  isbn = input('');
+  // The route books/detail/:isbn always provides the param.
+  readonly isbn = input.required<string>();
 
   bookResource = this.booksClient.getByIsbn(this.isbn);
 }

@@ -8,7 +8,7 @@
 ---
 
 - **Enable Component Input Binding** Add `withComponentInputBinding(){:ts}` as a second argument to `provideRouter(routes, ...){:ts}` in `app.config.ts`.
-- **Read the route param as an input** Inside `BookDetailPage{:ts}`, declare `readonly isbn = input('');{:ts}`. Thanks to Component Input Binding, Angular automatically sets this input to the current value of the `:isbn` route param — no `ActivatedRoute{:ts}` needed.
+- **Read the route param as an input** Inside `BookDetailPage{:ts}`, declare `readonly isbn = input.required<string>();{:ts}`. Thanks to Component Input Binding, Angular automatically sets this input to the current value of the `:isbn` route param — no `ActivatedRoute{:ts}` needed. The input is `required{:ts}` because the route always provides `:isbn`.
 
 ---
 
