@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.17.3](https://github.com/workshops-de/angular-workshop-slides/compare/v1.17.2...v1.17.3) (2026-10-22)
+
+
+### Bug Fixes
+
+* **02-angular-components:** add cover placeholder step to property binding task ([0f496d2](https://github.com/workshops-de/angular-workshop-slides/commit/0f496d291c3e5783c6091672d1eaf8157ad32fe9))
+
 ## [1.17.2](https://github.com/workshops-de/angular-workshop-slides/compare/v1.17.1...v1.17.2) (2026-10-21)
 
 
