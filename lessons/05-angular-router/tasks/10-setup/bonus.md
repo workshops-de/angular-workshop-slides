@@ -1,13 +1,15 @@
-#### navigation.html
+- **Catch unknown URLs** Add a wildcard route `{ path: '**', redirectTo: '' }{:ts}` as the **last** entry of `routes{:ts}`. Open [localhost:4200/foo](http://localhost:4200/foo): instead of an empty page you land on the start page. Move the wildcard route to the top for a moment: now every URL redirects, because the router takes the first route that matches.
 
-```html
-<ul class="m-0 flex list-none bg-gray-800 p-0">
-  <li><a routerLink="/books" routerLinkActive="bg-green-500" class="block px-4 py-3.5 text-center text-white hover:bg-black">Books</a></li>
-  <li><a routerLink="/about" routerLinkActive="bg-green-500" class="block px-4 py-3.5 text-center text-white hover:bg-black">About</a></li>
-</ul>
+---
+
+- **Show page titles** Give each route a `title{:ts}`, e.g. `title: 'Books'{:ts}`. Navigate through the app and watch the title of the browser tab change.
+
+```ts
+// app.routes.ts
+export const routes: Routes = [
+  { path: '', component: Welcome, pathMatch: 'full', title: 'Welcome' },
+  { path: 'books', component: BooksPage, title: 'Books' },
+  { path: 'books/create', component: BookCreatePage, title: 'Create Book' },
+  { path: '**', redirectTo: '' }
+];
 ```
-
-##### Bonus Task
-Find a way to dynamically highlight active navigation items using Tailwind utility classes.
-
-<details> <summary>Bonus hint</summary>`routerLinkActive="bg-green-500"`</details>
