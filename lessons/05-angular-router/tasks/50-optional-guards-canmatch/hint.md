@@ -44,3 +44,28 @@ export const routes: Routes = [
   }
 ];
 ```
+
+---
+
+## Adding the fallback route
+
+When `canMatch{:ts}` returns `false{:ts}`, the router skips the route and tries the next one. A second route with the same path catches that case. It must come **after** the protected route.
+
+```ts
+// src/app/app.routes.ts
+import { LoginHint, Welcome } from '@workshop-support';
+
+export const routes: Routes = [
+  // ...
+  {
+    path: 'books',
+    loadChildren: () => import('./books/book.routes').then(mod => mod.bookRoutes),
+    canMatch: [isUserAuthenticatedGuardFn]
+  },
+  {
+    // canMatch rejected the route above, so the router keeps looking and lands here.
+    path: 'books',
+    component: LoginHint
+  }
+];
+```
