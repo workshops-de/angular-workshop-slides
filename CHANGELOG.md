@@ -2,6 +2,20 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.18.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.17.4...v1.18.0) (2026-10-22)
+
+
+### Bug Fixes
+
+* **06-angular-forms:** wire edit link in edit book task ([8043aea](https://github.com/workshops-de/angular-workshop-slides/commit/8043aea2b1bdd96539bdd8064477db8b3d8d3160))
+
+
+### Features
+
+* **05-angular-router:** add bonus to delete a book from the detail page ([8401c3d](https://github.com/workshops-de/angular-workshop-slides/commit/8401c3d3470399413dcb185e3ab88b7b4beb8c82))
+* **05-angular-router:** replace obsolete setup bonus with wildcard route and page titles ([b06b304](https://github.com/workshops-de/angular-workshop-slides/commit/b06b3042390dd2dbd12a67e86b96ccd37ab8c16d))
+* **05-angular-router:** show canMatch fallthrough with LoginHint fallback route ([1103f82](https://github.com/workshops-de/angular-workshop-slides/commit/1103f827023917d15304c4106754505c0be9d897))
+
 ## [1.17.4](https://github.com/workshops-de/angular-workshop-slides/compare/v1.17.3...v1.17.4) (2026-10-22)
 
 
