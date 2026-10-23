@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.20.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.19.5...v1.20.0) (2026-10-23)
+
+
+### Features
+
+* **06-angular-forms:** handle duplicate ISBN from the API and reuse getByIsbn ([89d88e2](https://github.com/workshops-de/angular-workshop-slides/commit/89d88e228082daf0fc0e15861c7b72e8cfa5aa61))
+
 ## [1.19.5](https://github.com/workshops-de/angular-workshop-slides/compare/v1.19.4...v1.19.5) (2026-10-23)
 
 
