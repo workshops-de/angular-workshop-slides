@@ -2,6 +2,20 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.19.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.19.0...v1.19.1) (2026-10-23)
+
+
+### Bug Fixes
+
+* **02-angular-components:** align component tree hint headings with task phases ([de4588d](https://github.com/workshops-de/angular-workshop-slides/commit/de4588d5e98c35017135d68e179bb7f27a742edb))
+* **02-angular-components:** align task and hint formatting with lesson template ([8eddf3e](https://github.com/workshops-de/angular-workshop-slides/commit/8eddf3e9e887057ced67d452aecdef38059880bc))
+* **03-angular-services-http:** align task formatting and fix client file name in interceptor task ([b0dbae0](https://github.com/workshops-de/angular-workshop-slides/commit/b0dbae0db2621512315793a9dae2260c1cc8c689))
+* **05-angular-router:** align task and hint formatting with lesson template ([746dc04](https://github.com/workshops-de/angular-workshop-slides/commit/746dc0432419367e6c951e36f50e4e23cb66c4ad))
+* **06-angular-forms:** align create book, submission, async validation and edit book tasks with lesson format ([9e0ff48](https://github.com/workshops-de/angular-workshop-slides/commit/9e0ff486ff3da1a70b8c68be6965bc89a4f10311))
+* **06-angular-forms:** set route paths in edit book task in italics ([ee75b2a](https://github.com/workshops-de/angular-workshop-slides/commit/ee75b2a00c4553d0aadfb0f6849c52441fe9976b))
+* **06-angular-forms:** structure validation, custom validator, collections and custom control tasks ([0d90f03](https://github.com/workshops-de/angular-workshop-slides/commit/0d90f03b38fd41431e2977b8f250dc4409768822))
+* **07-angular-testing:** align task and hint formatting with lesson template ([9193622](https://github.com/workshops-de/angular-workshop-slides/commit/91936224c963ea1be9cba92a3c930ff177bc5c80))
+
 # [1.19.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.18.2...v1.19.0) (2026-10-23)
 
 
