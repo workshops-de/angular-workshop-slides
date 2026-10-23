@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.19.5](https://github.com/workshops-de/angular-workshop-slides/compare/v1.19.4...v1.19.5) (2026-10-23)
+
+
+### Bug Fixes
+
+* use bookmonkey-api version 5 in setup and HTTP tasks ([ecc71b3](https://github.com/workshops-de/angular-workshop-slides/commit/ecc71b3837214e51de12cdcf667b005fa8b44fdd))
+
 ## [1.19.4](https://github.com/workshops-de/angular-workshop-slides/compare/v1.19.3...v1.19.4) (2026-10-23)
 
 
