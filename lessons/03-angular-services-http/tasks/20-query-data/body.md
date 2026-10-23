@@ -2,7 +2,7 @@ Time to swap the hard-coded books for real data. Angular's `httpResource{:ts}` g
 
 ---
 
-- **Start the API** Start our HTTP-Server `bookmonkey-api` in your shell.
+- **Start the API** Start our HTTP-Server in your shell with `npx bookmonkey-api@4{:bash}`. The `@4` makes sure you run version 4 of the API.
 
 ---
 

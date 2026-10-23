@@ -4,7 +4,7 @@ If not already installed
 
 ```bash
 # run bookmonkey-api directly
-npx bookmonkey-api@latest
+npx bookmonkey-api@4
 ```
 
 ---

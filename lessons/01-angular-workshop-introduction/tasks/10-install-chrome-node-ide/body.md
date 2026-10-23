@@ -21,7 +21,7 @@ If you have to configure a proxy: <https://docs.npmjs.com/misc/config#https-prox
 
 Install angular-cli with:
 
-    $ npm install -g @angular/cli bookmonkey-api
+    $ npm install -g @angular/cli bookmonkey-api@4
 
 **4. IDE / Editor**
 
