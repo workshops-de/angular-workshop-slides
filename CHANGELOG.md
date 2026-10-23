@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.18.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.18.0...v1.18.1) (2026-10-23)
+
+
+### Bug Fixes
+
+* **03-angular-services-http:** show complete Book interface in query data hint ([9020473](https://github.com/workshops-de/angular-workshop-slides/commit/90204731b4c25a07bf201ed64ad39ecb474d44ab))
+
 # [1.18.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.17.4...v1.18.0) (2026-10-22)
 
 
