@@ -5,6 +5,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BookCard } from './book-card';
 import { Book } from '../book';
+import { BookMarkerStore } from '../book-marker-store';
 
 describe('BookCard', () => {
   const book: Book = {
@@ -18,7 +19,8 @@ describe('BookCard', () => {
   let fixture: ComponentFixture<BookCard>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    // BookMarker (used in the template) injects BookMarkerStore, which BooksPage normally provides.
+    TestBed.configureTestingModule({ providers: [BookMarkerStore] });
 
     fixture = TestBed.createComponent(BookCard);
     fixture.componentRef.setInput('book', book);

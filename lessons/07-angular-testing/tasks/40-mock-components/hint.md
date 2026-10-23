@@ -1,12 +1,13 @@
 ## Mock `BookCard{:ts}` and test the cards
 
 ```ts
-// books-page.spec.ts
+// src/app/books/books-page/books-page.spec.ts
 import { Component, input } from '@angular/core';
 import { render, screen } from '@testing-library/angular';
 import { BooksPage } from './books-page';
-import { BooksClient } from './books-client';
-import { Book } from './book';
+import { BookCard } from '../book-card/book-card';
+import { BooksClient } from '../books-client';
+import { Book } from '../book';
 
 @Component({
   selector: 'app-book-card',
@@ -32,6 +33,8 @@ describe('BooksPage', () => {
     author: 'Dale Carnegie'
   };
 
+  beforeEach(() => localStorage.clear());
+
   function booksClientMock(books: Book[]): Partial<BooksClient> {
     return {
       getAll: vi.fn().mockReturnValue({
@@ -44,7 +47,7 @@ describe('BooksPage', () => {
 
   it('renders one book card per book, without depending on BookCard internals', async () => {
     await render(BooksPage, {
-      componentImports: [BookCardMock],
+      importOverrides: [{ replace: BookCard, with: BookCardMock }],
       providers: [{ provide: BooksClient, useValue: booksClientMock([mobyDick, friends]) }]
     });
 

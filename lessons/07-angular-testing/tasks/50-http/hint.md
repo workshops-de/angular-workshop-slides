@@ -1,7 +1,7 @@
-## Set up the testing backend and test GET, POST and PUT
+## Set up the testing backend
 
 ```ts
-// books-client.spec.ts
+// src/app/books/books-client.spec.ts
 import { TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
@@ -9,70 +9,106 @@ import { BooksClient } from './books-client';
 import { Book } from './book';
 
 describe('BooksClient', () => {
+  let booksClient: BooksClient;
+  let httpMock: HttpTestingController;
+
   const mobyDick: Book = {
     id: 'a1b76e0a-6f19-4c9c-9d3e-1b7f5e2a1c7c',
     isbn: '978-3-16-148410-0',
-    cover: '',
     title: 'Moby Dick',
     author: 'Herman Melville'
   };
-
-  let booksClient: BooksClient;
-  let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [provideHttpClient(), provideHttpClientTesting()]
     });
 
-    httpMock = TestBed.inject(HttpTestingController);
     booksClient = TestBed.inject(BooksClient);
+    httpMock = TestBed.inject(HttpTestingController);
   });
 
-  afterEach(() => httpMock.verify());
-
-  it('requests a single book by ISBN', () => {
-    let actual: Book | undefined;
-    booksClient.getByIsbn(mobyDick.isbn).subscribe(book => (actual = book));
-
-    const req = httpMock.expectOne(`http://localhost:4730/books/${mobyDick.isbn}`);
-    expect(req.request.method).toBe('GET');
-
-    req.flush(mobyDick);
-
-    expect(actual).toEqual(mobyDick);
+  afterEach(() => {
+    httpMock.verify();
   });
 
-  it('sends a new book via POST', () => {
-    const draft: Partial<Book> = {
-      title: 'Clean Code',
-      author: 'Robert C. Martin',
-      isbn: '978-0-13-235088-4',
-      abstract: '',
-      cover: ''
-    };
-
-    booksClient.create(draft).subscribe();
-
-    const req = httpMock.expectOne('http://localhost:4730/books');
-    expect(req.request.method).toBe('POST');
-    expect(req.request.body).toEqual(draft);
-
-    req.flush({ ...draft });
-  });
-
-  it('updates a book via PUT', () => {
-    const changes: Partial<Book> = { ...mobyDick, title: 'Moby Dick (revised)' };
-
-    booksClient.update(mobyDick.isbn, changes).subscribe();
-
-    const req = httpMock.expectOne(`http://localhost:4730/books/${mobyDick.isbn}`);
-    expect(req.request.method).toBe('PUT');
-    expect(req.request.body).toEqual(changes);
-
-    req.flush(changes);
-  });
+  // ...
 });
 ```
 
-> `getAll(){:ts}` returns an `httpResource{:ts}`, not an `Observable{:ts}` — a resource fetches on its own inside an injection context, so it isn't exercised with the `subscribe(){:ts}` + `expectOne(){:ts}` pattern. It is covered at component level in `books-page.spec.ts`.
+---
+
+## Test the GET request
+
+`getAll(){:ts}` returns an `httpResource{:ts}`. It needs an injection context and sends its request only after `TestBed.tick(){:ts}`.
+
+```ts
+// src/app/books/books-client.spec.ts
+it('loads the first 15 books via GET', async () => {
+  const booksResource = TestBed.runInInjectionContext(() => booksClient.getAll());
+  TestBed.tick();
+
+  const req = httpMock.expectOne(r => r.url === 'http://localhost:4730/books');
+  expect(req.request.params.get('_start')).toBe('0');
+  expect(req.request.params.get('_end')).toBe('15');
+  req.flush([mobyDick]);
+
+  await vi.waitFor(() => expect(booksResource.value()).toEqual([mobyDick]));
+});
+```
+
+---
+
+## Test the POST request
+
+```ts
+// src/app/books/books-client.spec.ts
+it('creates a book via POST', () => {
+  let created: Book | undefined;
+  booksClient.create(mobyDick).subscribe(book => (created = book));
+
+  const req = httpMock.expectOne('http://localhost:4730/books');
+  expect(req.request.method).toBe('POST');
+  expect(req.request.body).toEqual(mobyDick);
+  req.flush(mobyDick);
+
+  expect(created).toEqual(mobyDick);
+});
+```
+
+---
+
+## Test the PUT request
+
+```ts
+// src/app/books/books-client.spec.ts
+it('updates a book via PUT', () => {
+  let updated: Book | undefined;
+  booksClient.update(mobyDick.isbn, mobyDick).subscribe(book => (updated = book));
+
+  const req = httpMock.expectOne(`http://localhost:4730/books/${mobyDick.isbn}`);
+  expect(req.request.method).toBe('PUT');
+  expect(req.request.body).toEqual(mobyDick);
+  req.flush(mobyDick);
+
+  expect(updated).toEqual(mobyDick);
+});
+```
+
+---
+
+## Test the DELETE request
+
+```ts
+// src/app/books/books-client.spec.ts
+it('deletes a book via DELETE', () => {
+  let done = false;
+  booksClient.delete(mobyDick.isbn).subscribe(() => (done = true));
+
+  const req = httpMock.expectOne(`http://localhost:4730/books/${mobyDick.isbn}`);
+  expect(req.request.method).toBe('DELETE');
+  req.flush(null);
+
+  expect(done).toBe(true);
+});
+```

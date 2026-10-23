@@ -1,12 +1,12 @@
 ## Mock `BooksClient{:ts}` and test rendering and filter
 
 ```ts
-// books-page.spec.ts
+// src/app/books/books-page/books-page.spec.ts
 import { render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { BooksPage } from './books-page';
-import { BooksClient } from './books-client';
-import { Book } from './book';
+import { BooksClient } from '../books-client';
+import { Book } from '../book';
 
 describe('BooksPage', () => {
   const mobyDick: Book = {
@@ -23,6 +23,9 @@ describe('BooksPage', () => {
     title: 'How to win friends',
     author: 'Dale Carnegie'
   };
+
+  // BookMarkerStore keeps the search term in localStorage. Start every test with an empty search.
+  beforeEach(() => localStorage.clear());
 
   // getAll() returns an httpResource; BooksPage reads value()/isLoading()/error() off it.
   function booksClientMock(books: Book[]): Partial<BooksClient> {
@@ -55,8 +58,9 @@ describe('BooksPage', () => {
     const user = userEvent.setup();
     await user.type(screen.getByRole('searchbox'), 'Moby');
 
-    expect(screen.getByText(mobyDick.title)).toBeInTheDocument();
-    expect(screen.queryByText(friends.title)).not.toBeInTheDocument();
+    // The marker splits the title into <mark>Moby</mark> Dick, so query the heading by its accessible name.
+    expect(screen.getByRole('heading', { name: mobyDick.title })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: friends.title })).not.toBeInTheDocument();
   });
 });
 ```

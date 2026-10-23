@@ -4,7 +4,7 @@ Testing through `TestBed{:ts}` directly involves a lot of repetitive boilerplate
 
 ---
 
-- **Render with ATL** In _book-card.spec.ts_ replace `TestBed.configureTestingModule{:ts}` + `createComponent{:ts}` + `setInput{:ts}` + `detectChanges{:ts}` with a single `await render(BookCard, { componentInputs: { book } }){:ts}` call from `@testing-library/angular`.
+- **Render with ATL** In _book-card.spec.ts_ replace `TestBed.configureTestingModule{:ts}` + `createComponent{:ts}` + `setInput{:ts}` + `detectChanges{:ts}` with a single `await render(BookCard, { componentInputs: { book }, providers: [BookMarkerStore] }){:ts}` call from `@testing-library/angular`.
 
 ---
 
@@ -14,7 +14,7 @@ Testing through `TestBed{:ts}` directly involves a lot of repetitive boilerplate
 
 - **Test the content projection** `BookCard{:ts}` renders whatever the parent projects via `<ng-content />{:html}` (that's how the "Details"-Link ends up inside the card since the content-projection task).
   - Declare a tiny host component with the template `<app-book-card [book]="book">Details</app-book-card>{:html}`.
-  - `render(){:ts}` it and assert `screen.getByText('Details'){:ts}` is in the document.
+  - `render(){:ts}` it (again with `providers: [BookMarkerStore]{:ts}`) and assert `screen.getByText('Details'){:ts}` is in the document.
 
 ---
 

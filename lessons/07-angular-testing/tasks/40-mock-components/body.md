@@ -1,4 +1,4 @@
-`BooksPage{:ts}` doesn't just depend on a service — it also depends on the `BookCard{:ts}`-Component to render every list item. Right now, your `BooksPage{:ts}` tests implicitly also render `BookCard{:ts}`'s real template. Let's isolate `BooksPage{:ts}` fully by swapping `BookCard{:ts}` for a mock component, using `render(){:ts}`'s `componentImports{:ts}`-shortcut.
+`BooksPage{:ts}` doesn't just depend on a service — it also depends on the `BookCard{:ts}`-Component to render every list item. Right now, your `BooksPage{:ts}` tests implicitly also render `BookCard{:ts}`'s real template. Let's isolate `BooksPage{:ts}` fully by swapping `BookCard{:ts}` for a mock component, using `render(){:ts}`'s `importOverrides{:ts}`-option.
 
 ---
 
@@ -8,7 +8,8 @@
 
 ---
 
-- **Swap it in** Pass the mock via `componentImports{:ts}`: `await render(BooksPage, { componentImports: [BookCardMock], providers: [...] });{:ts}`.
+- **Swap it in** Replace `BookCard{:ts}` with the mock via `importOverrides{:ts}`: `await render(BooksPage, { importOverrides: [{ replace: BookCard, with: BookCardMock }], providers: [...] });{:ts}`.
+  - Don't use `componentImports{:ts}` here. It replaces **all** imports of `BooksPage{:ts}`, including `RouterLink{:ts}`, and the test fails with _Can't bind to 'routerLink'_. `importOverrides{:ts}` only swaps the one import you name.
 
 ---
 
