@@ -1,6 +1,6 @@
 ## The functional interceptor
 
-```typescript
+```ts
 // error-interceptor.ts
 import {
   HttpErrorResponse,
@@ -35,7 +35,7 @@ Note that `inject(){:ts}` works here because Angular runs interceptors inside an
 
 ## Registering it
 
-```typescript
+```ts
 // app.config.ts
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 
@@ -51,10 +51,12 @@ export const appConfig: ApplicationConfig = {
 
 `Notifier{:ts}` already renders its toasts via CDK Overlay - no template markup needed, just inject and call `.error(){:ts}` / `.success(){:ts}` / `.info(){:ts}`.
 
+---
+
 ## Provoke an error
 
-```typescript
-// book-client.ts
+```ts
+// books-client.ts
 @Service()
 export class BooksClient {
   private readonly http = inject(HttpClient);

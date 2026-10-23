@@ -2,7 +2,7 @@ Right now a failed request just disappears silently in the console. Let's catch 
 
 ---
 
-- **Create a functional interceptor** Add `error-interceptor.ts` in `src/app/lib` and export a function `errorInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn){:ts}`. Call `next(req){:ts}` and use the `catchError{:ts}` operator from `rxjs` to react to failures.
+- **Create a functional interceptor** Add _error-interceptor.ts_ in _src/app/lib_ and export a function `errorInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn){:ts}`. Call `next(req){:ts}` and use the `catchError{:ts}` operator from `rxjs` to react to failures.
 
 ---
 
@@ -10,11 +10,11 @@ Right now a failed request just disappears silently in the console. Let's catch 
 
 ---
 
-- **Register the interceptor** In `app.config.ts` pass `withInterceptors([errorInterceptor]){:ts}` to `provideHttpClient(...){:ts}`.
+- **Register the interceptor** In _app.config.ts_ pass `withInterceptors([errorInterceptor]){:ts}` to `provideHttpClient(...){:ts}`.
 
 ---
 
-- **Provoke an HTTP error** Add the query parameter `_devError{:ts}` to the request that loads the books in `book-client.ts`. `_devError: true{:ts}` causes a 400 error which makes your `errorInterceptor{:ts}` to show an error notification
+- **Provoke an HTTP error** Add the query parameter `_devError{:ts}` to the request that loads the books in _books-client.ts_. `_devError: true{:ts}` causes a 400 error which makes your `errorInterceptor{:ts}` show an error notification.
 
 ---
 

@@ -11,7 +11,7 @@ npx bookmonkey-api@4
 
 ## Providing HttpClient
 
-```typescript
+```ts
 // app.config.ts
 import { provideHttpClient } from '@angular/common/http';
 
@@ -22,7 +22,7 @@ providers: [provideHttpClient()];
 
 ## Extending `Book{:ts}`
 
-```typescript
+```ts
 // book.ts
 export interface Book {
   id: string;
@@ -56,7 +56,7 @@ ng generate service books/books-client
 
 Both methods live in the same service:
 
-```typescript
+```ts
 // books-client.ts
 import { httpResource } from '@angular/common/http';
 import { Service, Signal } from '@angular/core';
@@ -93,7 +93,7 @@ export class BooksClient {
 
 ## Consuming the resource in `BooksPage{:ts}`
 
-```typescript
+```ts
 // books-page.ts
 booksClient = inject(BooksClient);
 bookMarkerStore = inject(BookMarkerStore);

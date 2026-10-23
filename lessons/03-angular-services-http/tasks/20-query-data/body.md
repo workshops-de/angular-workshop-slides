@@ -2,7 +2,7 @@ Time to swap the hard-coded books for real data. Angular's `httpResource{:ts}` g
 
 ---
 
-- **Start the API** Start our HTTP-Server in your shell with `npx bookmonkey-api@4{:bash}`. The `@4` makes sure you run version 4 of the API.
+- **Start the API** Start our HTTP-Server in your shell with `npx bookmonkey-api@4{:bash}`. The `@4{:bash}` makes sure you run version 4 of the API.
 
 ---
 
@@ -18,7 +18,7 @@ Time to swap the hard-coded books for real data. Angular's `httpResource{:ts}` g
 
 ---
 
-- **Load data via `httpResource{:ts}`** In _books-client.ts_ add a method `getAll(){:ts}` that returns an `httpResource<Book[]>{:ts}`. Point it at `http://localhost:4730/books`, pass `_start{:ts}`, `_end{:ts}`, `_sort{:ts}` and `_order{:ts}` as `params{:ts}` to page and sort the result, and set `defaultValue: []{:ts}` so the list is never `undefined{:ts}`.
+- **Load data via `httpResource{:ts}`** In _books-client.ts_ add a method `getAll(){:ts}` that returns an `httpResource<Book[]>{:ts}`. Point it at _http://localhost:4730/books_, pass `_start{:ts}`, `_end{:ts}`, `_sort{:ts}` and `_order{:ts}` as `params{:ts}` to page and sort the result, and set `defaultValue: []{:ts}` so the list is never `undefined{:ts}`.
 
 ---
 
@@ -34,7 +34,7 @@ Time to swap the hard-coded books for real data. Angular's `httpResource{:ts}` g
 
 ---
 
-- **Show the real cover** In _book-card.html_ use `currentBook.cover || placeholderCover{:ts}` as the image `src`, so books without a cover still fall back to the placeholder.
+- **Show the real cover** In _book-card.html_ use `currentBook.cover || placeholderCover{:ts}` as the image `src{:html}`, so books without a cover still fall back to the placeholder.
 
 ---
 
