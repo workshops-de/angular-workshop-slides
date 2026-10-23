@@ -1,4 +1,6 @@
-```typescript
+## Inject the service and wire up the submission
+
+```ts
 // book-create-form.ts
 import { Component, inject, output, signal } from '@angular/core';
 import { form, FormField, FormRoot, required } from '@angular/forms/signals';

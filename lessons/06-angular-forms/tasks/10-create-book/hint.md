@@ -1,6 +1,6 @@
-## The component class
+## Create the model, the form and import the directives
 
-```typescript
+```ts
 // book-create-form.ts
 import { Component, signal } from '@angular/core';
 import { form, FormField, FormRoot } from '@angular/forms/signals';
@@ -30,9 +30,12 @@ export class BookCreateForm {
 }
 ```
 
-## The template
+---
+
+## Wire up the template
 
 ```html
+<!-- book-create-form.html -->
 <form class="form-fields" [formRoot]="form">
   <label class="field-label">
     <span class="field-label-text">ISBN</span>

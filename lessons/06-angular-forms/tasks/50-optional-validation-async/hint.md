@@ -1,4 +1,6 @@
-```typescript
+## Write the validator
+
+```ts
 // validators/isbn.ts
 import { HttpErrorResponse } from '@angular/common/http';
 import { SchemaPath, validateHttp } from '@angular/forms/signals';
@@ -15,7 +17,11 @@ export function uniqueIsbn(path: SchemaPath<string>): void {
 }
 ```
 
-```typescript
+---
+
+## Wire it up
+
+```ts
 // book-create-form.ts
 import { uniqueIsbn } from '../validators/isbn';
 
@@ -24,13 +30,18 @@ protected readonly form = form(
   schemaPath => {
     required(schemaPath.isbn, { message: 'Please insert an ISBN.' });
     uniqueIsbn(schemaPath.isbn);
-    ....
+    // ...
   },
   { submission: { ... } }
 );
 ```
 
+---
+
+## Show the pending state
+
 ```html
+<!-- book-create-form.html -->
 @if (form.isbn().pending()) {
   <small class="field-hint">Checking ISBN…</small>
 } @else if (form.isbn().touched()) {

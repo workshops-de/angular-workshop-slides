@@ -1,4 +1,6 @@
-```typescript
+## Add the route
+
+```ts
 // book.routes.ts
 {
   path: 'edit/:isbn',
@@ -6,12 +8,20 @@
 }
 ```
 
+---
+
+## Wire the Edit link
+
 ```html
 <!-- book-detail-page.html -->
 <a [routerLink]="['/books', 'edit', isbn()]" class="btn-secondary">Edit</a>
 ```
 
-```typescript
+---
+
+## Extend `BooksClient{:ts}`
+
+```ts
 // books-client.ts
 import { httpResource } from '@angular/common/http';
 import { Signal } from '@angular/core';
@@ -21,7 +31,11 @@ getByIsbnResource(isbn: Signal<string>) {
 }
 ```
 
-```typescript
+---
+
+## Load the book
+
+```ts
 // book-edit-page.ts
 import { Component, inject, input } from '@angular/core';
 import { Book } from '../book';
@@ -46,6 +60,10 @@ export class BookEditPage {
 }
 ```
 
+---
+
+## Render by state
+
 ```html
 <!-- book-edit-page.html -->
 @if (bookResource.isLoading()) {
@@ -57,7 +75,11 @@ export class BookEditPage {
 }
 ```
 
-```typescript
+---
+
+## Input, output, model, form and submission
+
+```ts
 // book-edit-form.ts
 import { Component, input, linkedSignal, output } from '@angular/core';
 import { form, FormField, FormRoot, readonly, required } from '@angular/forms/signals';
@@ -103,6 +125,10 @@ export class BookEditForm {
   );
 }
 ```
+
+---
+
+## Build the template and update the cover preview
 
 ```html
 <!-- book-edit-form.html -->
