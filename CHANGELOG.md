@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.18.2](https://github.com/workshops-de/angular-workshop-slides/compare/v1.18.1...v1.18.2) (2026-10-23)
+
+
+### Bug Fixes
+
+* pin bookmonkey-api to version 4 in tasks ([590fa2a](https://github.com/workshops-de/angular-workshop-slides/commit/590fa2adff1cdc1e4e9956cfbada8596fe139e6a))
+
 ## [1.18.1](https://github.com/workshops-de/angular-workshop-slides/compare/v1.18.0...v1.18.1) (2026-10-23)
 
 
