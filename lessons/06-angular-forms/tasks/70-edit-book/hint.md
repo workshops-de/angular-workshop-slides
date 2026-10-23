@@ -19,20 +19,6 @@
 
 ---
 
-## Extend `BooksClient{:ts}`
-
-```ts
-// books-client.ts
-import { httpResource } from '@angular/common/http';
-import { Signal } from '@angular/core';
-
-getByIsbnResource(isbn: Signal<string>) {
-  return httpResource<Book>(() => ({ url: `${this.#baseUrl}/books/${isbn()}` }));
-}
-```
-
----
-
 ## Load the book
 
 ```ts
@@ -52,7 +38,7 @@ export class BookEditPage {
 
   readonly isbn = input.required<string>();
 
-  protected readonly bookResource = this.booksClient.getByIsbnResource(this.isbn);
+  protected readonly bookResource = this.booksClient.getByIsbn(this.isbn);
 
   protected saveBook(book: Book) {
     this.booksClient.update(book.isbn, book).subscribe();

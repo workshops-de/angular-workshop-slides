@@ -14,14 +14,10 @@ Let's reuse everything we learned to build an Edit-Page for an existing book. Th
 
 ---
 
-- **Extend `BooksClient{:ts}`** Add a method `getByIsbnResource(isbn: Signal<string>){:ts}` that returns an `httpResource<Book>(){:ts}` for _/books/:isbn_ (with the current `isbn(){:ts}`). The `update(){:ts}`-Method (PUT) already exists from the HTTP lesson.
-
----
-
 - **Load the book** In _book-edit-page.ts_:
   - Declare `readonly isbn = input.required<string>();{:ts}` to receive the _:isbn_ route param.
-  - Inject `BooksClient{:ts}` and call `getByIsbnResource(this.isbn){:ts}` — the resource re-fetches whenever `isbn(){:ts}` changes. Keep it in a `bookResource{:ts}` property.
-  - Add a method `saveBook(book: Book){:ts}` that calls `update(){:ts}` on `BooksClient{:ts}` with `book.isbn{:ts}` and the `book{:ts}` and subscribes to it.
+  - Inject `BooksClient{:ts}` and call `getByIsbn(this.isbn){:ts}`. You built this `httpResource{:ts}` in the HTTP lesson and already use it on the detail page. It re-fetches whenever `isbn(){:ts}` changes. Keep it in a `bookResource{:ts}` property.
+  - Add a method `saveBook(book: Book){:ts}` that calls `update(){:ts}` (from the HTTP lesson) on `BooksClient{:ts}` with `book.isbn{:ts}` and the `book{:ts}` and subscribes to it.
 
 ---
 
