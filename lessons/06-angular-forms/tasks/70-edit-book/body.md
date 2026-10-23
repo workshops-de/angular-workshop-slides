@@ -6,7 +6,7 @@ Let's reuse everything we learned to build an Edit-Page for an existing book. Th
 
 ---
 
-- **Add the route** In _book.routes.ts_ configure a new route with the path `edit/:isbn` that displays `BookEditPage{:ts}`, lazy-loaded like the existing `detail/:isbn` route.
+- **Add the route** In _book.routes.ts_ configure a new route with the path _edit/:isbn_ that displays `BookEditPage{:ts}`, lazy-loaded like the existing _detail/:isbn_ route.
 
 ---
 
@@ -19,7 +19,7 @@ Let's reuse everything we learned to build an Edit-Page for an existing book. Th
 ---
 
 - **Load the book** In _book-edit-page.ts_:
-  - Declare `readonly isbn = input.required<string>();{:ts}` to receive the `:isbn` route param.
+  - Declare `readonly isbn = input.required<string>();{:ts}` to receive the _:isbn_ route param.
   - Inject `BooksClient{:ts}` and call `getByIsbnResource(this.isbn){:ts}` — the resource re-fetches whenever `isbn(){:ts}` changes. Keep it in a `bookResource{:ts}` property.
   - Add a method `saveBook(book: Book){:ts}` that calls `update(){:ts}` on `BooksClient{:ts}` with `book.isbn{:ts}` and the `book{:ts}` and subscribes to it.
 
