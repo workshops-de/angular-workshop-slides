@@ -3,7 +3,7 @@ position: 7
 trainer: 'gregor@entwicklungszeit.dev'
 slides_type: google_slides
 github_code_url: https://github.com/workshops-de/angular-workshop
-git_tag_starting: solve--integrate-form-for-edit-page
+git_tag_starting: solution--content-projection
 google_slide_id: 1PHpUoQmxuujWJ9pq-DHX4B27qZreWXZ4btqlAIXwrkc
 pdf_generation_enabled: true
 stackblitz_enabled: false
