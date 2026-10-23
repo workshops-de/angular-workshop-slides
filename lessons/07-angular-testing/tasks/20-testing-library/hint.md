@@ -1,3 +1,5 @@
+## Render with ATL, query like a user and test the content projection
+
 ```ts
 // book-card.spec.ts
 import { Component } from '@angular/core';

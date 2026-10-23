@@ -1,3 +1,5 @@
+## Mock `BooksClient{:ts}` and test rendering and filter
+
 ```ts
 // books-page.spec.ts
 import { render, screen } from '@testing-library/angular';

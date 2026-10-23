@@ -1,3 +1,5 @@
+## Mock `BookCard{:ts}` and test the cards
+
 ```ts
 // books-page.spec.ts
 import { Component, input } from '@angular/core';
