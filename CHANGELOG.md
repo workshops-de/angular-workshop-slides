@@ -2,6 +2,19 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+# [1.19.0](https://github.com/workshops-de/angular-workshop-slides/compare/v1.18.2...v1.19.0) (2026-10-23)
+
+
+### Bug Fixes
+
+* **05-angular-router:** generate canDeactivate guard via CLI and rename to hasUnsavedChanges ([976a87a](https://github.com/workshops-de/angular-workshop-slides/commit/976a87ae6ce6e3326754a0a59d14e6fec47a2407))
+
+
+### Features
+
+* **05-angular-router:** add bonus for a generic unsaved-changes guard ([9a4b383](https://github.com/workshops-de/angular-workshop-slides/commit/9a4b383625ad40a153cc8e6aefc368be6706f774))
+* **06-angular-forms:** reset unsaved-changes state after saving a book ([97cd507](https://github.com/workshops-de/angular-workshop-slides/commit/97cd5077e3ecae5449b99ca63f546f1762397526))
+
 ## [1.18.2](https://github.com/workshops-de/angular-workshop-slides/compare/v1.18.1...v1.18.2) (2026-10-23)
 
 
