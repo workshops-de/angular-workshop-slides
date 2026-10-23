@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.19.4](https://github.com/workshops-de/angular-workshop-slides/compare/v1.19.3...v1.19.4) (2026-10-23)
+
+
+### Bug Fixes
+
+* **07-angular-testing:** start the lesson from the current sample solution ([574e619](https://github.com/workshops-de/angular-workshop-slides/commit/574e6192ff12e5d977b086170f369cf29a08cb7a))
+
 ## [1.19.3](https://github.com/workshops-de/angular-workshop-slides/compare/v1.19.2...v1.19.3) (2026-10-23)
 
 
