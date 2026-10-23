@@ -1,4 +1,4 @@
-## Routes
+## Define the routes
 
 ```ts
 // app.routes.ts
@@ -24,6 +24,10 @@ export const routes: Routes = [
 ];
 ```
 
+---
+
+## Provide the router
+
 ```ts
 // app.config.ts
 import { provideRouter } from '@angular/router';
@@ -34,7 +38,9 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-## Router outlet
+---
+
+## Add the router outlet
 
 ```ts
 // app.ts

@@ -1,3 +1,27 @@
+## Add the route
+
+```ts
+// app.routes.ts
+{ path: 'books/detail/:isbn', component: BookDetailPage }
+```
+
+---
+
+## Navigate from `BooksPage{:ts}`
+
+```ts
+// books-page.ts
+import { Router } from '@angular/router';
+
+private readonly router = inject(Router);
+
+async goToBookDetails(book: Book) {
+  await this.router.navigate(['/books', 'detail', book.isbn]);
+}
+```
+
+---
+
 ## Enable Component Input Binding
 
 ```ts
@@ -7,7 +31,9 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 provideRouter(routes, withComponentInputBinding());
 ```
 
-## The component
+---
+
+## Read the route param and load the book
 
 ```ts
 // book-detail-page.ts
@@ -31,29 +57,13 @@ export class BookDetailPage {
 }
 ```
 
+---
+
+## Build the template
+
 ```html
 <!-- book-detail-page.html -->
 @if (bookResource.value(); as book) {
   <app-book-detail [book]="book" />
 }
-```
-
-## Extend BooksPage
-
-```ts
-// books-page.ts
-import { Router } from '@angular/router';
-
-private readonly router = inject(Router);
-
-async goToBookDetails(book: Book) {
-  await this.router.navigate(['/books', 'detail', book.isbn]);
-}
-```
-
-## Extend your routes definitions
-
-```ts
-// app.routes.ts
-{ path: 'books/detail/:isbn', component: BookDetailPage }
 ```

@@ -1,4 +1,4 @@
-## Creating the user state
+## Create the user state
 
 ```ts
 // src/app/user-state.ts
@@ -13,7 +13,7 @@ export class UserState {
 
 ---
 
-## Creating the `canMatch{:ts}`-Guard
+## Create the `canMatch{:ts}`-Guard
 
 A `CanMatchFn{:ts}` runs in an injection context, so you can use `inject(){:ts}` directly.
 
@@ -47,7 +47,7 @@ export const routes: Routes = [
 
 ---
 
-## Adding the fallback route
+## Add a fallback route
 
 When `canMatch{:ts}` returns `false{:ts}`, the router skips the route and tries the next one. A second route with the same path catches that case. It must come **after** the protected route.
 
