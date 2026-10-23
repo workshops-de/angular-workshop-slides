@@ -1,4 +1,6 @@
-```typescript
+## Implement `FormValueControl<string>{:ts}` and the `remove{:ts}`-Output
+
+```ts
 // co-author-input.ts
 import { Component, input, model, output } from '@angular/core';
 import { FormValueControl, ValidationError } from '@angular/forms/signals';
@@ -19,6 +21,10 @@ export class CoAuthorInput implements FormValueControl<string> {
   remove = output<void>();
 }
 ```
+
+---
+
+## Build the template
 
 ```html
 <!-- co-author-input.html -->
@@ -42,6 +48,10 @@ export class CoAuthorInput implements FormValueControl<string> {
 }
 ```
 
+---
+
+## Use it in `BookCreateForm{:ts}`
+
 ```html
 <!-- book-create-form.html -->
 @for (coAuthor of form.coAuthors; track $index; let coAuthorIndex = $index) {
@@ -51,7 +61,7 @@ export class CoAuthorInput implements FormValueControl<string> {
 }
 ```
 
-```typescript
+```ts
 // book-create-form.ts
 import { CoAuthorInput } from '../co-author-input/co-author-input';
 

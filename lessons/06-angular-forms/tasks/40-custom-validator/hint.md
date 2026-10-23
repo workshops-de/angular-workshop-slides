@@ -1,4 +1,6 @@
-```typescript
+## Write the validator
+
+```ts
 // validators/author.ts
 import { SchemaPath, validate } from '@angular/forms/signals';
 
@@ -14,7 +16,11 @@ export function validAuthorName(schemaPath: SchemaPath<string>): void {
 }
 ```
 
-```typescript
+---
+
+## Wire it up
+
+```ts
 // book-create-form.ts
 import { validAuthorName } from '../validators/author';
 
@@ -23,7 +29,7 @@ protected readonly form = form(
   schemaPath => {
     required(schemaPath.author, { message: 'Please insert an Author.' });
     validAuthorName(schemaPath.author);
-    ....
+    // ...
   },
   { submission: { ... } }
 );

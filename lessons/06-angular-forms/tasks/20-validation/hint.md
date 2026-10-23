@@ -1,4 +1,6 @@
-```typescript
+## Add a schema function and validators
+
+```ts
 // book-create-form.ts
 import { form, FormField, FormRoot, required } from '@angular/forms/signals';
 
@@ -28,7 +30,12 @@ protected readonly form = form(
 );
 ```
 
+---
+
+## Show validation errors
+
 ```html
+<!-- book-create-form.html -->
 <form [formRoot]="form">
   <label>
     <span>ISBN</span>
@@ -57,7 +64,7 @@ protected readonly form = form(
       }
     }
   </label>
-  ....
+  <!-- ... -->
   <button type="submit" [disabled]="form().invalid()">Save</button>
 </form>
 ```

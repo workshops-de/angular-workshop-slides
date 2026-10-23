@@ -1,4 +1,6 @@
-```typescript
+## Extend the model and the schema, add and remove co-authors
+
+```ts
 // book-create-form.ts
 import { applyEach, form, FormField, FormRoot, required } from '@angular/forms/signals';
 
@@ -43,7 +45,12 @@ export class BookCreateForm {
 }
 ```
 
+---
+
+## Build the template
+
 ```html
+<!-- book-create-form.html -->
 <fieldset class="field-collection">
   <legend class="field-label-text">Co-authors</legend>
 
