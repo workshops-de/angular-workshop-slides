@@ -2,7 +2,7 @@ Since we add more and more books to our list, a filter is helpful to focus the b
 
 ---
 
-- **The Book filter control** In _books-page.ts_ add a `signal{:ts}` property called `searchTerm{:ts}`. Switch to _books-page.html_ and add an _<input>_-Field acting as search field. Handle its `(input){:html}`-Event by setting the signal directly: `searchTerm.set($event.target.value){:ts}`.
+- **The Book filter control** In _books-page.ts_ add a `signal{:ts}` property called `searchTerm{:ts}`. Switch to _books-page.html_ and add an `<input>{:html}`-Field acting as search field. Handle its `(input){:html}`-Event by setting the signal directly: `searchTerm.set($event.target.value){:ts}`.
 
 ---
 

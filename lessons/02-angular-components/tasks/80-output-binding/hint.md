@@ -1,7 +1,7 @@
 ## Declaring and emitting the output
 
 ```ts
-// src/app/books/book-card/book-card.ts
+// book-card.ts
 
 // Output-Binding
 readonly detailClick = output<Book>();
@@ -12,10 +12,12 @@ this.detailClick.emit(this.book());
 this.deleteClick.emit(this.book());
 ```
 
+---
+
 ## Handling the event in BooksPage
 
 ```ts
-// src/app/books/books-page/books-page.ts
+// books-page.ts
 
 // handling detailClick-Event
 goToBookDetails(book: Book) {

@@ -6,7 +6,7 @@
 searchTerm = signal(localStorage.getItem('books.searchTerm') ?? '');
 ```
 
---- 
+---
 
 ## Persisting with an effect
 

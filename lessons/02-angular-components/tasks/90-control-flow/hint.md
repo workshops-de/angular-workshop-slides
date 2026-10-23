@@ -24,6 +24,8 @@ books = signal<Book[]>([
 ]);
 ```
 
+---
+
 ## Rendering the list with @for
 
 ```html

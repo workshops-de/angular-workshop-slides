@@ -1,14 +1,16 @@
 ## Formatting the date with the `date{:ts}` pipe
 
 ```html
-<!-- src/app/books/book-card/book-card.html -->
+<!-- book-card.html -->
 <p class="book-published">{{ currentBook.publishedAt | date: 'longDate' }}</p>
 ```
+
+---
 
 ## Importing the pipe
 
 ```ts
-// src/app/books/book-card/book-card.ts
+// book-card.ts
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -21,10 +23,12 @@ export class BookCard {
 }
 ```
 
+---
+
 ## Providing the locale
 
 ```ts
-// src/app/app.config.ts
+// app.config.ts
 import { ApplicationConfig, LOCALE_ID } from '@angular/core';
 
 export const appConfig: ApplicationConfig = {
@@ -32,10 +36,12 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
+---
+
 ## Registering the locale data
 
 ```ts
-// src/main.ts
+// main.ts
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import { bootstrapApplication } from '@angular/platform-browser';

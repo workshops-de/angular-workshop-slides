@@ -3,6 +3,7 @@
 A `[style]{:html}`-Binding accepts an object whose keys are CSS properties. Keep the object inside a `signal{:ts}`.
 
 ```ts
+// book-card.ts
 import { Component, signal } from '@angular/core';
 
 export class BookCard {

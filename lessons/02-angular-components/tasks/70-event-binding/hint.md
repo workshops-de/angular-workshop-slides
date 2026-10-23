@@ -1,6 +1,7 @@
 ## Preventing the default link behaviour
 
 ```ts
+// book-card.ts
 handleDetailClick(click: MouseEvent) {
   click.preventDefault();
 

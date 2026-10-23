@@ -12,6 +12,8 @@ warmWelcome = signal('Angularian');
 <app-welcome>{{ warmWelcome() }}</app-welcome>
 ```
 
+---
+
 ## Adding the `greet{:ts}` signal
 
 ```ts
@@ -23,6 +25,8 @@ export class App {
   greet = signal('Hello');
 }
 ```
+
+---
 
 ## Updating a signal from the `constructor{:ts}`
 

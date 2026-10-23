@@ -1,5 +1,7 @@
 Let's warm up a bit and get familiar with our project by taking a first look at Angular's reactivity model.
 
+---
+
 - **Meet the App component** Open your editor and switch to _src/app/app.ts_. You will find a `signal{:ts}` property called `warmWelcome{:ts}`. Switch to _src/app/app.html_ and see how its value is read in the template via `warmWelcome(){:ts}`.
 
 ---

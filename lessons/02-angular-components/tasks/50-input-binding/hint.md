@@ -16,6 +16,8 @@ export class BooksPage {
 <app-book-card [book]="book()" />
 ```
 
+---
+
 ## Reading an input signal in the template
 
 Input signals are functions — call them with `()` to read their value. A `@let{:html}` variable keeps the template short.

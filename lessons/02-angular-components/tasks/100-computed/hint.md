@@ -5,6 +5,8 @@
 searchTerm = signal('');
 ```
 
+---
+
 ## Wiring the search input
 
 ```html
@@ -18,6 +20,8 @@ searchTerm = signal('');
   (input)="searchTerm.set($event.target.value)"
 />
 ```
+
+---
 
 ## Filtering with `computed{:ts}`
 
