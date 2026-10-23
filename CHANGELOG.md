@@ -2,6 +2,13 @@
 
 Alle nennenswerten Änderungen an den Workshop-Lessons. Automatisch aus den Conventional Commits erzeugt (semantic-release).
 
+## [1.19.3](https://github.com/workshops-de/angular-workshop-slides/compare/v1.19.2...v1.19.3) (2026-10-23)
+
+
+### Bug Fixes
+
+* **06-angular-forms:** point custom validator task to renamed solution tag ([ebdd5e8](https://github.com/workshops-de/angular-workshop-slides/commit/ebdd5e89d388007daf3d20798160bab7eca11b7a))
+
 ## [1.19.2](https://github.com/workshops-de/angular-workshop-slides/compare/v1.19.1...v1.19.2) (2026-10-23)
 
 
