@@ -10,7 +10,7 @@ Time to swap the hard-coded books for real data. Angular's `httpResource{:ts}` g
 
 ---
 
-- **Extend the `Book{:ts}` interface** Open _book.ts_ and extend `Book{:ts}` with the fields the API returns, e.g. `isbn{:ts}`, `cover{:ts}`, `subtitle{:ts}`, `price{:ts}`, `numPages{:ts}` and `publishedAt{:ts}`. Most of them are optional - only `isbn{:ts}` and `title{:ts}` stay required.
+- **Extend the `Book{:ts}` interface** Open _book.ts_ and extend `Book{:ts}` with the fields the API returns, e.g. `isbn{:ts}`, `cover{:ts}`, `subtitle{:ts}`, `price{:ts}`, `numPages{:ts}` and `publishedAt{:ts}`. Most of them are optional - only `id{:ts}`, `isbn{:ts}` and `title{:ts}` stay required. The hint shows the complete interface.
 
 ---
 
