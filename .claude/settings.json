@@ -6,7 +6,7 @@
   },
   "enabledPlugins": {
     "google-slides-mcp@matteoantoci-plugins": true,
-    "workshops-slides@workshops-de": true
+    "workshops-courses@workshops-de": true
   },
   "extraKnownMarketplaces": {
     "workshops-de": {
