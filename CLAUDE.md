@@ -1,7 +1,11 @@
 # Lessons
 
 This repository only contains lessons for the Angular Workshop.
-To understand how to structure lessons, in order to create and update them correctly, refer to [lessons.md](./docs/lessons.md).
+To understand how to structure lessons and tasks, in order to create and update them correctly, use the
+`course-content` skill from the workshops.de `workshops-courses` Claude Code plugin (enabled in
+`.claude/settings.json`, source: [workshops-de/claude-plugins](https://github.com/workshops-de/claude-plugins)).
+This repository uses two-digit task folders stepped by 10 (`10-service`, `20-http`, …) and
+`git_tag_completed: solution--<task-slug>`.
 
 # Slides
 
